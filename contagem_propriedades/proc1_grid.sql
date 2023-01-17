@@ -1,0 +1,5 @@
+
+DROP TABLE IF EXISTS temporarios.gridbr;
+CREATE TABLE temporarios.gridbr as
+SELECT ROW_NUMBER() OVER () id,*
+FROM  ST_CreateFishnet(4100, 4000, 0.01, 0.01, -74.3904499689998971, -34.7511779939999457) AS cells;
