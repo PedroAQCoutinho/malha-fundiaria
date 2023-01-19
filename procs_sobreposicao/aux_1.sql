@@ -1,4 +1,3 @@
-
 -- Interesse da uniao
 \echo Interesse da uniao
 \echo   
