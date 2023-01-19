@@ -181,7 +181,6 @@ CREATE INDEX valid_sicar_imovel_valid_geom_idx ON dados_brutos.valid_sicar_imove
 \echo terra legal
 \echo
 
-
 DROP TABLE IF EXISTS dados_brutos.valid_terralegal_privado;
 CREATE TABLE dados_brutos.valid_terralegal_privado AS
 SELECT *, ST_MakeValid(geom) valid_geom FROM dados_brutos.input_terralegal_particular_incra icsp  ;
@@ -195,15 +194,41 @@ CREATE INDEX valid_terralegal_privado_geom_idx ON dados_brutos.valid_terralegal_
 \echo  
 
 DROP TABLE IF EXISTS dados_brutos.valid_areas_interesse_uniao;
-CREATE TABLE dados_brutos.valid_areas_interesse_uniao AS 
-SELECT 1 gid, 17 original_layer , ST_setSRID(ST_MakeValid(ST_Intersection(ST_Buffer(ST_Boundary(geom)::geography, 150000), geom)::geometry), 0) valid_geom 
-FROM geo_adm.pa_br_limitenacional_250_2015_ibge_4674 pbli 
-UNION ALL
-SELECT gid, 18 original_layer, ST_SetSRID(ST_MakeValid(geom), 0) valid_geom FROM dados_brutos.cnfp_2020_br cb WHERE classe = 'USO MILITAR';
+CREATE TABLE dados_brutos.valid_areas_interesse_uniao AS
+SELECT *,  ST_SetSRID(ST_MakeValid(geom), 0) valid_geom FROM dados_brutos.cnfp_2020_br cb WHERE classe = 'USO MILITAR';
 
 CREATE INDEX valid_areas_interesse_uniao_gid_idx ON dados_brutos.valid_areas_interesse_uniao USING btree (gid);
 CREATE INDEX valid_areas_interesse_uniao_geom_idx ON dados_brutos.valid_areas_interesse_uniao USING gist (valid_geom);
 
+
+
+
+
+-- Massas dagua
+\echo Massas dagua 
+\echo  
+
+DROP TABLE IF EXISTS dados_brutos.valid_input_massas_dagua;
+CREATE TABLE dados_brutos.valid_input_massas_dagua AS
+SELECT *,  ST_SetSRID(ST_MakeValid(geom), 0) valid_geom FROM dados_brutos.geoft_bho_massa_dagua_2019 cb;
+
+CREATE INDEX valid_input_massas_dagua_gid_idx ON dados_brutos.valid_input_massas_dagua USING btree (gid);
+CREATE INDEX valid_input_massas_dagua_geom_idx ON dados_brutos.valid_input_massas_dagua USING gist (valid_geom);
+
+
+
+
+-- Faixa de fronteira
+\echo Faixa de fronteira
+\echo  
+
+DROP TABLE IF EXISTS dados_brutos.valid_input_faixa_fronteira;
+CREATE TABLE dados_brutos.valid_input_faixa_fronteira AS
+SELECT 1 id , ST_MakeValid( ST_Intersection( ST_buffer( ST_BOUNDARY(geom)::geography, 150000) , geom)::geometry ) valid_geom 
+FROM geo_adm.pa_br_limitenacional_250_2015_ibge_4674 cb;
+
+CREATE INDEX valid_input_faixa_fronteira_gid_idx ON dados_brutos.valid_input_faixa_fronteira USING btree (gid);
+CREATE INDEX valid_input_faixa_fronteira_geom_idx ON dados_brutos.valid_input_faixa_fronteira USING gist (valid_geom);
 
 
 
