@@ -14,6 +14,10 @@ CREATE TABLE autointersection.autointersection_input_terrasindigenas_funai_2022
   geom geometry NULL
 );
 
+CREATE INDEX input_terrasindigenas_funai_2022_agid_idx ON autointersection.autointersection_input_terrasindigenas_funai_2022 USING btree (agid);
+CREATE INDEX input_terrasindigenas_funai_2022_geom_idx ON autointersection.autointersection_input_terrasindigenas_funai_2022 USING gist (geom);
+CREATE INDEX input_terrasindigenas_funai_2022_bgid_idx ON autointersection.autointersection_input_terrasindigenas_funai_2022 USING btree (bgid);
+
 
 -- Quilombolas
 \echo Quilombolas
@@ -31,6 +35,9 @@ CREATE TABLE autointersection.autointersection_input_quilombolas_2022
   geom geometry NULL
 );
 
+CREATE INDEX autointersection_input_quilombolas_2022_agid_idx ON autointersection.autointersection_input_quilombolas_2022 USING btree (agid);
+CREATE INDEX autointersection_input_quilombolas_2022_geom_idx ON autointersection.autointersection_input_quilombolas_2022 USING gist (geom);
+CREATE INDEX autointersection_input_quilombolas_2022_bgid_idx ON autointersection.autointersection_input_quilombolas_2022 USING btree (bgid);
 
 
 
@@ -51,6 +58,11 @@ CREATE TABLE autointersection.autointersection_input_assentamento_federal_2022
 );
 
 
+CREATE INDEX input_assentamento_federal_2022_agid_idx ON autointersection.autointersection_input_assentamento_federal_2022 USING btree (agid);
+CREATE INDEX input_assentamento_federal_2022_geom_idx ON autointersection.autointersection_input_assentamento_federal_2022 USING gist (geom);
+CREATE INDEX input_assentamento_federal_2022_bgid_idx ON autointersection.autointersection_input_assentamento_federal_2022 USING btree (bgid);
+
+
 -- AssReconhecimento
 \echo AssReconhecimento
 \echo  
@@ -66,6 +78,11 @@ CREATE TABLE autointersection.autointersection_input_assentamento_reconhecimento
   bgid int4 NULL,
   geom geometry NULL
 );
+
+CREATE INDEX input_assentamento_reconhecimento_2022_agid_idx ON autointersection.autointersection_input_assentamento_reconhecimento_2022 USING btree (agid);
+CREATE INDEX input_assentamento_reconhecimento_2022_geom_idx ON autointersection.autointersection_input_assentamento_reconhecimento_2022 USING gist (geom);
+CREATE INDEX input_assentamento_reconhecimento_2022_bgid_idx ON autointersection.autointersection_input_assentamento_reconhecimento_2022 USING btree (bgid);
+
 
 
 -- UCUSs
@@ -83,6 +100,11 @@ CREATE TABLE autointersection.autointersection_input_ucus_2022
   bgid int4 NULL,
   geom geometry NULL
 );
+
+
+CREATE INDEX autointersection_input_ucus_2022_agid_idx ON autointersection.autointersection_input_ucus_2022 USING btree (agid);
+CREATE INDEX autointersection_input_ucus_2022_geom_idx ON autointersection.autointersection_input_ucus_2022 USING gist (geom);
+CREATE INDEX autointersection_input_ucus_2022_bgid_idx ON autointersection.autointersection_input_ucus_2022 USING btree (bgid);
 
 
 
@@ -103,6 +125,10 @@ CREATE TABLE autointersection.autointersection_input_ucpi_2022
 );
 
 
+CREATE INDEX autointersection_input_ucpi_2022_agid_idx ON autointersection.autointersection_input_ucpi_2022 USING btree (agid);
+CREATE INDEX autointersection_input_ucpi_2022_geom_idx ON autointersection.autointersection_input_ucpi_2022 USING gist (geom);
+CREATE INDEX autointersection_input_ucpi_2022_bgid_idx ON autointersection.autointersection_input_ucpi_2022 USING btree (bgid);
+
 
 
 -- Glebas est
@@ -122,6 +148,9 @@ CREATE TABLE autointersection.autointersection_input_glebaspublicas_2022
 );
 
 
+CREATE INDEX autointersection_input_glebaspublicas_est_2022_agid_idx ON autointersection.autointersection_input_glebaspublicas_est_2022 USING btree (agid);
+CREATE INDEX autointersection_input_glebaspublicas_est_2022_geom_idx ON autointersection.autointersection_input_glebaspublicas_est_2022 USING gist (geom);
+CREATE INDEX autointersection_input_glebaspublicas_est_2022_bgid_idx ON autointersection.autointersection_input_glebaspublicas_est_2022 USING btree (bgid);
 
 -- Glebas fed
 \echo Glebas fed
@@ -139,6 +168,9 @@ CREATE TABLE autointersection.autointersection_input_glebaspublicas_2022
   geom geometry NULL
 );
 
+CREATE INDEX autointersection_input_glebaspublicas_fed_2022_agid_idx ON autointersection.autointersection_input_glebaspublicas_fed_2022 USING btree (agid);
+CREATE INDEX autointersection_input_glebaspublicas_fed_2022_geom_idx ON autointersection.autointersection_input_glebaspublicas_fed_2022 USING gist (geom);
+CREATE INDEX autointersection_input_glebaspublicas_fed_2022_bgid_idx ON autointersection.autointersection_input_glebaspublicas_fed_2022 USING btree (bgid);
 
 
 
@@ -159,6 +191,11 @@ CREATE TABLE autointersection.autointersection_input_sigefpublico_2022
   geom geometry NULL
 );
 
+CREATE INDEX input_sigefpublico_2022_agid_idx ON autointersection.autointersection_input_sigefpublico_2022 USING btree (agid);
+CREATE INDEX input_sigefpublico_2022_geom_idx ON autointersection.autointersection_input_sigefpublico_2022 USING gist (geom);
+CREATE INDEX input_sigefpublico_2022_bgid_idx ON autointersection.autointersection_input_sigefpublico_2022 USING btree (bgid);
+
+
 
 
 -- SNCI publico
@@ -176,6 +213,13 @@ CREATE TABLE autointersection.autointersection_input_sncipublico_2022
   bgid int4 NULL,
   geom geometry NULL
 );
+
+
+CREATE INDEX input_sncipublico_2022_agid_idx ON autointersection.autointersection_input_sncipublico_2022 USING btree (agid);
+CREATE INDEX input_sncipublico_2022_geom_idx ON autointersection.autointersection_input_sncipublico_2022 USING gist (geom);
+CREATE INDEX input_sncipublico_2022_bgid_idx ON autointersection.autointersection_input_sncipublico_2022 USING btree (bgid);
+
+
 
 
 -- Sigef privado
@@ -196,6 +240,11 @@ CREATE TABLE autointersection.autointersection_input_sigefprivado_2022
 
 
 
+CREATE INDEX input_sigefprivado_2022_agid_idx ON autointersection.autointersection_input_sigefprivado_2022 USING btree (agid);
+CREATE INDEX input_sigefprivado_2022_geom_idx ON autointersection.autointersection_input_sigefprivado_2022 USING gist (geom);
+CREATE INDEX input_sigefprivado_2022_bgid_idx ON autointersection.autointersection_input_sigefprivado_2022 USING btree (bgid);
+
+
 -- SNCI privado
 \echo SNCI priv
 \echo  
@@ -211,6 +260,10 @@ CREATE TABLE autointersection.autointersection_input_snciprivado_2022
   bgid int4 NULL,
   geom geometry NULL
 );
+
+CREATE INDEX input_snciprivado_2022_agid_idx ON autointersection.autointersection_input_snciprivado_2022 USING btree (agid);
+CREATE INDEX input_snciprivado_2022_geom_idx ON autointersection.autointersection_input_snciprivado_2022 USING gist (geom);
+CREATE INDEX input_snciprivado_2022_bgid_idx ON autointersection.autointersection_input_snciprivado_2022 USING btree (bgid);
 
 
 
@@ -230,6 +283,9 @@ CREATE TABLE autointersection.autointersection_input_terralegal
   geom geometry NULL
 );
 
+CREATE INDEX autointersection_input_terralegal_agid_idx ON autointersection.autointersection_input_terralegal USING btree (agid);
+CREATE INDEX autointersection_input_terralegal_geom_idx ON autointersection.autointersection_input_terralegal USING gist (geom);
+CREATE INDEX autointersection_input_terralegal_bgid_idx ON autointersection.autointersection_input_terralegal USING btree (bgid);
 
 
 -- areas interesse da uniao 
@@ -243,49 +299,6 @@ CREATE TABLE autointersection.autointersection_input_areas_interesse_uniao
 );
 
 
-
-
 CREATE INDEX autointersection_input_areas_interesse_uniao_agid_idx ON autointersection.autointersection_input_areas_interesse_uniao USING btree (agid);
 CREATE INDEX autointersection_input_areas_interesse_uniao_geom_idx ON autointersection.autointersection_input_areas_interesse_uniao USING gist (geom);
 CREATE INDEX autointersection_input_areas_interesse_uniao_bgid_idx ON autointersection.autointersection_input_areas_interesse_uniao USING btree (bgid);
-
-CREATE INDEX input_sncipublico_2022_agid_idx ON autointersection.autointersection_input_sncipublico_2022 USING btree (agid);
-CREATE INDEX input_sncipublico_2022_geom_idx ON autointersection.autointersection_input_sncipublico_2022 USING gist (geom);
-CREATE INDEX input_sncipublico_2022_bgid_idx ON autointersection.autointersection_input_sncipublico_2022 USING btree (bgid);
-
-CREATE INDEX input_sigefpublico_2022_agid_idx ON autointersection.autointersection_input_sigefpublico_2022 USING btree (agid);
-CREATE INDEX input_sigefpublico_2022_geom_idx ON autointersection.autointersection_input_sigefpublico_2022 USING gist (geom);
-CREATE INDEX input_sigefpublico_2022_bgid_idx ON autointersection.autointersection_input_sigefpublico_2022 USING btree (bgid);
-
-CREATE INDEX input_snciprivado_2022_agid_idx ON autointersection.autointersection_input_snciprivado_2022 USING btree (agid);
-CREATE INDEX input_snciprivado_2022_geom_idx ON autointersection.autointersection_input_snciprivado_2022 USING gist (geom);
-CREATE INDEX input_snciprivado_2022_bgid_idx ON autointersection.autointersection_input_snciprivado_2022 USING btree (bgid);
-
-CREATE INDEX input_sigefprivado_2022_agid_idx ON autointersection.autointersection_input_sigefprivado_2022 USING btree (agid);
-CREATE INDEX input_sigefprivado_2022_geom_idx ON autointersection.autointersection_input_sigefprivado_2022 USING gist (geom);
-CREATE INDEX input_sigefprivado_2022_bgid_idx ON autointersection.autointersection_input_sigefprivado_2022 USING btree (bgid);
-
-CREATE INDEX input_terrasindigenas_funai_2022_agid_idx ON autointersection.autointersection_input_terrasindigenas_funai_2022 USING btree (agid);
-CREATE INDEX input_terrasindigenas_funai_2022_geom_idx ON autointersection.autointersection_input_terrasindigenas_funai_2022 USING gist (geom);
-CREATE INDEX input_terrasindigenas_funai_2022_bgid_idx ON autointersection.autointersection_input_terrasindigenas_funai_2022 USING btree (bgid);
-
-CREATE INDEX input_quilombolas_2022_agid_idx ON autointersection.autointersection_input_quilombolas_2022 USING btree (agid);
-CREATE INDEX input_quilombolas_2022_geom_idx ON autointersection.autointersection_input_quilombolas_2022 USING gist (geom);
-CREATE INDEX input_quilombolas_2022_bgid_idx ON autointersection.autointersection_input_quilombolas_2022 USING btree (bgid);
-
-CREATE INDEX input_assentamento_federal_2022_agid_idx ON autointersection.autointersection_input_assentamento_federal_2022 USING btree (agid);
-CREATE INDEX input_assentamento_federal_2022_geom_idx ON autointersection.autointersection_input_assentamento_federal_2022 USING gist (geom);
-CREATE INDEX input_assentamento_federal_2022_bgid_idx ON autointersection.autointersection_input_assentamento_federal_2022 USING btree (bgid);
-
-CREATE INDEX input_assentamento_reconhecimento_2022_agid_idx ON autointersection.autointersection_input_assentamento_reconhecimento_2022 USING btree (agid);
-CREATE INDEX input_assentamento_reconhecimento_2022_geom_idx ON autointersection.autointersection_input_assentamento_reconhecimento_2022 USING gist (geom);
-CREATE INDEX input_assentamento_reconhecimento_2022_bgid_idx ON autointersection.autointersection_input_assentamento_reconhecimento_2022 USING btree (bgid);
-
-CREATE INDEX input_uc_2022_agid_idx ON autointersection.autointersection_input_uc_2022 USING btree (agid);
-CREATE INDEX input_uc_2022_geom_idx ON autointersection.autointersection_input_uc_2022 USING gist (geom);
-CREATE INDEX input_uc_2022_bgid_idx ON autointersection.autointersection_input_uc_2022 USING btree (bgid);
-
-CREATE INDEX input_glebaspublicas_2022_agid_idx ON autointersection.autointersection_input_glebaspublicas_2022 USING btree (agid);
-CREATE INDEX input_glebaspublicas_2022_geom_idx ON autointersection.autointersection_input_glebaspublicas_2022 USING gist (geom);
-CREATE INDEX input_glebaspublicas_2022_bgid_idx ON autointersection.autointersection_input_glebaspublicas_2022 USING btree (bgid);
-
