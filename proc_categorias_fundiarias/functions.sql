@@ -56,3 +56,28 @@ $BODY$
 		;
 	END;
 $BODY$ LANGUAGE plpgsql;
+
+
+DROP FUNCTION IF EXISTS array_sort(anyarray);
+CREATE FUNCTION
+  array_sort(
+    array_vals_to_sort anyarray
+  )
+  RETURNS TABLE (
+    sorted_array anyarray
+  )
+  AS $BODY$
+    BEGIN
+      RETURN QUERY SELECT
+        ARRAY_AGG(val) AS sorted_array
+      FROM
+        (
+          SELECT
+            UNNEST(array_vals_to_sort) AS val
+          ORDER BY
+            val
+        ) AS sorted_vals
+      ;
+    END;
+  $BODY$
+LANGUAGE plpgsql;
