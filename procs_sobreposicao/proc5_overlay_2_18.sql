@@ -1,7 +1,7 @@
--- + SICAR imovel
-\echo SICAR imovel
-INSERT INTO outputs.step16_overlay (cd_mun, cd_bioma, am_legal, original_gid, original_layer, is_ti, is_qui, is_assenfed, is_assenrec, is_ucus, is_ucpi, is_glebaest, is_glebafed, is_sigefpub, is_sncipub, is_sigefpriv, is_sncipriv , is_terralegal, is_interesse_uniao, is_sicar, is_fronteira, geom)
-SELECT-- Feições de todo o resto subtraído de feicoes quilombolas
+-- + FRONTEIRA
+\echo FRONTEIRA
+INSERT INTO outputs.step16_overlay (cd_mun, cd_bioma, am_legal, original_gid, original_layer, is_ti, is_qui, is_assenfed, is_assenrec, is_ucus, is_ucpi, is_glebaest, is_glebafed, is_sigefpub, is_sncipub, is_sigefpriv, is_sncipriv , is_terralegal, is_interesse_uniao, is_massas_dagua, , is_fronteira, geom)
+SELECT-- Feições de todo o resto subtraído 
 	a.cd_mun, 
 	a.cd_bioma,
 	a.am_legal,
@@ -21,8 +21,8 @@ SELECT-- Feições de todo o resto subtraído de feicoes quilombolas
     a.is_sncipriv,
 	a.is_terralegal,
 	a.is_interesse_uniao,
-	a.is_sicar,
-	FALSE is_fronteira, 
+	a.is_massas_dagua, 
+	FALSE is_fronteira,
 	CASE 
 		WHEN ST_Union(b.geom) IS NULL THEN ST_CollectionExtract(a.geom,3)
 		ELSE ST_CollectionExtract(ST_Difference(a.geom,  ST_Union(b.geom)) ,3)
@@ -36,9 +36,9 @@ ON
 WHERE 
 	(a.gid % :var_num_proc) = :var_proc
 GROUP BY 
-	a.cd_mun, a.cd_bioma, am_legal, a.original_gid, a.original_layer, a.geom, a.is_ti, a.is_qui, a.is_assenfed, a.is_assenrec, a.is_ucus, a.is_ucpi, a.is_glebaest, a.is_glebafed, 	a.is_sigefpub, a.is_sncipub, a.is_sigefpriv ,is_sncipriv, is_terralegal, is_interesse_uniao, is_sicar
+	a.cd_mun, a.cd_bioma, am_legal, a.original_gid, a.original_layer, a.geom, a.is_ti, a.is_qui, a.is_assenfed, a.is_assenrec, a.is_ucus, a.is_ucpi, a.is_glebaest, a.is_glebafed, 	a.is_sigefpub, a.is_sncipub, a.is_sigefpriv ,is_sncipriv, is_terralegal, is_interesse_uniao, is_massas_dagua
 UNION ALL 
-SELECT -- Feições de assentamentos reco
+SELECT -- Feições
 	b.cd_mun,
 	b.cd_bioma,
 	b.am_legal,
@@ -58,7 +58,7 @@ SELECT -- Feições de assentamentos reco
     b.is_sncipriv,
 	b.is_terralegal,
 	b.is_interesse_uniao,
-	b.is_sicar,
+	b.is_massas_dagua,
 	TRUE is_fronteira,
 	ST_CollectionExtract(ST_Intersection(a.geom, b.geom), 3)  geom
 FROM 
