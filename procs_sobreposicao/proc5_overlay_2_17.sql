@@ -1,7 +1,7 @@
--- + SICAR imovel
-\echo SICAR imovel
-INSERT INTO outputs.step15_overlay (cd_mun, cd_bioma, am_legal, original_gid, original_layer, is_ti, is_qui, is_assenfed, is_assenrec, is_ucus, is_ucpi, is_glebaest, is_glebafed, is_sigefpub, is_sncipub, is_sigefpriv, is_sncipriv , is_terralegal, is_interesse_uniao, is_sicar, geom)
-SELECT-- Feições de todo o resto subtraído de feicoes quilombolas
+-- + Massas dagua
+\echo Massas dagua
+INSERT INTO outputs.step15_overlay (cd_mun, cd_bioma, am_legal, original_gid, original_layer, is_ti, is_qui, is_assenfed, is_assenrec, is_ucus, is_ucpi, is_glebaest, is_glebafed, is_sigefpub, is_sncipub, is_sigefpriv, is_sncipriv , is_terralegal, is_interesse_uniao, is_massas_dagua, geom)
+SELECT-- Feições de todo o resto subtraído 
 	a.cd_mun, 
 	a.cd_bioma,
 	a.am_legal,
@@ -21,7 +21,7 @@ SELECT-- Feições de todo o resto subtraído de feicoes quilombolas
     a.is_sncipriv,
 	a.is_terralegal,
 	a.is_interesse_uniao,
-	FALSE is_sicar, 
+	FALSE inputs_massas_dagua, 
 	CASE 
 		WHEN ST_Union(b.geom) IS NULL THEN ST_CollectionExtract(a.geom,3)
 		ELSE ST_CollectionExtract(ST_Difference(a.geom,  ST_Union(b.geom)) ,3)
@@ -29,7 +29,7 @@ SELECT-- Feições de todo o resto subtraído de feicoes quilombolas
 FROM 
 	outputs.step14_overlay a 
 LEFT JOIN 
-	(SELECT gid, (st_dump(geom)).geom FROM inputs.inputs_sicar_imovel) b
+	(SELECT gid, (st_dump(geom)).geom FROM inputs.inputs_massas_dagua) b
 ON
 	ST_Intersects(a.geom, b.geom)
 WHERE 
@@ -37,7 +37,7 @@ WHERE
 GROUP BY 
 	a.cd_mun, a.cd_bioma, am_legal, a.original_gid, a.original_layer, a.geom, a.is_ti, a.is_qui, a.is_assenfed, a.is_assenrec, a.is_ucus, a.is_ucpi, a.is_glebaest, a.is_glebafed, 	a.is_sigefpub, a.is_sncipub, a.is_sigefpriv ,is_sncipriv, is_terralegal, is_interesse_uniao
 UNION ALL 
-SELECT -- Feições de assentamentos reco
+SELECT -- Feições
 	b.cd_mun,
 	b.cd_bioma,
 	b.am_legal,
@@ -57,10 +57,10 @@ SELECT -- Feições de assentamentos reco
     b.is_sncipriv,
 	b.is_terralegal,
 	b.is_interesse_uniao,
-	TRUE is_sicar,
+	TRUE is_massas_dagua,
 	ST_CollectionExtract(ST_Intersection(a.geom, b.geom), 3)  geom
 FROM 
-	(SELECT * FROM inputs.inputs_sicar_imovel) a	
+	(SELECT * FROM inputs.inputs_massas_dagua) a	
 LEFT JOIN 
 	(SELECT * FROM outputs.step14_overlay) b 
 ON
