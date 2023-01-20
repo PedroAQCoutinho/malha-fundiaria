@@ -1,41 +1,28 @@
--- Interesse da uniao
-\echo Interesse da uniao
-\echo   
-
--- 
-DROP TABLE IF EXISTS outputs.step14_overlay;
-CREATE TABLE outputs.step14_overlay
-(
-  gid serial NOT null,
-  cd_mun integer NULL, 
-  cd_bioma integer NULL,
-  am_legal BOOLEAN NULL,
-  original_gid integer[] NULL,
-  original_layer integer[] NULL,
-  is_ti boolean NULL,
-  is_qui boolean NULL,
-  is_assenfed boolean NULL,
-  is_assenrec BOOLEAN NULL,
-  is_ucus BOOLEAN NULL,
-  is_ucpi BOOLEAN NULL,
-  is_glebaest BOOLEAN NULL,
-  is_glebafed BOOLEAN NULL,
-  is_sigefpub BOOLEAN NULL,
-  is_sncipub BOOLEAN NULL,
-  is_sigefpriv BOOLEAN NULL,
-  is_sncipriv BOOLEAN NULL,
-  is_terralegal BOOLEAN NULL,
-  is_interesse_uniao BOOLEAN NULL,
-  geom geometry NULL
-);
-
-
-CREATE INDEX step14_overlay_original_gid_idx ON outputs.step14_overlay USING btree (original_gid);
-CREATE INDEX step14_overlay_cd_mun_idx ON outputs.step14_overlay USING btree (cd_mun);
-CREATE INDEX step14_overlay_original_layer_idx ON outputs.step14_overlay USING btree (original_layer);
-CREATE INDEX step14_overlay_geom_idx ON outputs.step14_overlay USING gist (geom);
-CREATE INDEX step14_overlay_gid_idx ON outputs.step14_overlay USING btree (gid);
-CREATE INDEX step14_overlay_cd_bioma_idx ON outputs.step14_overlay USING btree (cd_bioma);
-
-
+-- Massas dagua
+\echo Massas dagua 
 \echo  
+
+DROP TABLE IF EXISTS dados_brutos.valid_input_massas_dagua;
+CREATE TABLE dados_brutos.valid_input_massas_dagua AS
+SELECT *,  ST_SetSRID(ST_MakeValid(geom), 0) valid_geom FROM dados_brutos.geoft_bho_massa_dagua_2019 cb;
+
+CREATE INDEX valid_input_massas_dagua_gid_idx ON dados_brutos.valid_input_massas_dagua USING btree (gid);
+CREATE INDEX valid_input_massas_dagua_geom_idx ON dados_brutos.valid_input_massas_dagua USING gist (valid_geom);
+
+
+
+
+-- Faixa de fronteira
+\echo Faixa de fronteira
+\echo  
+
+DROP TABLE IF EXISTS dados_brutos.valid_input_faixa_fronteira;
+CREATE TABLE dados_brutos.valid_input_faixa_fronteira AS
+SELECT 1 id , ST_MakeValid( ST_Intersection( ST_buffer( ST_BOUNDARY(geom)::geography, 150000) , geom)::geometry ) valid_geom 
+FROM geo_adm.pa_br_limitenacional_250_2015_ibge_4674 cb;
+
+CREATE INDEX valid_input_faixa_fronteira_gid_idx ON dados_brutos.valid_input_faixa_fronteira USING btree (gid);
+CREATE INDEX valid_input_faixa_fronteira_geom_idx ON dados_brutos.valid_input_faixa_fronteira USING gist (valid_geom);
+
+
+
