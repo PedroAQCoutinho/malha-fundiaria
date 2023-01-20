@@ -302,6 +302,57 @@ CREATE INDEX inputs_interesse_uniao_geom_idx ON inputs.inputs_interesse_uniao US
 CREATE INDEX inputs_interesse_uniao_gid_idx ON inputs.inputs_interesse_uniao USING btree (gid);
 
 
+
+
+
+-- Massas dagua
+\echo Massas dagua
+\echo  
+\echo  
+
+
+-- Autointersecção
+DROP TABLE IF EXISTS inputs.inputs_massas_dagua;
+CREATE TABLE inputs.inputs_massas_dagua
+(
+  gid serial NOT NULL ,
+  original_gid int4[] NULL,
+  cd_layer int4 NULL,
+  geom geometry NULL
+);
+
+
+CREATE INDEX inputs_massas_dagua_original_gid_idx ON inputs.inputs_massas_dagua USING btree (original_gid);
+CREATE INDEX inputs_massas_dagua_geom_idx ON inputs.inputs_massas_dagua USING gist (geom);
+CREATE INDEX inputs_massas_dagua_gid_idx ON inputs.inputs_massas_dagua USING btree (gid);
+
+
+
+
+-- Faixa de fronteira
+\echo Faixa de fronteira
+\echo  
+\echo  
+
+
+-- Autointersecção
+DROP TABLE IF EXISTS inputs.inputs_faixa_fronteira;
+CREATE TABLE inputs.inputs_faixa_fronteira
+(
+  gid serial NOT NULL ,
+  original_gid int4[] NULL,
+  cd_layer int4 NULL,
+  geom geometry NULL
+);
+
+
+CREATE INDEX inputs_faixa_fronteira_original_gid_idx ON inputs.inputs_faixa_fronteira USING btree (original_gid);
+CREATE INDEX inputs_faixa_fronteira_geom_idx ON inputs.inputs_faixa_fronteira USING gist (geom);
+CREATE INDEX inputs_faixa_fronteira_gid_idx ON inputs.inputs_faixa_fronteira USING btree (gid);
+
+
+
+
 -- SICAR
 \echo SICAR imoveis
 \echo  
@@ -322,59 +373,6 @@ CREATE TABLE inputs.inputs_sicar_imovel
 CREATE INDEX inputs_sicar_imovel_original_gid_idx ON inputs.inputs_sicar_imovel USING btree (original_gid);
 CREATE INDEX inputs_sicar_imovel_geom_idx ON inputs.inputs_sicar_imovel USING gist (geom);
 CREATE INDEX inputs_sicar_imovel_gid_idx ON inputs.inputs_sicar_imovel USING btree (gid);
-
-
-
-
-
-
--- Faixa de fronteira
-\echo Faixa de fronteira
-\echo  
-\echo  
-
-
--- Autointersecção
-DROP TABLE IF EXISTS inputs.inputs_faixa_fronteira;
-CREATE TABLE inputs.inputs_faixa_fronteira
-(
-  gid serial NOT NULL ,
-  original_gid int4[] NULL,
-  cd_layer int4 NULL,
-  geom geometry NULL
-);
-
-
-CREATE INDEX inputs_faixa_fronteira_original_gid_idx ON inputs.inputs_faixa_fronteira USING btree (original_gid);
-CREATE INDEX inputs_faixa_fronteira_geom_idx ON inputs.inputs_faixa_fronteira USING gist (geom);
-CREATE INDEX inputs_faixa_fronteira_gid_idx ON inputs.inputs_faixa_fronteira USING btree (gid);
-
-
-
-
-
-
--- Faixa de fronteira
-\echo Faixa de fronteira
-\echo  
-\echo  
-
-
--- Autointersecção
-DROP TABLE IF EXISTS inputs.inputs_faixa_fronteira;
-CREATE TABLE inputs.inputs_faixa_fronteira
-(
-  gid serial NOT NULL ,
-  original_gid int4[] NULL,
-  cd_layer int4 NULL,
-  geom geometry NULL
-);
-
-
-CREATE INDEX inputs_faixa_fronteira_original_gid_idx ON inputs.inputs_faixa_fronteira USING btree (original_gid);
-CREATE INDEX inputs_faixa_fronteira_geom_idx ON inputs.inputs_faixa_fronteira USING gist (geom);
-CREATE INDEX inputs_faixa_fronteira_gid_idx ON inputs.inputs_faixa_fronteira USING btree (gid);
-
 
 
  
