@@ -203,7 +203,6 @@ CREATE INDEX valid_areas_interesse_uniao_geom_idx ON dados_brutos.valid_areas_in
 
 
 
-
 -- Massas dagua
 \echo Massas dagua 
 \echo  
