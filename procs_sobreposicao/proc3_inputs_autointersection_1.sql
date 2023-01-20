@@ -322,7 +322,7 @@ CREATE INDEX autointersection_input_massas_dagua_bgid_idx ON autointersection.au
 
 
 -- Faixa de fronteira
-DROP TABLE IF EXISTS autointersection.autointersection_input_input_faixa_fronteira;
+DROP TABLE IF EXISTS autointersection.autointersection_input_faixa_fronteira;
 CREATE TABLE autointersection.autointersection_valid_input_faixa_fronteira
 (
   gid serial4 NOT null,
@@ -332,9 +332,9 @@ CREATE TABLE autointersection.autointersection_valid_input_faixa_fronteira
 );
 
 
-CREATE INDEX autointersection_input_input_faixa_fronteira_agid_idx ON autointersection.autointersection_input_input_faixa_fronteira USING btree (agid);
-CREATE INDEX autointersection_input_input_faixa_fronteira_geom_idx ON autointersection.autointersection_input_input_faixa_fronteira USING gist (geom);
-CREATE INDEX autointersection_input_input_faixa_fronteira_bgid_idx ON autointersection.autointersection_input_input_faixa_fronteira USING btree (bgid);
+CREATE INDEX autointersection_input_faixa_fronteira_agid_idx ON autointersection.autointersection_input_faixa_fronteira USING btree (agid);
+CREATE INDEX autointersection_input_faixa_fronteira_geom_idx ON autointersection.autointersection_input_faixa_fronteira USING gist (geom);
+CREATE INDEX autointersection_input_faixa_fronteira_bgid_idx ON autointersection.autointersection_input_faixa_fronteira USING btree (bgid);
 
 
 
