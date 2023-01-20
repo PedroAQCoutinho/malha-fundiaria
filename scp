@@ -1,1 +1,1 @@
-gcloud compute scp /home/pedro/hd1/pedro/GPP/ltmodel/db/malha_fundiaria.dump.tar.xzz pedro_alves_coutinho_usp_br@gpp-malha:/home/pedro_alves_coutinho_usp_br
+gcloud compute scp /home/pedro/hd1/pedro/GPP/ltmodel/db/malha_fundiaria.tar.gz pedro_alves_coutinho_usp_br@gpp-malha:/home/pedro_alves_coutinho_usp_br
