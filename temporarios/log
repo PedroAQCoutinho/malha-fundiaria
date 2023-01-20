@@ -1,0 +1,4 @@
+[1] 14640
+psql:test.sql:1: NOTICE:  table "test" does not exist, skipping
+DROP TABLE
+SELECT 1
