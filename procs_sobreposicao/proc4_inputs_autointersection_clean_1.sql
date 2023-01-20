@@ -253,9 +253,6 @@ CREATE INDEX input_snciprivado_2022_gid_idx ON inputs.input_snciprivado_2022 USI
 
 
 
-
-
-
 -- Terra legal
 \echo Terra legal
 \echo  
