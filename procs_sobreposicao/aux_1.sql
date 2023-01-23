@@ -13,12 +13,12 @@
 \echo Massas dagua 
 \echo  
 
-DROP TABLE IF EXISTS dados_brutos.valid_input_massas_dagua;
-CREATE TABLE dados_brutos.valid_input_massas_dagua AS
-SELECT *,  ST_SetSRID(ST_MakeValid(geom), 0) valid_geom FROM dados_brutos.geoft_bho_massa_dagua_2019 cb;
+--DROP TABLE IF EXISTS dados_brutos.valid_input_massas_dagua;
+--CREATE TABLE dados_brutos.valid_input_massas_dagua AS
+--SELECT *,  ST_SetSRID(ST_MakeValid(geom), 0) valid_geom FROM dados_brutos.geoft_bho_massa_dagua_2019 cb;
 
-CREATE INDEX valid_input_massas_dagua_gid_idx ON dados_brutos.valid_input_massas_dagua USING btree (gid);
-CREATE INDEX valid_input_massas_dagua_geom_idx ON dados_brutos.valid_input_massas_dagua USING gist (valid_geom);
+--CREATE INDEX valid_input_massas_dagua_gid_idx ON dados_brutos.valid_input_massas_dagua USING btree (gid);
+--CREATE INDEX valid_input_massas_dagua_geom_idx ON dados_brutos.valid_input_massas_dagua USING gist (valid_geom);
 
 
 
@@ -27,10 +27,10 @@ CREATE INDEX valid_input_massas_dagua_geom_idx ON dados_brutos.valid_input_massa
 \echo Faixa de fronteira
 \echo  
 
-DROP TABLE IF EXISTS dados_brutos.valid_input_faixa_fronteira;
-CREATE TABLE dados_brutos.valid_input_faixa_fronteira AS
-SELECT 1 id , ST_MakeValid( ST_Intersection( ST_buffer( ST_BOUNDARY(geom)::geography, 150000) , geom)::geometry ) valid_geom 
-FROM geo_adm.pa_br_limitenacional_250_2015_ibge_4674 cb;
+--DROP TABLE IF EXISTS dados_brutos.valid_input_faixa_fronteira;
+--CREATE TABLE dados_brutos.valid_input_faixa_fronteira AS
+--SELECT 1 id , ST_MakeValid( ST_Intersection( ST_buffer( ST_BOUNDARY(geom)::geography, 150000) , geom)::geometry ) valid_geom 
+--FROM geo_adm.pa_br_limitenacional_250_2015_ibge_4674 cb;
 
 CREATE INDEX valid_input_faixa_fronteira_gid_idx ON dados_brutos.valid_input_faixa_fronteira USING btree (gid);
 CREATE INDEX valid_input_faixa_fronteira_geom_idx ON dados_brutos.valid_input_faixa_fronteira USING gist (valid_geom);
@@ -43,9 +43,9 @@ CREATE INDEX valid_input_faixa_fronteira_geom_idx ON dados_brutos.valid_input_fa
 \echo
 
 
-DROP TABLE IF EXISTS dados_brutos.valid_sicar_imovel;
-CREATE TABLE dados_brutos.valid_sicar_imovel AS
-SELECT *, ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imovel icsp  ;
+--DROP TABLE IF EXISTS dados_brutos.valid_sicar_imovel;
+--CREATE TABLE dados_brutos.valid_sicar_imovel AS
+--SELECT *, ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imovel icsp  ;
 
 CREATE INDEX valid_sicar_imovel_gid_idx ON dados_brutos.valid_sicar_imovel USING btree (gid);
 CREATE INDEX valid_sicar_imovel_geom_idx ON dados_brutos.valid_sicar_imovel USING gist (geom);
@@ -84,28 +84,9 @@ CREATE INDEX autointersection_input_massas_dagua_geom_idx ON autointersection.au
 CREATE INDEX autointersection_input_massas_dagua_bgid_idx ON autointersection.autointersection_input_massas_dagua USING btree (bgid);
 
 
-
--- Faixa de fronteira
-DROP TABLE IF EXISTS autointersection.autointersection_input_faixa_fronteira;
-CREATE TABLE autointersection.autointersection_valid_input_faixa_fronteira
-(
-  gid serial4 NOT null,
-  agid int4 NULL,
-  bgid int4 NULL,
-  geom geometry NULL
-);
-
-
-CREATE INDEX autointersection_input_faixa_fronteira_agid_idx ON autointersection.autointersection_input_faixa_fronteira USING btree (agid);
-CREATE INDEX autointersection_input_faixa_fronteira_geom_idx ON autointersection.autointersection_input_faixa_fronteira USING gist (geom);
-CREATE INDEX autointersection_input_faixa_fronteira_bgid_idx ON autointersection.autointersection_input_faixa_fronteira USING btree (bgid);
-
-
-
-
 -- SICAR
 DROP TABLE IF EXISTS autointersection.autointersection_input_sicar_imovel;
-CREATE TABLE autointersection.autointersection_valid_sicar_imovel
+CREATE TABLE autointersection.autointersection_input_sicar_imovel
 (
   gid serial4 NOT null,
   agid int4 NULL,
@@ -114,9 +95,9 @@ CREATE TABLE autointersection.autointersection_valid_sicar_imovel
 );
 
 
-CREATE INDEX autointersection_input_sicar_imovel_agid_idx ON autointersection.autointersection_input_sicar_imovel USING btree (agid);
-CREATE INDEX autointersection_input_sicar_imovel_geom_idx ON autointersection.autointersection_input_sicar_imovel USING gist (geom);
-CREATE INDEX autointersection_input_sicar_imovel_bgid_idx ON autointersection.autointersection_input_sicar_imovel USING btree (bgid);
+CREATE INDEX autointersection_sicar_imovel_agid_idx ON autointersection.autointersection_input_sicar_imovel USING btree (agid);
+CREATE INDEX autointersection_sicar_imovel_geom_idx ON autointersection.autointersection_input_sicar_imovel USING gist (geom);
+CREATE INDEX autointersection_sicar_imovel_bgid_idx ON autointersection.autointersection_input_sicar_imovel USING btree (bgid);
 
 
 
