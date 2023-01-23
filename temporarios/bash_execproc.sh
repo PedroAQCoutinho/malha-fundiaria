@@ -1,3 +1,5 @@
+#!/bin/bash
+
 userName=postgres
 databaseName=malha_fundiaria
 numProc=1
