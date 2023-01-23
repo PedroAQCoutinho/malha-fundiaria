@@ -84,6 +84,23 @@ CREATE INDEX autointersection_input_massas_dagua_geom_idx ON autointersection.au
 CREATE INDEX autointersection_input_massas_dagua_bgid_idx ON autointersection.autointersection_input_massas_dagua USING btree (bgid);
 
 
+-- Faixa
+DROP TABLE IF EXISTS autointersection.autointersection_input_faixa_fronteira;
+CREATE TABLE autointersection.autointersection_input_faixa_fronteira
+(
+  gid serial4 NOT null,
+  agid int4 NULL,
+  bgid int4 NULL,
+  geom geometry NULL
+);
+
+
+CREATE INDEX autointersection_input_faixa_fronteira_agid_idx ON autointersection.autointersection_input_faixa_fronteira USING btree (agid);
+CREATE INDEX autointersection_input_faixa_fronteira_geom_idx ON autointersection.autointersection_input_faixa_fronteira USING gist (geom);
+CREATE INDEX autointersection_input_faixa_fronteira_bgid_idx ON autointersection.autointersection_input_faixa_fronteira USING btree (bgid);
+
+
+
 -- SICAR
 DROP TABLE IF EXISTS autointersection.autointersection_input_sicar_imovel;
 CREATE TABLE autointersection.autointersection_input_sicar_imovel
