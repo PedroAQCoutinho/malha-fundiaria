@@ -78,6 +78,7 @@ WHERE
 \echo 
 
 -- Popular a tabela maior
+/*
 INSERT INTO inputs.inputs_sicar_imovel (original_gid, cd_layer, geom)
 SELECT 
 	ARRAY[a.gid] original_gid,
@@ -105,3 +106,4 @@ FROM
 	autointersection.autointersection_input_sicar_imovel d
 WHERE 
 	(d.gid % :var_num_proc) = :var_proc  ;
+	*/
