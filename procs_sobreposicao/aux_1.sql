@@ -68,7 +68,7 @@
 
 
 -- Massas dagua
-DROP TABLE IF EXISTS autointersection.autointersection_input_massas_dagua;
+--DROP TABLE IF EXISTS autointersection.autointersection_input_massas_dagua;
 CREATE TABLE autointersection.autointersection_input_massas_dagua
 (
   gid serial4 NOT null,
@@ -84,7 +84,7 @@ CREATE INDEX autointersection_input_massas_dagua_bgid_idx ON autointersection.au
 
 
 -- Faixa
-DROP TABLE IF EXISTS autointersection.autointersection_input_faixa_fronteira;
+--DROP TABLE IF EXISTS autointersection.autointersection_input_faixa_fronteira;
 CREATE TABLE autointersection.autointersection_input_faixa_fronteira
 (
   gid serial4 NOT null,
@@ -101,7 +101,7 @@ CREATE INDEX autointersection_input_faixa_fronteira_bgid_idx ON autointersection
 
 
 -- SICAR
-DROP TABLE IF EXISTS autointersection.autointersection_input_sicar_imovel;
+--DROP TABLE IF EXISTS autointersection.autointersection_input_sicar_imovel;
 CREATE TABLE autointersection.autointersection_input_sicar_imovel
 (
   gid serial4 NOT null,
