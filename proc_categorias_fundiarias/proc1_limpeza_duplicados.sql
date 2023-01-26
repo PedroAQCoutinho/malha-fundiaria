@@ -17,10 +17,12 @@ array_replace(
 array_replace(
 array_replace(
 array_replace(
+array_replace(	
 array_replace(
 array_replace(original_layer
-, '1', 2)
 , '2', 3)
+, '1', 2)
+, '20', 9)
 , '4', 4)
 ,'5',4)
 , '7' ,5)
@@ -46,6 +48,7 @@ SELECT gid, CASE
 	array_replace(
 	array_replace(
 	array_replace(
+	array_replace(
 	original_layer_label::TEXT[]
 	, '1', 'IMOVEL_PRIVADO')
 	, '2', 'TI')
@@ -54,6 +57,7 @@ SELECT gid, CASE
 	, '5', 'GLEBAPUB')
 	, '7', 'MILITAR')
 	, '6', 'UCUS')
+	, '9', 'MASSA_DAGUA')
 	, '8', 'UCPI')
 	ELSE '{VAZIO}'
 END original_layer_label
