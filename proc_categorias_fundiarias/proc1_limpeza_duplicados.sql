@@ -1,5 +1,5 @@
-DROP TABLE layer_fundiario.step1_id_label;
-CREATE TABLE layer_fundiario.step1_id_label AS 
+DROP TABLE layer_fundiario.step15_id_label;
+CREATE TABLE layer_fundiario.step15_id_label AS 
 WITH foo AS (SELECT gid, anyarray_sort(anyarray_uniq(original_layer)) original_layer
 FROM outputs.step14_overlay so 
 WHERE am_legal),
@@ -64,5 +64,10 @@ END original_layer_label
 FROM nee 
 
 
-CREATE INDEX step1_id_label_gid_idx ON layer_fundiario.step1_id_label USING btree (gid);
-CREATE INDEX step1_id_label_original_layer_label_idx ON layer_fundiario.step1_id_label USING btree (original_layer_label);
+
+CREATE INDEX step15_id_label_gid_idx ON layer_fundiario.step15_id_label USING btree (gid);
+CREATE INDEX step15_id_label_original_layer_label_idx ON layer_fundiario.step15_id_label USING btree (original_layer_label);
+
+
+
+
