@@ -1,4 +1,4 @@
-DROP TABLE layer_fundiario.step15_id_label;
+DROP TABLE IF EXISTS layer_fundiario.step15_id_label;
 CREATE TABLE layer_fundiario.step15_id_label AS 
 WITH foo AS (SELECT gid, anyarray_sort(anyarray_uniq(original_layer)) original_layer, ST_Area(geom::geography) area
 FROM outputs.step15_overlay so 
