@@ -4,7 +4,7 @@ numProc=14
 procName=proc1_limpeza_duplicados
 export PGPASSWORD='gpp-es@lq'
 
-psql -U $userName -d $databaseName -f ${procName}_1.sql
+psql -U $userName -d $databaseName -f ${procName}.sql
 
 
 #If sql 2 exists execute it
