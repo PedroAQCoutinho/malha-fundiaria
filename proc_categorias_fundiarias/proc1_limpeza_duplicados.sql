@@ -1,7 +1,7 @@
 DROP TABLE layer_fundiario.step15_id_label;
 CREATE TABLE layer_fundiario.step15_id_label AS 
-WITH foo AS (SELECT gid, anyarray_sort(anyarray_uniq(original_layer)) original_layer
-FROM outputs.step14_overlay so 
+WITH foo AS (SELECT gid, anyarray_sort(anyarray_uniq(original_layer)) original_layer, ST_Area(geom::geography) area
+FROM outputs.step15_overlay so 
 WHERE am_legal),
 bar AS (SELECT gid, CASE 
 	WHEN original_layer != '{0}' THEN anyarray_uniq(array_remove(
@@ -35,9 +35,9 @@ array_replace(original_layer
 ,'15',5)
 ,'17',7)
 , '16', 1), 0))
-	ELSE original_layer 
-END original_layer  FROM foo),
-nee AS (SELECT gid, array_sort(original_layer) original_layer_label, original_layer FROM bar)
+	ELSE original_layer
+END original_layer  , area FROM foo),
+nee AS (SELECT gid, array_sort(original_layer) original_layer_label, original_layer, area FROM bar)
 SELECT gid, CASE 
 	WHEN original_layer_label != '{0}' THEN 
 	array_replace(
@@ -60,7 +60,7 @@ SELECT gid, CASE
 	, '9', 'MASSA_DAGUA')
 	, '8', 'UCPI')
 	ELSE '{VAZIO}'
-END original_layer_label
+END original_layer_label, area
 FROM nee 
 
 
