@@ -2,6 +2,7 @@ userName=postgres
 databaseName=malha_fundiaria
 numProc=14
 procName=proc1_limpeza_duplicados
+export PGPASSWORD='gpp-es@lq'
 
 psql -U $userName -d $databaseName -f ${procName}_1.sql
 
