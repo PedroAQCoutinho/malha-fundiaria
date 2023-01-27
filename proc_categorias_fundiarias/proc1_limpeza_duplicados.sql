@@ -36,7 +36,7 @@ array_replace(original_layer
 ,'17',7)
 , '16', 1), 0))
 	ELSE original_layer
-END original_layer  , area FROM foo),
+END original_layer , area FROM foo),
 nee AS (SELECT gid, array_sort(original_layer) original_layer_label, original_layer, area FROM bar)
 SELECT gid, CASE 
 	WHEN original_layer_label != '{0}' THEN 
@@ -61,7 +61,7 @@ SELECT gid, CASE
 	, '8', 'UCPI')
 	ELSE '{VAZIO}'
 END original_layer_label, area
-FROM nee 
+FROM nee;
 
 
 
