@@ -65,8 +65,8 @@ FROM nee;
 
 
 
-CREATE INDEX step15_id_label_gid_idx ON layer_fundiario.step15_id_label USING btree (gid);
-CREATE INDEX step15_id_label_original_layer_label_idx ON layer_fundiario.step15_id_label USING btree (original_layer_label);
+CREATE INDEX step14_id_label_gid_idx ON layer_fundiario.step14_id_label USING btree (gid);
+CREATE INDEX step14_id_label_original_layer_label_idx ON layer_fundiario.step14_id_label USING btree (original_layer_label);
 
 
 
