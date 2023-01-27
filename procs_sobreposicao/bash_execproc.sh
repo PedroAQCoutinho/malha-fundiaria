@@ -7,7 +7,7 @@ export PGPASSWORD='gpp-es@lq'
 procName=aux
 
 
-#psql -U $userName -d $databaseName -f ${procName}_1.sql
+psql -U $userName -d $databaseName -f ${procName}_1.sql
 
 
 #If sql 2 exists execute it
@@ -29,11 +29,11 @@ wait
 #procName=proc5_overlay
 
 #If sql 2 exists execute it
-#for ((i=0; i < ${numProc}; i++))
-#do
-#    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f procs/${procName}_2_17.sql &
-#done > log_massas 2>&1
-#wait
+for ((i=0; i < ${numProc}; i++))
+do
+    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f procs/${procName}_2_17.sql &
+done > log_massas 2>&1
+wait
 
 #If sql 2 exists execute it
 #for ((i=0; i < ${numProc}; i++))
