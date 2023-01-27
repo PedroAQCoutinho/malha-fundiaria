@@ -1,5 +1,5 @@
 
-/*
+
 	-- Massas dagua
 \echo Massas dagua
 \echo  
@@ -69,7 +69,7 @@ WHERE
 	(d.gid % :var_num_proc) = :var_proc  ;
 
 
-*/
+/*
 
 
 	-- SICAR
@@ -107,3 +107,5 @@ FROM
 WHERE 
 	(d.gid % :var_num_proc) = :var_proc  ;
 	
+
+*/
