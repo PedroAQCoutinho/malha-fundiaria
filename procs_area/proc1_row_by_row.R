@@ -28,9 +28,9 @@ error=function(cond) {
 #dados
 desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
 car <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/sicar_imovel.tif')
-Navalues(car) <- 0
+Navalue(car) <- 0
 cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/step14_overlay.tif')
-Navalues(cat_fund) <- 0
+Navalue(cat_fund) <- 0
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 100) ; bss
 output <- vector('list', bss$n)
