@@ -53,8 +53,8 @@ atualiza_dt <- function() {
     flush.console()
     
     #atualiza o objeto dt por conta do superassignment <<-
-    output[[i]] <-  d$value$value[[1]]
-    
+    output[[i]] <<-  d$value$value[[1]]
+    #print( d$value$value[[1]] )
     rm(d)
     print(Sys.time()-ini)
     
