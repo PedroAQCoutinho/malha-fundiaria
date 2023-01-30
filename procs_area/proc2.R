@@ -24,16 +24,16 @@ error=function(cond) {
 dbListTables(connec)[order(dbListTables(connec))]
 
 #dados
-desmatamento <- raster('/home/pedro/hd1/pedro/GPP/ltmodel/outputs/geotiffs/pa_br_desmatamento_GPP_30m_1988-2021.tif')
-car <- raster('/home/pedro/hd1/pedro/GPP/ltmodel/outputs/geotiffs/sicar_imovel.tif')
-cat_fund <- raster('/home/pedro/hd1/pedro/GPP/ltmodel/outputs/geotiffs/step15_overlay.tif')
+desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+car <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/sicar_imovel.tif')
+cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/step15_overlay.tif')
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 10) ; bss
 output <- vector('list', bss$n)
 
 
 #Cluster start
-cl <- snow::makeSOCKcluster(12)
+cl <- snow::makeSOCKcluster(24)
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
