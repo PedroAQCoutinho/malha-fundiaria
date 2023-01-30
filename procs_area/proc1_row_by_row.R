@@ -4,7 +4,7 @@ options(stringsAsFactors = F)
 # installing packages
 library(pacman)
 p_load( raster, rgdal,   dplyr, doMPI, snow, raster, RPostgreSQL)
-setwd('/home/pedro/hd1/pedro/GPP/ltmodel/codes/malha-fundiaria/procs_area/')
+setwd('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area')
 source('funcoes.R')
 
 tryCatch({
@@ -26,10 +26,10 @@ dbWriteTable()
 #dbListTables(connec)[order(dbListTables(connec))]
 
 #dados
-desmatamento <- raster('../../../outputs/geotiffs/pa_br_desmatamento_GPP_30m_1988-2021.tif')
-car <- raster('../../../outputs/geotiffs/sicar_imovel.tif')
+desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+car <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/sicar_imovel.tif')
 Navalues(car) <- 0
-cat_fund <- raster('../../../outputs/geotiffs/step15_overlay.tif')
+cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/step14_overlay.tif')
 Navalues(cat_fund) <- 0
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 100) ; bss
