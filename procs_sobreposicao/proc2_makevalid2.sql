@@ -216,19 +216,6 @@ CREATE INDEX valid_input_faixa_fronteira_geom_idx ON dados_brutos.valid_input_fa
 
 
 
---SICAR
-\echo sicar_imovel
-\echo
-
-
-DROP TABLE IF EXISTS dados_brutos.valid_sicar_imovel;
-CREATE TABLE dados_brutos.valid_sicar_imovel AS
-SELECT *, ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imovel icsp  ;
-
-CREATE INDEX valid_sicar_imovel_gid_idx ON dados_brutos.valid_sicar_imovel USING btree (gid);
-CREATE INDEX valid_sicar_imovel_geom_idx ON dados_brutos.valid_sicar_imovel USING gist (geom);
-CREATE INDEX valid_sicar_imovel_valid_geom_idx ON dados_brutos.valid_sicar_imovel USING gist (geom);
-
 
 
 
