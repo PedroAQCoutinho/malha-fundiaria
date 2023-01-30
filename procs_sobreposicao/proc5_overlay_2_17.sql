@@ -1,5 +1,6 @@
 -- + Massas dagua
 \echo Massas dagua
+
 INSERT INTO outputs.step15_overlay (cd_mun, cd_bioma, am_legal, original_gid, original_layer, is_ti, is_qui, is_assenfed, is_assenrec, is_ucus, is_ucpi, is_glebaest, is_glebafed, is_sigefpub, is_sncipub, is_sigefpriv, is_sncipriv , is_terralegal, is_interesse_uniao, is_massas_dagua, geom)
 SELECT-- Feições de todo o resto subtraído 
 	a.cd_mun, 
