@@ -138,7 +138,7 @@ CREATE INDEX autointersection_input_sicar_imovel_bgid_idx ON autointersection.au
 \echo  
 \echo  
 
-
+/*
 -- Autointersecção
 DROP TABLE IF EXISTS inputs.inputs_massas_dagua;
 CREATE TABLE inputs.inputs_massas_dagua
@@ -155,7 +155,7 @@ CREATE INDEX inputs_massas_dagua_geom_idx ON inputs.inputs_massas_dagua USING gi
 CREATE INDEX inputs_massas_dagua_gid_idx ON inputs.inputs_massas_dagua USING btree (gid);
 
 
-/*
+
 
 -- Faixa de fronteira
 \echo Faixa de fronteira
@@ -219,7 +219,7 @@ CREATE INDEX inputs_sicar_imovel_gid_idx ON inputs.inputs_sicar_imovel USING btr
 
 
 
-
+/*
 
 
 -- Massas dagua
@@ -266,7 +266,7 @@ CREATE INDEX step15_overlay_cd_bioma_idx ON outputs.step15_overlay USING btree (
 \echo  
 
 
-/*
+
 -- Faixa de fronteira
 \echo faixa de fronteira
 \echo   
