@@ -42,8 +42,7 @@ snow::clusterExport(cl=cl,
                     ls())
 
 atualiza_dt()
-output[[1]]
-output <- do.call(rbind, output)
+output <- data.frame(do.call(rbind, output))
 saveRDS(output, '../../outputs/areas/raw_output.rds')
 
 
