@@ -9,6 +9,9 @@ for i in "${arr[@]}"
 do 
 (shp2pgsql -c -I "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/dados_INCRA_2022/CNFP_2020_$i.shp" dados_brutos.CNFP_2020_$i | psql -U postgres -d malha_fundiaria)
 done
+
+
+
 --TERRAS INDÍGENAS
 shp2pgsql -c -I "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/dados_INCRA_2022/GEOFT_TERRA_INDIGENA.shp" dados_brutos.GEOFT_TERRA_INDIGENA | psql -U postgres -d malha_fundiaria
 --UNIDADES DE CONSERVAÇÃO
@@ -24,6 +27,8 @@ shp2pgsql -c -I -W "latin1" "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/dados_INCR
 --Sigef Público
 shp2pgsql -c -I "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/dados_INCRA_2022/Sigef Público.shp" dados_brutos.Sigef_Publico | psql -U postgres -d malha_fundiaria
 
+
+
 --Massas dagua
 shp2pgsql -c -I "/home/pedro/hd1/dados_GPP/biofisicos/dados_ANA/originais/geoft_bho_massa_dagua_v2019_wgs.shp" dados_brutos.geoft_bho_massa_dagua_v2019_wgs | psql -U postgres -d malha_fundiaria
 
@@ -32,8 +37,10 @@ shp2pgsql -c -I "/home/pedro/hd1/dados_GPP/biofisicos/dados_ANA/originais/geoft_
 declare -a arr=("al" "am" "ap" "ba" "df1" "es" "go" "ma" "ms" "mt" "pb" "pe" "pi" "rj" "rn" "ro" "rr" "se" "to")
 for i in "${arr[@]}" 
 do 
-(shp2pgsql -c -I -W "LATIN1" "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/CAR/car_2022/sicar_imoveis_$i/sicar_imoveis_$i.shp" dados_brutos.sicar_imoveis_$i | psql -U postgres -d malha_fundiaria)
+(shp2pgsql -c -I  "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/CAR/car_2022/sicar_imoveis_$i/sicar_imoveis_$i.shp" dados_brutos.sicar_imoveis_$i | psql -U postgres -d malha_fundiaria)
 done
+
+
 
 -- Terra legal
 shp2pgsql -c -I "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/dados_INCRA_2022/input_terralegal_particular_incra_4674.shp" dados_brutos.input_terralegal_particular_incra | psql -U postgres -d malha_fundiaria
