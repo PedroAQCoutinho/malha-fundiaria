@@ -30,7 +30,7 @@ atualiza_dt <- function() {
   
   
   #Spread the blocks over the processes
-  for (i in 1:bss$n) {
+  for (i in 1:10) {
 
     ini <- Sys.time()
     # receive results from a node
