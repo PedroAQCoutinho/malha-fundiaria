@@ -4,7 +4,8 @@ options(stringsAsFactors = F)
 # installing packages
 library(pacman)
 p_load( raster, rgdal,   dplyr, doMPI, snow, raster, RPostgreSQL)
-source('procs_area/funcoes.R')
+setwd('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area')
+source('funcoes.R')
 
 tryCatch({
   drv <- dbDriver("PostgreSQL")
