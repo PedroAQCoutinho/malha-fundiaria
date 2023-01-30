@@ -20,112 +20,112 @@ CREATE SEQUENCE teams_id_seq;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ac  
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ac ; 
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_al 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_al ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_am 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_am ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ap 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ap ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ba 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ba ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ce 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ce ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_df 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_df ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_es
-
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_go
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_es;
 
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ma
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_go;
 
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ms 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_mt  
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ma;
 
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pa 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ms ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pb 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pe 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pi 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pr 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rj 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rn 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ro 
-
-INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
-SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rr 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_mt  ;
 
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rs 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pa ;
+
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_sc 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pb ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_se 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pe ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_sp 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pi ;
 
 INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
 SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
-ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_to 
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_pr ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rj ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rn ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_ro ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rr ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_rs ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_sc ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_se ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_sp ;
+
+INSERT INTO dados_brutos.valid_sicar_imovel (gid, gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove, valid_geom)
+SELECT nextval('teams_id_seq') gid , gid gid_original, cod_imovel, status_imo, dat_criaca, area, condicao, uf, municipio, cod_munici, m_fiscal, tipo_imove,
+ST_MakeValid(geom) valid_geom FROM dados_brutos.sicar_imoveis_to ;
 
 
 
