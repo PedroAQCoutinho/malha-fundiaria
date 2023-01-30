@@ -34,6 +34,9 @@ FROM
 WHERE 
 	(d.gid % :var_num_proc) = :var_proc  ;
 
+
+
+/*
 	-- Fronteira
 \echo Faixa fronteira
 \echo  
@@ -69,7 +72,7 @@ WHERE
 	(d.gid % :var_num_proc) = :var_proc  ;
 
 
-/*
+
 
 
 	-- SICAR
