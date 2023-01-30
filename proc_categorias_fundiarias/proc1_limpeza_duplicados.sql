@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS layer_fundiario.step14_id_label;
 CREATE TABLE layer_fundiario.step14_id_label AS 
 WITH foo AS (SELECT gid, anyarray_sort(anyarray_uniq(original_layer)) original_layer, am_legal, cd_bioma, cd_mun, ST_Area(geom::geography) area
-FROM outputs.step15_overlay so ),
+FROM outputs.step14_overlay so ),
 bar AS (SELECT gid, CASE 
 	WHEN original_layer != '{0}' THEN anyarray_uniq(array_remove(
 array_replace(
