@@ -3,7 +3,7 @@ options(scipen = 999)
 options(stringsAsFactors = F)
 # installing packages
 library(pacman)
-p_load(data.table, raster, rgdal, sf, fasterize, dplyr,exactextractr, doMPI, snow, raster, RPostgreSQL)
+p_load( raster, rgdal,   dplyr, doMPI, snow, raster, RPostgreSQL)
 source('procs_area/funcoes.R')
 
 tryCatch({
