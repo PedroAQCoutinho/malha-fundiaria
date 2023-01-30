@@ -1,5 +1,5 @@
 
-
+/*
 -- Massas dagua
 \echo Massas dagua
 \echo  
@@ -14,7 +14,7 @@ ON ST_Intersects(a.valid_geom, b.valid_geom) AND a.gid <> b.gid AND a.gid < b.gi
 
 
 
-/*
+*/
 
 -- SICAR
 \echo SICAR
@@ -28,4 +28,3 @@ FROM dados_brutos.valid_sicar_imovel a
 JOIN dados_brutos.valid_sicar_imovel b 
 ON ST_Intersects(a.valid_geom, b.valid_geom) AND a.gid <> b.gid AND a.gid < b.gid WHERE (a.gid % :var_num_proc) = :var_proc;  ;
 
-*/
