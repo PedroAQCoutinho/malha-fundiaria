@@ -43,13 +43,5 @@ snow::clusterExport(cl=cl,
 
 atualiza_dt()
 output <- data.frame(do.call(rbind, output))
-saveRDS(output, '../../outputs/areas/raw_output.rds')
-
-
-
-
-output <- output %>% left_join(id_cat_fund, by = c('cat_fund' = 'gid')) %>%
-  group_by(cat_fund, car, desmatamento, original_layer_label) %>%
-  summarise(count = sum(count, na.rm = T))
-saveRDS(output, '../../outputs/areas/proc1_area.rds')
+saveRDS(output, '/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/proc1_area.rds')
 snow::stopCluster(cl)
