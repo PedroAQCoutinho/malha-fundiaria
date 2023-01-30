@@ -32,7 +32,7 @@ SELECT
 FROM
 	autointersection.autointersection_input_massas_dagua d
 WHERE 
-	(d.gid % :var_num_proc) = :var_proc  ;
+	(d.gid % :var_num_proc) = :var_proc;
 
 
 
