@@ -12,6 +12,3 @@ CREATE INDEX step14_area_cat_fund_car_idx ON layer_fundiario.step14_area_cat_fun
 CREATE INDEX step14_area_cat_fund_original_layer_label_idx ON layer_fundiario.step14_area_cat_fund USING btree (original_layer_label);
 CREATE INDEX step14_area_cat_fund_desmatamento_idx ON layer_fundiario.step14_area_cat_fund USING btree (desmatamento);
 
-
-
-
