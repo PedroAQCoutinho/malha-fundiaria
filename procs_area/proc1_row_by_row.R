@@ -22,7 +22,7 @@ error=function(cond) {
   print("Unable to connect to Database.")
 })
 
-dbWriteTable()
+
 #dbListTables(connec)[order(dbListTables(connec))]
 
 #dados
