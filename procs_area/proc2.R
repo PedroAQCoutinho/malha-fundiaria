@@ -16,7 +16,7 @@ tryCatch({
                       user = 'postgres', 
                       password = 'gpp-es@lq')
   print("Database Connected!")
-},
+},/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas
 error=function(cond) {
   print("Unable to connect to Database.")
 })
@@ -33,7 +33,7 @@ output <- vector('list', bss$n)
 
 
 #Cluster start
-cl <- snow::makeSOCKcluster(24)
+cl <- snow::makeSOCKcluster(32)
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
