@@ -33,7 +33,7 @@ wait
 #do
 #    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f procs/${procName}_2_17.sql &
 #done > log_massas 2>&1
-wait
+#wait
 
 #If sql 2 exists execute it
 #for ((i=0; i < ${numProc}; i++))
