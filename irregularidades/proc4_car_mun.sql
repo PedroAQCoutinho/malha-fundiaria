@@ -4,7 +4,8 @@ SELECT car, cd_mun, area
 FROM layer_fundiario.step14_area_export sae 
 WHERE sae.car = vsi.gid
 ORDER BY area DESC LIMIT 1
-) bar
+) bar 
+WHERE (vsi.gid % :var_num_proc) = :var_proc ;
 
 
 CREATE INDEX step14_car_mun_gid_idx ON irregularidades.step14_car_mun USING btree (gid);
