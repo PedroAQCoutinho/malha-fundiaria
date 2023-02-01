@@ -12,7 +12,7 @@ END is_ocupa_irregular,
 CASE
 	WHEN area > 2500 THEN TRUE
 	ELSE FALSE 
-END is_area_irregular, valid_geom geom
+END is_area_irregular, ST_Force2D(ST_CollectionExtract(valid_geom)) geom
 FROM dados_brutos.valid_sicar_imovel vsi 
 LEFT JOIN irregularidades.step14_car_flag scf ON gid = scf.car
 LEFT JOIN irregularidades.step14_car_ocupacao sco  ON gid = sco.car;
