@@ -1,4 +1,6 @@
 
+\echo TIPOS OII
+
 INSERT INTO irregularidades.step14_tipo_oii (gid, flag, original_layer_label , cat_agrupada , area, tipo_imove , is_data_irregular , is_ocupa_irregular , is_area_irregular, tipo, geom)
 SELECT a.gid, flag, original_layer_label , cat_agrupada , area, tipo_imove , is_data_irregular , is_ocupa_irregular , is_area_irregular , 
 ST_Intersection(a.geom, b.geom) geom, 
