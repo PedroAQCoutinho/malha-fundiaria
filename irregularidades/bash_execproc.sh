@@ -2,7 +2,7 @@
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=15
+numProc=64
 export PGPASSWORD='gpp-es@lq'
 procName=proc4_car_mun
 
