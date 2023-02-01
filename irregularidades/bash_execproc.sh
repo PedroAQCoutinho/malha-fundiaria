@@ -4,7 +4,7 @@ userName=postgres
 databaseName=malha_fundiaria
 numProc=50
 export PGPASSWORD='gpp-es@lq'
-procName=proc4_tipos_irregularidade
+procName=proc5_tipos_irregularidade
 
 
 psql -U $userName -d $databaseName -f ${procName}_1.sql
