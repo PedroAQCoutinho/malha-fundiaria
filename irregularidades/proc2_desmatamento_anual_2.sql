@@ -1,3 +1,5 @@
+\echo proc2_step14_desmatamento_anual
+
 INSERT INTO irregularidades.proc2_step14_desmatamento_anual (cat_fund, car, desmatamento, area_desmatamento, original_layer_label, 
 am_legal, cd_bioma, cd_mun, area_categoria_fundiaria, nm_cat_fund, nm_agrup, geom ) 
 SELECT cat_fund::int, car, CASE 
