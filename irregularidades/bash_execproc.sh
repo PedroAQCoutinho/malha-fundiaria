@@ -2,9 +2,9 @@
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=50
+numProc=16
 export PGPASSWORD='gpp-es@lq'
-procName=proc5_tipos_irregularidade
+procName=proc2_desmatamento_anual
 
 
 psql -U $userName -d $databaseName -f ${procName}_1.sql
@@ -13,5 +13,5 @@ psql -U $userName -d $databaseName -f ${procName}_1.sql
 for ((i=0; i < ${numProc}; i++))
 do
     psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
-done > log_oii 2>&1
+done > log_desmatamento 2>&1
 wait
