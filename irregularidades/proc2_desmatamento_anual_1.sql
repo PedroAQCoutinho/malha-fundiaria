@@ -10,8 +10,7 @@ cd_bioma int NULL,
 cd_mun int NULL,
 area_categoria_fundiaria decimal NULL,
 nm_cat_fund TEXT NULL, 
-nm_agrup TEXT NULL,
-geom geometry null
+nm_agrup TEXT NULL
 );
 
 
