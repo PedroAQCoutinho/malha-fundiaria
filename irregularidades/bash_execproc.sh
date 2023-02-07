@@ -2,7 +2,7 @@
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=16
+numProc=32
 export PGPASSWORD='gpp-es@lq'
 procName=proc5_tipos_irregularidade
 
