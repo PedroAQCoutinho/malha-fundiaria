@@ -24,7 +24,7 @@ WHERE
     (a.gid % :var_num_proc) = :var_proc 
 GROUP BY 
 	a.gid, a.valid_geom
-UNION ALL 
+UNION ALL
 SELECT 
 	ARRAY[agid,bgid] original_gid,
 	1 cd_layer,
