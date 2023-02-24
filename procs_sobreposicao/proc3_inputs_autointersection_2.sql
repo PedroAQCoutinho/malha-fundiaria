@@ -11,6 +11,18 @@ JOIN dados_brutos.valid_geoft_terra_indigena b
 ON ST_Intersects(a.valid_geom, b.valid_geom) AND a.gid <> b.gid AND a.gid < b.gid WHERE (a.gid % :var_num_proc) = :var_proc;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 -- Quilombolas
 \echo Quilombolas
 \echo  
