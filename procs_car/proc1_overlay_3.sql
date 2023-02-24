@@ -3,7 +3,7 @@
 \echo adm2overlay
 
 
-INSERT INTO temporario.adm2_overlay (cd_grid, cd_mun , am_legal,  geom)
+INSERT INTO temporario.adm2_overlay (cd_mun , cd_grid,  am_legal,  geom)
 SELECT * FROM (SELECT
 	cd_mun::int,
 	a.cd_grid::int,
