@@ -13,7 +13,7 @@ SELECT * FROM (SELECT
 		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(ST_Intersection(a.geom,  b.geom), 3) 
 	END geom
 FROM 
-	temporario.adm1_overlay a , geo_adm.pa_br_amazonia_legal_ibge_250_4674 b
+	temporario.adm1_overlay a, geo_adm.pa_br_amazonia_legal_ibge_250_4674 b
 WHERE 
 	(a.gid % :var_num_proc) = :var_proc	
 UNION ALL 
@@ -26,7 +26,7 @@ SELECT
 		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(ST_Difference(a.geom,  b.geom), 3) 
 	END geom
 FROM 
-	temporario.adm1_overlay a , geo_adm.pa_br_amazonia_legal_ibge_250_4674 b
+	temporario.adm1_overlay a, geo_adm.pa_br_amazonia_legal_ibge_250_4674 b 
 WHERE 
 	(a.gid % :var_num_proc) = :var_proc) as foo WHERE geom IS NOT NULL ;
 
