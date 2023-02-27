@@ -69,11 +69,6 @@ CREATE INDEX valid_cnfp_2020_br_fed_geom_idx ON dados_brutos.valid_cnfp_2020_br_
 CREATE INDEX valid_cnfp_2020_br_fed_classe_idx ON dados_brutos.valid_cnfp_2020_br_fed USING btree (classe);
 
 
-
-
-
-
-
 --TI
 \echo geoft_terra_indigena
 \echo
