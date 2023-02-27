@@ -1,9 +1,9 @@
 #! /bin/bash
 
-  N=10  # Amount of jobs to run in parallel
-  T=40000  # Counter for amount of jobs
-  Q=() # Job queue
-  FILE='cd_grid.txt'
+N=10  # Amount of jobs to run in parallel
+T=0  # Counter for amount of jobs
+Q=() # Job queue
+FILE='cd_grid_test.txt'
 
 
 userName=postgres
@@ -29,8 +29,9 @@ for ((i=0; i < $N; i++)); do
         Q[$i]=0
 done
 
-while [ $T -lt 53000 ]; do
-        echo $line
+while read -r line; do
+        echo RUN $T
+        echo cd_grid $line
         psql -U $userName -d $databaseName -f ${procName}_2.sql -v run=$line &
 
         # Try to find an open sport (Q[i]=0)
@@ -47,6 +48,4 @@ while [ $T -lt 53000 ]; do
         ((T++))
 done < ${FILE}
 wait
-
-
-echo "Processed ($T/) jobs"
+echo "Processed ($T/$(wc -l < cd_grid_test.txt)) jobs"
