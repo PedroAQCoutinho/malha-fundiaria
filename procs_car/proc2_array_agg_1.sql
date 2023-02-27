@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS car.proc2_array_agg;
+--DROP TABLE IF EXISTS car.proc2_array_agg;
 CREATE TABLE IF NOT EXISTS car.proc2_array_agg (
 
 gid int[] null,
