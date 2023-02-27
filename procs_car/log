@@ -59,18 +59,13 @@ cd_grid 48209
  
 (1 row)
 
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -91,6 +86,26 @@ cd_grid 48209
 
  car_dump 
 ----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -101,8 +116,8 @@ cd_grid 48209
 
 RUN 11
 cd_grid 48210
- inserto_array_agg 
--------------------
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -111,43 +126,33 @@ cd_grid 48210
  
 (1 row)
 
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
- car_dump 
-----------
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
 RUN 12
 cd_grid 48211
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
 RUN 13
 cd_grid 48212
  inserto_array_agg 
@@ -164,11 +169,6 @@ cd_grid 48213
 
 RUN 15
 cd_grid 48214
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -176,16 +176,6 @@ cd_grid 48214
 
 RUN 16
 cd_grid 48215
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -198,38 +188,15 @@ cd_grid 52209
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
 (1 row)
 
- split_polygons 
-----------------
+RUN 18
+cd_grid 52210
+ car_dump 
+----------
  
 (1 row)
 
@@ -238,8 +205,16 @@ cd_grid 52209
  
 (1 row)
 
-RUN 18
-cd_grid 52210
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -252,6 +227,11 @@ cd_grid 52211
  
 (1 row)
 
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -259,21 +239,6 @@ cd_grid 52211
 
 RUN 20
 cd_grid 52212
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -281,41 +246,6 @@ cd_grid 52212
 
 RUN 21
 cd_grid 52213
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -323,11 +253,6 @@ cd_grid 52213
 
 RUN 22
 cd_grid 52214
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -340,6 +265,41 @@ cd_grid 52215
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -347,6 +307,11 @@ cd_grid 52215
 
 RUN 24
 cd_grid 52216
+ car_dump 
+----------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -364,6 +329,11 @@ cd_grid 52216
 
 RUN 25
 cd_grid 56209
+ split_polygons 
+----------------
+ 
+(1 row)
+
  car_dump 
 ----------
  
@@ -386,11 +356,6 @@ cd_grid 56210
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -398,11 +363,6 @@ cd_grid 56210
 
 RUN 27
 cd_grid 56211
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -412,6 +372,11 @@ RUN 28
 cd_grid 56212
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
@@ -437,16 +402,6 @@ cd_grid 56213
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
@@ -464,16 +419,6 @@ cd_grid 56213
 
 RUN 30
 cd_grid 56214
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -481,11 +426,6 @@ cd_grid 56214
 
 RUN 31
 cd_grid 56215
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -505,6 +445,46 @@ cd_grid 56217
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -517,13 +497,23 @@ cd_grid 56217
 
 RUN 34
 cd_grid 60209
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
@@ -534,6 +524,16 @@ cd_grid 60209
 
 RUN 35
 cd_grid 60210
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -541,6 +541,21 @@ cd_grid 60210
 
 RUN 36
 cd_grid 60211
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -548,16 +563,6 @@ cd_grid 60211
 
 RUN 37
 cd_grid 60212
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -565,16 +570,6 @@ cd_grid 60212
 
 RUN 38
 cd_grid 60213
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -582,13 +577,18 @@ cd_grid 60213
 
 RUN 39
 cd_grid 60214
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
  car_dump 
 ----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -609,41 +609,6 @@ cd_grid 60215
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -651,21 +616,6 @@ cd_grid 60215
 
 RUN 41
 cd_grid 60216
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -678,15 +628,55 @@ cd_grid 60217
  
 (1 row)
 
+RUN 43
+cd_grid 60218
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
 (1 row)
 
-RUN 43
-cd_grid 60218
 RUN 44
 cd_grid 64209
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -694,6 +684,11 @@ cd_grid 64209
 
 RUN 45
 cd_grid 64210
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -701,11 +696,6 @@ cd_grid 64210
 
 RUN 46
 cd_grid 64211
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
@@ -723,47 +713,32 @@ cd_grid 64212
  
 (1 row)
 
- split_polygons 
-----------------
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ split_polygons 
+----------------
  
 (1 row)
 
 RUN 48
 cd_grid 64213
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
 RUN 49
 cd_grid 64214
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -774,8 +749,13 @@ cd_grid 64214
 
 RUN 50
 cd_grid 64215
- split_polygons 
-----------------
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
@@ -786,55 +766,35 @@ cd_grid 64215
 
 RUN 51
 cd_grid 64216
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
  inserto_array_agg 
 -------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
 RUN 52
 cd_grid 64217
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
 (1 row)
 
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -850,21 +810,31 @@ cd_grid 64217
 
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- split_polygons 
-----------------
  
 (1 row)
 
 RUN 53
 cd_grid 64218
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
 RUN 54
 cd_grid 68210
  inserto_array_agg 
@@ -884,18 +854,25 @@ cd_grid 68211
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
 RUN 56
 cd_grid 68212
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+RUN 57
+cd_grid 68213
  split_polygons 
 ----------------
  
@@ -906,20 +883,13 @@ cd_grid 68212
  
 (1 row)
 
-RUN 57
-cd_grid 68213
+RUN 58
+cd_grid 68214
  car_dump 
 ----------
  
 (1 row)
 
- inserto_array_agg 
--------------------
- 
-(1 row)
-
-RUN 58
-cd_grid 68214
  split_polygons 
 ----------------
  
@@ -942,8 +912,8 @@ cd_grid 68215
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -952,25 +922,22 @@ cd_grid 68215
  
 (1 row)
 
- car_dump 
-----------
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
 RUN 60
 cd_grid 68216
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
 (1 row)
 
- inserto_array_agg 
--------------------
+RUN 61
+cd_grid 68217
+ car_dump 
+----------
  
 (1 row)
 
@@ -979,8 +946,26 @@ cd_grid 68216
  
 (1 row)
 
-RUN 61
-cd_grid 68217
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
 RUN 62
 cd_grid 68218
  split_polygons 
@@ -988,68 +973,84 @@ cd_grid 68218
  
 (1 row)
 
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
 RUN 63
 cd_grid 68219
- split_polygons 
-----------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
 RUN 64
 cd_grid 72211
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
 RUN 65
 cd_grid 72212
- car_dump 
-----------
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
 RUN 66
 cd_grid 72213
-RUN 67
-cd_grid 72214
-RUN 68
-cd_grid 72215
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -1060,6 +1061,30 @@ cd_grid 72215
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+RUN 67
+cd_grid 72214
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+RUN 68
+cd_grid 72215
  inserto_array_agg 
 -------------------
  
@@ -1072,8 +1097,8 @@ cd_grid 72216
  
 (1 row)
 
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -1084,13 +1109,8 @@ cd_grid 72216
 
 RUN 70
 cd_grid 72217
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
@@ -1101,26 +1121,6 @@ cd_grid 72217
 
 RUN 71
 cd_grid 72218
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
 RUN 72
 cd_grid 72219
  car_dump 
@@ -1133,90 +1133,30 @@ cd_grid 72219
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
 RUN 73
 cd_grid 72220
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
 (1 row)
 
+ split_polygons 
+----------------
+ 
+(1 row)
+
 RUN 74
 cd_grid 76213
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1229,22 +1169,28 @@ cd_grid 76214
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ car_dump 
+----------
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ car_dump 
+----------
  
 (1 row)
 
 RUN 76
 cd_grid 76215
-RUN 77
-cd_grid 76216
-RUN 78
-cd_grid 76217
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  car_dump 
 ----------
  
@@ -1252,6 +1198,55 @@ cd_grid 76217
 
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+RUN 77
+cd_grid 76216
+RUN 78
+cd_grid 76217
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
@@ -1262,43 +1257,8 @@ cd_grid 76217
 
 RUN 79
 cd_grid 76218
- inserto_array_agg 
--------------------
- 
-(1 row)
-
 RUN 80
 cd_grid 76219
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1306,13 +1266,8 @@ cd_grid 76219
 
 RUN 81
 cd_grid 76220
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -1323,6 +1278,11 @@ cd_grid 76220
 
 RUN 82
 cd_grid 80213
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -1345,6 +1305,11 @@ cd_grid 80214
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
 RUN 84
 cd_grid 80215
  split_polygons 
@@ -1357,47 +1322,52 @@ cd_grid 80215
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
 RUN 85
 cd_grid 80216
- inserto_array_agg 
--------------------
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
 RUN 86
 cd_grid 80217
- car_dump 
-----------
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -1406,17 +1376,37 @@ cd_grid 80217
  
 (1 row)
 
-RUN 87
-cd_grid 80218
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
 (1 row)
 
-RUN 88
-cd_grid 80219
  car_dump 
 ----------
+ 
+(1 row)
+
+RUN 87
+cd_grid 80218
+RUN 88
+cd_grid 80219
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -1432,6 +1422,16 @@ cd_grid 80220
  
 (1 row)
 
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -1439,16 +1439,6 @@ cd_grid 80220
 
 RUN 90
 cd_grid 84210
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1456,16 +1446,6 @@ cd_grid 84210
 
 RUN 91
 cd_grid 84211
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1478,38 +1458,23 @@ cd_grid 84212
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
 RUN 93
 cd_grid 84213
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -1522,13 +1487,8 @@ cd_grid 84214
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -1537,8 +1497,23 @@ cd_grid 84214
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -1549,18 +1524,18 @@ cd_grid 84214
 
 RUN 95
 cd_grid 84215
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
 RUN 96
 cd_grid 84216
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1568,33 +1543,8 @@ cd_grid 84216
 
 RUN 97
 cd_grid 84217
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
  
 (1 row)
 
@@ -1605,12 +1555,28 @@ cd_grid 84217
 
 RUN 98
 cd_grid 84218
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
 RUN 99
 cd_grid 84219
-RUN 100
-cd_grid 84220
-RUN 101
-cd_grid 88209
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -1626,25 +1592,49 @@ cd_grid 88209
  
 (1 row)
 
+RUN 100
+cd_grid 84220
  car_dump 
 ----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+RUN 101
+cd_grid 88209
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
 RUN 102
 cd_grid 88210
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
@@ -1655,10 +1645,40 @@ cd_grid 88211
  
 (1 row)
 
-RUN 104
-cd_grid 88212
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+RUN 104
+cd_grid 88212
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
@@ -1669,16 +1689,6 @@ cd_grid 88212
 
 RUN 105
 cd_grid 88213
- split_polygons 
-----------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
 RUN 106
 cd_grid 88214
  inserto_array_agg 
@@ -1688,6 +1698,11 @@ cd_grid 88214
 
 RUN 107
 cd_grid 88215
+ car_dump 
+----------
+ 
+(1 row)
+
  car_dump 
 ----------
  
@@ -1705,6 +1720,16 @@ cd_grid 88215
 
 RUN 108
 cd_grid 88216
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -1712,35 +1737,20 @@ cd_grid 88216
 
 RUN 109
 cd_grid 88217
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
 RUN 110
 cd_grid 88218
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -1749,50 +1759,40 @@ cd_grid 88218
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
 RUN 111
 cd_grid 88219
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
 RUN 112
 cd_grid 88220
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1800,47 +1800,40 @@ cd_grid 88220
 
 RUN 113
 cd_grid 88221
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
- 
-(1 row)
-
- split_polygons 
-----------------
  
 (1 row)
 
 RUN 114
 cd_grid 92208
- inserto_array_agg 
--------------------
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
  inserto_array_agg 
 -------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
 RUN 115
 cd_grid 92209
-RUN 116
-cd_grid 92210
  car_dump 
 ----------
  
@@ -1853,23 +1846,30 @@ cd_grid 92210
 
  car_dump 
 ----------
+ 
+(1 row)
+
+RUN 116
+cd_grid 92210
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
 RUN 117
 cd_grid 92211
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -1885,13 +1885,23 @@ cd_grid 92212
  
 (1 row)
 
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
  car_dump 
 ----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -1910,18 +1920,8 @@ cd_grid 92212
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
 RUN 119
 cd_grid 92213
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -1936,13 +1936,33 @@ cd_grid 92214
 
 RUN 121
 cd_grid 92215
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
 RUN 122
 cd_grid 92216
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -1950,26 +1970,6 @@ cd_grid 92216
 
 RUN 123
 cd_grid 92217
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
@@ -1990,6 +1990,11 @@ cd_grid 92217
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -1997,6 +2002,36 @@ cd_grid 92217
 
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
@@ -2005,13 +2040,23 @@ cd_grid 92217
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ car_dump 
+----------
  
 (1 row)
 
 RUN 124
 cd_grid 92218
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
 RUN 125
 cd_grid 92219
  inserto_array_agg 
@@ -2021,18 +2066,8 @@ cd_grid 92219
 
 RUN 126
 cd_grid 92220
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -2053,6 +2088,16 @@ cd_grid 92220
 
  split_polygons 
 ----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
  
 (1 row)
 
@@ -2073,33 +2118,13 @@ cd_grid 92220
 
 RUN 127
 cd_grid 92221
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
 RUN 128
 cd_grid 96208
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2107,16 +2132,6 @@ cd_grid 96208
 
 RUN 129
 cd_grid 96209
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2124,21 +2139,6 @@ cd_grid 96209
 
 RUN 130
 cd_grid 96210
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2151,6 +2151,11 @@ cd_grid 96210
 
 RUN 131
 cd_grid 96211
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -2165,6 +2170,46 @@ cd_grid 96212
 
 RUN 133
 cd_grid 96213
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -2182,16 +2227,6 @@ cd_grid 96214
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
@@ -2202,8 +2237,8 @@ cd_grid 96214
  
 (1 row)
 
- car_dump 
-----------
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -2212,18 +2247,8 @@ cd_grid 96214
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
 RUN 135
 cd_grid 96215
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2231,8 +2256,8 @@ cd_grid 96215
 
 RUN 136
 cd_grid 96216
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -2267,6 +2292,23 @@ cd_grid 96219
  
 (1 row)
 
+ car_dump 
+----------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+RUN 140
+cd_grid 96220
  split_polygons 
 ----------------
  
@@ -2277,8 +2319,23 @@ cd_grid 96219
  
 (1 row)
 
-RUN 140
-cd_grid 96220
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 141
+cd_grid 96221
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  car_dump 
 ----------
  
@@ -2289,13 +2346,6 @@ cd_grid 96220
  
 (1 row)
 
- inserto_array_agg 
--------------------
- 
-(1 row)
-
-RUN 141
-cd_grid 96221
  inserto_array_agg 
 -------------------
  
@@ -2308,8 +2358,18 @@ cd_grid 96222
  
 (1 row)
 
+ split_polygons 
+----------------
+ 
+(1 row)
+
  car_dump 
 ----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
  
 (1 row)
 
@@ -2318,38 +2378,8 @@ cd_grid 96222
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
 RUN 143
 cd_grid 100207
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2357,6 +2387,26 @@ cd_grid 100207
 
 RUN 144
 cd_grid 100208
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -2369,43 +2419,8 @@ cd_grid 100209
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
 RUN 146
 cd_grid 100210
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2413,11 +2428,6 @@ cd_grid 100210
 
 RUN 147
 cd_grid 100211
- split_polygons 
-----------------
- 
-(1 row)
-
  inserto_array_agg 
 -------------------
  
@@ -2432,13 +2442,13 @@ cd_grid 100212
 
 RUN 149
 cd_grid 100213
- car_dump 
-----------
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
- inserto_array_agg 
--------------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -2459,18 +2469,8 @@ cd_grid 100214
  
 (1 row)
 
- split_polygons 
-----------------
- 
-(1 row)
-
  car_dump 
 ----------
- 
-(1 row)
-
- split_polygons 
-----------------
  
 (1 row)
 
@@ -2491,21 +2491,6 @@ cd_grid 100214
 
  split_polygons 
 ----------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- car_dump 
-----------
  
 (1 row)
 
@@ -2521,6 +2506,36 @@ cd_grid 100214
 
 RUN 151
 cd_grid 100215
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -2535,8 +2550,8 @@ cd_grid 100216
 
 RUN 153
 cd_grid 100217
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -2557,11 +2572,6 @@ cd_grid 100217
 
 RUN 154
 cd_grid 100218
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
@@ -2569,11 +2579,6 @@ cd_grid 100218
 
  car_dump 
 ----------
- 
-(1 row)
-
- split_polygons 
-----------------
  
 (1 row)
 
@@ -2584,6 +2589,11 @@ cd_grid 100218
 
 RUN 155
 cd_grid 100219
+ split_polygons 
+----------------
+ 
+(1 row)
+
  inserto_array_agg 
 -------------------
  
@@ -2591,18 +2601,6 @@ cd_grid 100219
 
 RUN 156
 cd_grid 100220
- inserto_array_agg 
--------------------
- 
-(1 row)
-
-RUN 157
-cd_grid 100221
- car_dump 
-----------
- 
-(1 row)
-
  car_dump 
 ----------
  
@@ -2618,13 +2616,15 @@ cd_grid 100221
  
 (1 row)
 
-RUN 158
-cd_grid 100222
- car_dump 
-----------
+RUN 157
+cd_grid 100221
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
+RUN 158
+cd_grid 100222
  car_dump 
 ----------
  
@@ -2642,8 +2642,8 @@ cd_grid 100222
 
 RUN 159
 cd_grid 100223
- split_polygons 
-----------------
+ car_dump 
+----------
  
 (1 row)
 
@@ -2654,6 +2654,31 @@ cd_grid 100223
 
 RUN 160
 cd_grid 100224
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
  split_polygons 
 ----------------
  
@@ -2674,26 +2699,6 @@ cd_grid 100224
  
 (1 row)
 
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- split_polygons 
-----------------
- 
-(1 row)
-
- inserto_array_agg 
--------------------
- 
-(1 row)
-
- car_dump 
-----------
- 
-(1 row)
-
  split_polygons 
 ----------------
  
@@ -2719,13 +2724,8 @@ cd_grid 100224
  
 (1 row)
 
- car_dump 
-----------
- 
-(1 row)
-
- split_polygons 
-----------------
+ inserto_array_agg 
+-------------------
  
 (1 row)
 
