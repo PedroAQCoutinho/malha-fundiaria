@@ -1,15 +1,14 @@
 #! /bin/bash
 
-N=10  # Amount of jobs to run in parallel
+N=120  # Amount of jobs to run in parallel
 T=0  # Counter for amount of jobs
 Q=() # Job queue
 FILE='cd_grid.txt'
 start_date="$(date)"
 SECONDS=0
-
+export PGPASSWD='gpp-es@lq'
 userName=postgres
 databaseName=malha_fundiaria
-numProc=120
 procName=proc2_array_agg
 
 
