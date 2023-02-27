@@ -116332,3 +116332,723 @@ RUN 46876
 
 
 RUN 46878
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+RUN 46879
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46880
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46881
+RUN 46882
+RUN 46883
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46884
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46885
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+
+
+RUN 46887
+RUN 46888
+RUN 46886
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46889
+RUN 46890
+ split_polygons 
+----------------
+ 
+(1 row)
+
+RUN 46892
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+RUN 46891
+RUN 46893
+
+RUN 46894
+RUN 46895
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 46896
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46897
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46898
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46899
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+
+RUN 46900
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+RUN 46901
+RUN 46902
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 46904
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+RUN 46903
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46906
+RUN 46905
+RUN 46907
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46908
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46909
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 46910
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46911
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 46912
+ car_dump 
+----------
+ 
+(1 row)
+
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 46913
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+
+RUN 46915
+ car_dump 
+----------
+ 
+(1 row)
+
+RUN 46914
+RUN 46917
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46916
+RUN 46918
+RUN 46919
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+ car_dump 
+----------
+ 
+(1 row)
+
+ split_polygons 
+----------------
+ 
+(1 row)
+
+ inserto_array_agg 
+-------------------
+ 
+(1 row)
+
+
+RUN 46920
+RUN 46921
+ car_dump 
+----------
+ 
+(1 row)
+
