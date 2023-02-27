@@ -56,7 +56,7 @@ CREATE INDEX adm3_overlay_cd_mun_idx ON temporario.adm3_overlay USING btree (cd_
 CREATE INDEX adm3_overlay_geom_idx ON temporario.adm3_overlay USING gist (geom);
 
 
-/*
+
 DROP TABLE IF EXISTS temporario.gridbr;
 CREATE TABLE temporario.gridbr as
 SELECT ROW_NUMBER() OVER () id,*
@@ -73,4 +73,4 @@ WHERE b.gid IS NOT NULL
 
 
 CREATE INDEX gridbr_filtrado_idx_geom ON temporario.gridbr_filtrado USING GIST (geom);
-*/
+
