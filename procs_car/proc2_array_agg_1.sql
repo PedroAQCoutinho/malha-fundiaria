@@ -25,7 +25,7 @@ BEGIN
    EXECUTE format('CREATE TEMPORARY TABLE car_dump_%s AS
       SELECT a.gid, cd_grid, cd_mun, am_legal, cd_bioma
       st_collectionextract((ST_Dump(ST_Intersection(a.valid_geom, b.geom))).geom, 3) geom 
-      FROM dados_brutos.valid_sicar_imovel a LEFT JOIN temporario.adm2_overlay b
+      FROM dados_brutos.valid_sicar_imovel a LEFT JOIN grid.adm3_overlay b
       ON ST_Intersects(a.valid_geom, b.geom) WHERE  b.cd_grid = cast(%s as integer);
       CREATE INDEX car_dump_%s_gid_idx ON car_dump_%s USING btree (gid);
       CREATE INDEX car_dump_%s_geom_idx ON car_dump_%s USING GIST (geom);', t_name, t_name, t_name, t_name, t_name, t_name);
