@@ -3,8 +3,9 @@
 N=10  # Amount of jobs to run in parallel
 T=0  # Counter for amount of jobs
 Q=() # Job queue
-FILE='cd_grid_test.txt'
-
+FILE='cd_grid.txt'
+start_date="$(date)"
+SECONDS=0
 
 userName=postgres
 databaseName=malha_fundiaria
@@ -49,3 +50,13 @@ while read -r line; do
 done < ${FILE}
 wait
 echo "Processed ($T/$(wc -l < cd_grid_test.txt)) jobs"
+
+
+
+echo Started at: 
+echo $start_date
+echo 
+echo Finished at:
+echo `date`
+echo Elapsed:
+displaytime $SECONDS
