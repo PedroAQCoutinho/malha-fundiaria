@@ -1,6 +1,6 @@
 \echo adm1overlay
 
-INSERT INTO temporario.adm1_overlay (cd_grid, cd_mun , geom)
+INSERT INTO grid.adm1_overlay (cd_grid, cd_mun , geom)
 SELECT
 	id::int cd_grid,
 	cd_mun::int,
@@ -9,7 +9,7 @@ SELECT
 		ELSE ST_CollectionExtract(ST_Intersection(a.geom,  b.geom), 3) 
 	END geom
 FROM 
-	temporario.gridbr_filtrado  a 
+	grid.gridbr_filtrado  a 
 LEFT JOIN 
 	geo_adm.pa_br_limitemunicipal_250_2015_ibge_4674  b
 ON
