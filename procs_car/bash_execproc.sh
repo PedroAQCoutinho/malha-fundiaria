@@ -18,7 +18,6 @@ done
 wait
 
 
-
 #If sql 2 exists execute it
 for ((i=0; i < ${numProc}; i++))
 do
@@ -34,6 +33,14 @@ done
 wait
 
 
+
+echo Started at: 
+echo $start_date
+echo 
+echo Finished at:
+echo `date`
+echo Elapsed:
+displaytime $SECONDS
 
 
 
