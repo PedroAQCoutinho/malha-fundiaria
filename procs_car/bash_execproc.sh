@@ -5,7 +5,7 @@ userName=postgres
 databaseName=malha_fundiaria
 numProc=120
 procName=proc1_overlay
-export PGPASSWD='gpp-es@lq'
+export PGPASSWORD='gpp-es@lq'
 
 
 psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_1.sql &
