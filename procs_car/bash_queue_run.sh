@@ -49,7 +49,7 @@ while read -r line; do
         ((T++))
 done < ${FILE}
 wait
-echo "Processed ($T/$(wc -l < cd_grid_test.txt)) jobs"
+echo "Processed ($T/$(wc -l < cd_grid.txt)) jobs"
 
 
 
