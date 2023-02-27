@@ -66,7 +66,7 @@ BEGIN
       array_agg(b.gid) gid, cd_grid, cd_mun, am_legal, cd_bioma,
       ST_Area(ST_Union(ST_Force2d(a.geom))::geography) area  FROM proc1_split_polygons_%s a 
       LEFT JOIN car_dump_%s b ON ST_Intersects(ST_Buffer(a.geom::geography, -5), b.geom) 
-      GROUP BY bin, cd_grid, cd_mun, am_legal;', t_name, t_name);
+      GROUP BY bin, cd_grid, cd_mun, am_legal,cd_bioma;', t_name, t_name);
 END
 $func$;
 
