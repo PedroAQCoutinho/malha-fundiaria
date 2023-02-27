@@ -1,5 +1,5 @@
 
---DROP TABLE IF EXISTS car.proc2_array_agg;
+DROP TABLE IF EXISTS car.proc2_array_agg;
 CREATE TABLE IF NOT EXISTS car.proc2_array_agg (
 
 gid int[] null,
@@ -16,7 +16,7 @@ CREATE INDEX proc2_array_agg_bin_idx ON car.proc2_array_agg USING btree (gid);
 CREATE INDEX proc2_array_agg_geom_idx ON car.proc2_array_agg USING GIST (geom);
 
 
-CREATE SEQUENCE IF NOT EXISTS car.car_break_seq INCREMENT BY 1 MINVALUE 880122 MAXVALUE 1600144 START WITH 880122;
+CREATE SEQUENCE IF NOT EXISTS car.car_break_seq INCREMENT BY 1 MINVALUE 40200 MAXVALUE 1600144 START WITH 40200;
 
 CREATE OR REPLACE FUNCTION car_dump(t_name varchar(30))
   RETURNS VOID
