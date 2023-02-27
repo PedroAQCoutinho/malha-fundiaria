@@ -20,9 +20,9 @@ CREATE OR REPLACE FUNCTION car_dump(t_name varchar(30))
 $func$
 BEGIN
    EXECUTE format('CREATE TABLE car_dump_%s AS
-      SELECT a.gid, st_collectionextract((ST_Dump(ST_Intersection(a.geom, b.geom))).geom, 3) geom 
-      FROM dados_brutos.sicar_imoveis_al a , temporario.adm2_overlay b
-      WHERE ST_Intersects(a.geom, b.geom) AND b.cd_grid = cast(%s as integer);
+      SELECT a.gid, st_collectionextract((ST_Dump(ST_Intersection(a.valid_geom, b.geom))).geom, 3) geom 
+      FROM dados_brutos.valid_sicar_imovel a , temporario.adm2_overlay b
+      WHERE ST_Intersects(a.valid_geom, b.geom) AND b.cd_grid = cast(%s as integer);
       CREATE INDEX car_dump_%s_gid_idx ON car_dump_%s USING btree (gid);
       CREATE INDEX car_dump_%s_geom_idx ON car_dump_%s USING GIST (geom);', t_name, t_name, t_name, t_name, t_name, t_name);
 END
