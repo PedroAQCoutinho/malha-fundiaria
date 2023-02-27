@@ -56,12 +56,12 @@ CREATE INDEX adm3_overlay_cd_mun_idx ON grid.adm3_overlay USING btree (cd_mun);
 CREATE INDEX adm3_overlay_geom_idx ON grid.adm3_overlay USING gist (geom);
 
 
-/*
+
 DROP TABLE IF EXISTS grid.gridbr;
 CREATE TABLE grid.gridbr as
 SELECT ROW_NUMBER() OVER () id,*
 FROM  ST_CreateFishnet(4100, 4000, 0.1, 0.1, -74.3904499689998971, -34.7511779939999457) AS cells;
-*/
+
 CREATE INDEX gridbr_idx_geom ON grid.gridbr USING GIST (geom);
 
 
