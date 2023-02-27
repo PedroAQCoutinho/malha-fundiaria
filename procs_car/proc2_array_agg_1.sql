@@ -23,7 +23,7 @@ CREATE OR REPLACE FUNCTION car_dump(t_name varchar(30))
 $func$
 BEGIN
    EXECUTE format('CREATE TEMPORARY TABLE car_dump_%s AS
-      SELECT a.gid, cd_grid, cd_mun, am_legal, cd_bioma
+      SELECT a.gid, cd_grid, cd_mun, am_legal, cd_bioma,
       st_collectionextract((ST_Dump(ST_Intersection(a.valid_geom, b.geom))).geom, 3) geom 
       FROM dados_brutos.valid_sicar_imovel a LEFT JOIN grid.adm3_overlay b
       ON ST_Intersects(a.valid_geom, b.geom) WHERE  b.cd_grid = cast(%s as integer);
@@ -63,7 +63,7 @@ BEGIN
    EXECUTE format('
       INSERT INTO car.proc2_array_agg (geom, gid, cd_grid, cd_mun, am_legal, cd_bioma, area) 
       SELECT ST_Union(ST_Force2d(a.geom)) geom,
-      array_agg(b.gid) gid, cd_grid, cd_mun, am_legal, cd_bioma
+      array_agg(b.gid) gid, cd_grid, cd_mun, am_legal, cd_bioma,
       ST_Area(ST_Union(ST_Force2d(a.geom))::geography) area  FROM proc1_split_polygons_%s a 
       LEFT JOIN car_dump_%s b ON ST_Intersects(ST_Buffer(a.geom::geography, -5), b.geom) 
       GROUP BY bin, cd_grid, cd_mun, am_legal;', t_name, t_name);
