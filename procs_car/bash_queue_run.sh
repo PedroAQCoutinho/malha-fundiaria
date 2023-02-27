@@ -8,7 +8,7 @@ FILE='cd_grid_test.txt'
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=10
+numProc=120
 procName=proc2_array_agg
 
 
