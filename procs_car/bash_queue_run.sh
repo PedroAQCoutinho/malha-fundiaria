@@ -1,7 +1,7 @@
   N=10  # Amount of jobs to run in parallel
-  T=0  # Counter for amount of jobs
+  T=40000  # Counter for amount of jobs
   Q=() # Job queue
-  FILE='run.txt'
+ 
 
 
 userName=postgres
@@ -27,7 +27,7 @@ for ((i=0; i < $N; i++)); do
         Q[$i]=0
 done
 
-while [ $T -lt 100 ]; do
+while [ $T -lt 1600145 ]; do
         echo $line
         psql -U $userName -d $databaseName -f ${procName}_2.sql -v run=$T &
 
@@ -47,4 +47,4 @@ done
 wait
 
 
-echo "Processed ($T/20) jobs"
+echo "Processed ($T/) jobs"
