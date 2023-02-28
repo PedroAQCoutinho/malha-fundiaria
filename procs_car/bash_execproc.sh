@@ -60,4 +60,4 @@ displaytime $SECONDS
 
 
 
-bash bash_queue_run.sh > log_split 2>&1 
+#bash bash_queue_run.sh > log_split 2>&1 
