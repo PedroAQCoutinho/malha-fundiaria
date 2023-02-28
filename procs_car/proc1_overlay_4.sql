@@ -8,23 +8,7 @@ SELECT * FROM (SELECT
 	cd_bioma::int, 
 	CASE 
 		WHEN ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(a.geom, 3)
-		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(ST_Intersection(a.geom,  b.geom), 3) 
-	END geom
-FROM 
-	grid.adm2_overlay a 
-LEFT JOIN 
-	geo_adm.pa_br_limitebiomas_250_2006_ibge_4674 b ON ST_Intersects(a.geom, b.geom)
-WHERE 
-	(a.gid % :var_num_proc) = :var_proc	
-UNION ALL 
-SELECT
-	cd_mun::int,
-	a.cd_grid::int,
-	am_legal,
-	cd_bioma::int, 
-	CASE 
-		WHEN NOT ST_Intersects(a.geom, b.geom) THEN ST_CollectionExtract(a.geom, 3)
-		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(ST_Difference(a.geom,  b.geom), 3) 
+		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN (ST_Dump(ST_CollectionExtract(ST_Intersection(a.geom,  b.geom), 3))).geom 
 	END geom
 FROM 
 	grid.adm2_overlay a 
