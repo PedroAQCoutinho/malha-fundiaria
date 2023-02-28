@@ -8,7 +8,7 @@ SELECT * FROM (SELECT
 	cd_bioma::int, 
 	CASE 
 		WHEN ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(a.geom, 3)
-		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN (ST_Dump(ST_CollectionExtract(ST_Intersection(a.geom,  b.geom), 3))).geom 
+		WHEN ST_Intersects(a.geom, b.geom) AND NOT ST_Within(a.geom, b.geom) THEN ST_CollectionExtract(ST_Intersection(a.geom,  b.geom), 3) 
 	END geom
 FROM 
 	grid.adm2_overlay a 
