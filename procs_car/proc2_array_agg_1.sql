@@ -2,7 +2,8 @@
 DROP TABLE IF EXISTS car.proc2_array_agg;
 CREATE TABLE car.proc2_array_agg (
 
-gid int[] null,
+gid serial NOT null,
+original_gid int[] null,
 cd_grid integer null, 
 cd_mun integer null, 
 am_legal boolean null ,
@@ -61,9 +62,9 @@ CREATE OR REPLACE FUNCTION inserto_array_agg(t_name varchar(30))
 $func$
 BEGIN
    EXECUTE format('
-      INSERT INTO car.proc2_array_agg (geom, gid, cd_grid, cd_mun, am_legal, cd_bioma, area) 
+      INSERT INTO car.proc2_array_agg (geom, original_gid, cd_grid, cd_mun, am_legal, cd_bioma, area) 
       SELECT ST_Union(ST_Force2d(a.geom)) geom,
-      array_agg(b.gid) gid, cd_grid, cd_mun, am_legal, cd_bioma,
+      array_agg(b.gid) original_gid, cd_grid, cd_mun, am_legal, cd_bioma,
       ST_Area(ST_Union(ST_Force2d(a.geom))::geography) area  FROM proc1_split_polygons_%s a 
       LEFT JOIN car_dump_%s b ON ST_Intersects(ST_Buffer(a.geom::geography, -5), b.geom) 
       GROUP BY bin, cd_grid, cd_mun, am_legal,cd_bioma;', t_name, t_name);
