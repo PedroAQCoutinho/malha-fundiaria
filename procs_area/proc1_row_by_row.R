@@ -6,7 +6,7 @@ library(pacman)
 p_load( raster, rgdal,   dplyr, doMPI, snow,  RPostgreSQL)
 #setwd('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area')
 #source('funcoes.R')
-
+start <- Sys.time()
 tryCatch({
   drv <- dbDriver("PostgreSQL")
   print("Connecting to Database…")
@@ -54,3 +54,4 @@ output <- data.frame(do.call(rbind, output))
 saveRDS(output, 'proc1_area.rds')
 dbWriteTable(connec, 'proc1_area', a)
 snow::stopCluster(cl)
+print(paste0('Elapsed time: ', Sys.time()-start))
