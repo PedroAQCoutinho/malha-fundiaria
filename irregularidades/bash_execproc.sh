@@ -13,5 +13,5 @@ psql -U $userName -d $databaseName -f ${procName}_1.sql
 for ((i=0; i < ${numProc}; i++))
 do
     psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
-done > log_proc2 2>&1
+done
 wait
