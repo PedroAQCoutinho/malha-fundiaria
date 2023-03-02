@@ -21,7 +21,7 @@ error=function(cond) {
   print("Unable to connect to Database.")
 })
 
-source('/mnt/GPP2/pedro/GPP/ltmodel/codes/malha-fundiaria/procs_area/funcoes.R')
+source('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/funcoes.R')
 
 
 #dbListTables(connec)[order(dbListTables(connec))]
