@@ -50,6 +50,6 @@ snow::clusterExport(cl=cl,
 
 atualiza_dt()
 output <- data.frame(do.call(rbind, output))
-saveRDS(output, '/home/pedro/hd1/pedro/GPP/ltmodel/outputs/areas/proc1_area.rds')
+saveRDS(output, 'proc1_area.rds')
 dbWriteTable(connec, 'proc1_area', a)
 snow::stopCluster(cl)
