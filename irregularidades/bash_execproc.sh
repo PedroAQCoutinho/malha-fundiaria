@@ -2,7 +2,7 @@
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=32
+numProc=128
 export PGPASSWORD='gpp-es@lq'
 procName=proc2_desmatamento_anual
 
