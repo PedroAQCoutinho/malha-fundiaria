@@ -13,8 +13,9 @@ tryCatch({
   connec <- dbConnect(drv, 
                       dbname = 'malha_fundiaria',
                       host = 'localhost',
+                      port = '5433',
                       user = 'postgres', 
-                      password = '1kakaroto*')
+                      password = 'gpp-es@lq')
   print("Database Connected!")
 },
 error=function(cond) {
@@ -27,7 +28,7 @@ source('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/funcoes.R')
 #dbListTables(connec)[order(dbListTables(connec))]
 
 #dados
-desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/desmatamento/PRODES/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/desmatamento/PRODES/pa_br_desmatamento_PRODES_30m_2000-2021.tif')
 car <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/limites_administrativos/car/proc2_array_agg.tif')
 NAvalue(car) <- 0
 cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/step14_overlay.tif')
