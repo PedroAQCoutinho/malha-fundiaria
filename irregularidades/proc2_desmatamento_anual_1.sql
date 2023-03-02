@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS irregularidades.proc2_step14_desmatamento_anual;
 CREATE TABLE irregularidades.proc2_step14_desmatamento_anual (
 cat_fund int NULL,
 car_gid int NULL,
-car int[] null
+car int[] null,
 desmatamento int NULL,
 area_desmatamento decimal NULL,
 original_layer_label TEXT[] null,
