@@ -40,7 +40,7 @@ output <- vector('list', bss$n)
 
 
 #Cluster start
-cl <- snow::makeSOCKcluster(16)
+cl <- snow::makeSOCKcluster(16, outfile="")
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
