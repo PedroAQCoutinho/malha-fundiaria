@@ -51,6 +51,9 @@ wait
 echo "Processed ($T/$(wc -l < cd_grid.txt)) jobs"
 
 
+pg_dump 
+
+
 
 echo Started at: 
 echo $start_date
