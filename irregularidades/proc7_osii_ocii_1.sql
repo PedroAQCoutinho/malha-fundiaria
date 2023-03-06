@@ -15,7 +15,7 @@ is_local_restrito boolean NULL ,
 tipo_irregularidade TEXT NULL , 
 geom  geometry null
 
-)
+);
 
 CREATE INDEX proc7_step14_categorizacao_car_idx ON irregularidades.proc7_step14_categorizacao USING btree (car);
 CREATE INDEX proc7_step14_categorizacao_cd_mun_idx ON irregularidades.proc7_step14_categorizacao USING btree (cd_mun);
