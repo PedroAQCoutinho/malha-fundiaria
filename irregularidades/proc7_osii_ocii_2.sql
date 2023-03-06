@@ -28,7 +28,7 @@ LEFT JOIN auxiliares.step14_chave_categorias_limpas h USING (id_cat_fund)
 LEFT JOIN LATERAL (
 SELECT car, am_legal, cd_mun, cd_bioma FROM irregularidades.proc2_step14_desmatamento_anual psda WHERE a.gid = psda.car ORDER BY area_desmatamento DESC 
 LIMIT 1) foo
-ON TRUE AND (a.gid % :var_num_proc) = :var_proc
+ON TRUE AND (a.gid % :var_num_proc) = :var_proc;
 
 
 
