@@ -14,7 +14,7 @@ cd_mun integer null,
 area_categoria_fundiaria decimal null, 
 nm_cat_fund TEXT NULL , 
 nm_agrup TEXT NULL  
-)
+);
 
 
 CREATE INDEX proc2_step14_desmatamento_anual_car_idx ON irregularidades.proc2_step14_desmatamento_anual USING btree (car);
