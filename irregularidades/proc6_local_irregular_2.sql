@@ -1,7 +1,7 @@
 -- Para a car é preciso saber se ele está em local restritivo ou nao à regularizacao fundiaria
 -- Para isso verificamos que pelo menos 10% da propriedade está em área restrita
 -- Area restrita: nm_agrup = 'publica_afetada' OR nm_agrup = 'publica_afetada__imovel_rural_privado' OR nm_agrup = 'publica afetada_coletiva_privada' OR nm_agrup = 'publica imovel_privado_coletivo_publica_destinada'
-
+\echo RUN :var_proc
 INSERT INTO irregularidades.proc6_step14_local_restrito
 SELECT  a.gid car , 
 CASE
