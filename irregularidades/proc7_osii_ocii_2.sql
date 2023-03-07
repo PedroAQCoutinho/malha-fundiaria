@@ -1,7 +1,7 @@
 
 \echo RUN :var_proc
-INSERT INTO irregularidades.proc7_step14_categorizacao (car,  area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label, nm_agrup, nm_cat_fund, is_grande, is_recente, is_local_restrito, tipo_irregularidade, geom )
-SELECT a.gid car, a.area area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label, nm_agrup, nm_cat_fund , is_grande, is_recente , is_local_restrito, CASE 
+INSERT INTO irregularidades.proc7_step14_categorizacao (car,  area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label, nm_agrup, nm_cat_fund, is_grande, is_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
+SELECT a.gid car, a.area area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label, nm_agrup, nm_cat_fund , is_grande, is_recente , desmatamento,  is_local_restrito, CASE 
 	WHEN tipo_imove = 'IRU' AND (nm_agrup <> ' coletiva_privada' or nm_agrup <> 'imovel_rural_privado' or nm_agrup <> 'coletiva_privada_imovel_privado')
  AND is_recente AND NOT is_grande AND NOT is_local_restrito AND am_legal  THEN 'A'
 	WHEN tipo_imove = 'IRU' AND ( nm_agrup <> ' coletiva_privada' or nm_agrup <> 'imovel_rural_privado' or nm_agrup <> 'coletiva_privada_imovel_privado' )
@@ -29,7 +29,10 @@ LEFT JOIN auxiliares.step14_chave_categorias_limpas h USING (id_cat_fund)
 LEFT JOIN LATERAL (
 SELECT car, am_legal, cd_mun, cd_bioma FROM irregularidades.proc2_step14_desmatamento_anual psda WHERE a.gid = psda.car ORDER BY area_desmatamento DESC 
 LIMIT 1) foo
-ON TRUE AND (a.gid % :var_num_proc) = :var_proc;
+ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
+
+
+
 
 
 
