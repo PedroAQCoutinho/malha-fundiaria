@@ -1,3 +1,5 @@
+\echo RUN :var_proc
+
 INSERT INTO irregularidades.proc3_step14_ano_ocupacao (gid, desmatamento, is_recente)
 SELECT gid, desmatamento, is_recente
 FROM dados_brutos.valid_sicar_imovel a, LATERAL 
