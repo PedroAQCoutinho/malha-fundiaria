@@ -1,7 +1,7 @@
 DROP TABLE irregularidades.proc1_step14_area_raw;
 CREATE TABLE irregularidades.proc1_step14_area_raw 
 (
-cat_fund TEXT NULL,
+cat_fund int NULL,
 car bigint NULL,
 desmatamento int NULL,
 count int NULL
