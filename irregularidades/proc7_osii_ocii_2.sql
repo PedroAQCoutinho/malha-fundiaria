@@ -1,7 +1,21 @@
 
 \echo RUN :var_proc
 INSERT INTO irregularidades.proc7_step14_categorizacao (car,  area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label, nm_agrup, nm_cat_fund, is_grande, is_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
-SELECT a.gid car, a.area area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label, nm_agrup, nm_cat_fund , is_grande, is_recente , desmatamento,  is_local_restrito, CASE 
+SELECT 
+a.gid car, 
+a.area area_imovel, 
+am_legal, 
+cd_mun, 
+cd_bioma, 
+original_layer_label, 
+nm_agrup, 
+nm_cat_fund , 
+is_grande, 
+is_recente , 
+desmatamento,  
+is_local_restrito, 
+
+CASE 
 	WHEN tipo_imove = 'IRU' AND (nm_agrup <> ' coletiva_privada' or nm_agrup <> 'imovel_rural_privado' or nm_agrup <> 'coletiva_privada_imovel_privado')
  AND is_recente AND NOT is_grande AND NOT is_local_restrito AND am_legal  THEN 'A'
 	WHEN tipo_imove = 'IRU' AND ( nm_agrup <> ' coletiva_privada' or nm_agrup <> 'imovel_rural_privado' or nm_agrup <> 'coletiva_privada_imovel_privado' )
