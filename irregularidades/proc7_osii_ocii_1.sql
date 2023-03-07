@@ -11,6 +11,7 @@ nm_agrup TEXT NULL ,
 nm_cat_fund TEXT NULL , 
 is_grande boolean NULL , 
 is_recente boolean NULL , 
+desmatamento int NULL ,
 is_local_restrito boolean NULL , 
 tipo_irregularidade TEXT NULL , 
 geom  geometry null
