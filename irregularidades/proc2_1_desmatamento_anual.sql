@@ -6,9 +6,9 @@ cat_fund int NULL,
 car int NULL, 
 desmatamento int NULL,
 area decimal NULL
-)
+);
 
 
 INSERT INTO irregularidades.proc21_step14_desmatamento_anual (cat_fund, car, desmatamento, area)
 SELECT cat_fund, car, desmatamento, sum(count)*0.087 area FROM irregularidades.proc1_step14_area_raw psar 
-WHERE cat_fund IS NOT null
+WHERE cat_fund IS NOT null;
