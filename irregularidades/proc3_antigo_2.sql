@@ -2,7 +2,7 @@ INSERT INTO irregularidades.proc3_step14_ano_ocupacao (gid, desmatamento, is_rec
 SELECT gid, desmatamento, is_recente
 FROM dados_brutos.valid_sicar_imovel a, LATERAL 
 (SELECT *, CASE 
-	WHEN desmatamento > 2009 THEN TRUE 
+	WHEN desmatamento > 9 THEN TRUE 
 	ELSE FALSE 
 END is_recente FROM irregularidades.proc2_step14_desmatamento_anual b 
 WHERE a.gid = b.car  ORDER BY desmatamento LIMIT 1) foo
