@@ -1,4 +1,4 @@
-\echo RUN :var_proc
+\echo RUN ANTIGO :var_proc
 
 INSERT INTO irregularidades.proc6_step14_local_restrito
 SELECT  a.gid, 
