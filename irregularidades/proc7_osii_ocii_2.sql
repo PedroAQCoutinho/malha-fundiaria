@@ -1,13 +1,13 @@
 
 \echo RUN :var_proc
-INSERT INTO irregularidades.proc7_step14_categorizacao (car,  area_imovel, am_legal, cd_mun, cd_bioma, original_layer_label,  d.nm_agrup, nm_cat_fund, is_grande, is_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
+INSERT INTO irregularidades.proc7_step14_categorizacao (car,  area_imovel, am_legal, cd_mun, cd_bioma, nm_agrup, nm_cat_fund, is_grande, is_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
 SELECT 
 a.gid car, 
 a.area area_imovel, 
 am_legal, 
 cd_mun, 
 cd_bioma, 
- d.nm_agrup, 
+d.nm_agrup, 
 d.nm_cat_fund , 
 is_grande, 
 is_recente , 
