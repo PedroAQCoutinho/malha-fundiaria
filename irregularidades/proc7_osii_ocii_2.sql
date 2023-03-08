@@ -14,7 +14,6 @@ is_grande,
 is_recente , 
 desmatamento,  
 is_local_restrito, 
-
 CASE 
 	WHEN tipo_imove = 'IRU' AND (nm_agrup <> ' coletiva_privada' or nm_agrup <> 'imovel_rural_privado' or nm_agrup <> 'coletiva_privada_imovel_privado')
  AND is_recente AND NOT is_grande AND NOT is_local_restrito AND am_legal  THEN 'A'
@@ -41,7 +40,7 @@ LEFT JOIN auxiliares.step14_chave_geral f USING(original_layer_label)
 LEFT JOIN auxiliares.step14_chave_agrupamento g USING (id_agrup)
 LEFT JOIN auxiliares.step14_chave_categorias_limpas h USING (id_cat_fund)
 LEFT JOIN LATERAL (
-SELECT car, am_legal, cd_mun, cd_bioma FROM irregularidades.proc23_step14_desmatamento_anual psda WHERE a.gid = psda.car ORDER BY area_desmatamento DESC 
+SELECT car, am_legal, cd_mun, cd_bioma FROM irregularidades.proc23_step14_desmatamento_anual psda WHERE a.gid = psda.car ORDER BY area_count DESC 
 LIMIT 1) foo
 ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
 
