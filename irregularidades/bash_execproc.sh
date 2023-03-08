@@ -4,7 +4,7 @@ userName=postgres
 databaseName=malha_fundiaria
 numProc=16
 export PGPASSWORD='gpp-es@lq'
-procName=proc3_antigo
+procName=proc7_osii_ocii
 
 
 psql -U $userName -d $databaseName -f ${procName}_1.sql
