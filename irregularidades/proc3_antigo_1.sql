@@ -1,3 +1,5 @@
+\echo proc_1
+
 DROP TABLE IF EXISTS irregularidades.proc3_step14_ano_ocupacao;
 CREATE TABLE irregularidades.proc3_step14_ano_ocupacao (
 gid bigint null, 
