@@ -27,4 +27,3 @@ CREATE INDEX proc7_step14_categorizacao_nm_cat_fund_idx ON irregularidades.proc7
 CREATE INDEX proc7_step14_categorizacao_geom_idx ON irregularidades.proc7_step14_categorizacao USING GIST (geom);
 
 
-
