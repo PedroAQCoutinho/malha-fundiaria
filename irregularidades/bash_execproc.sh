@@ -2,7 +2,7 @@
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=16
+numProc=64
 export PGPASSWORD='gpp-es@lq'
 procName=proc6_local_irregular
 
