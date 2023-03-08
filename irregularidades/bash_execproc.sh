@@ -2,9 +2,9 @@
 
 userName=postgres
 databaseName=malha_fundiaria
-numProc=16
+numProc=8
 export PGPASSWORD='gpp-es@lq'
-procName=proc2_desmatamento_anual
+procName=proc2_3_desmatamento_anual
 
 
 psql -U $userName -d $databaseName -f ${procName}_1.sql
