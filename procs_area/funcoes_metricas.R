@@ -48,7 +48,7 @@ resume <- function(i) {
   uso2000 <- out2 %>% left_join(dt[,c('car', 'uso2000', 'value')], by = c('car'='car','uso'='uso2000')) %>%
     filter(!is.na(value)) %>%
     group_by(car, uso) %>%
-    summarise(contagem = sum(value)) %>%
+    summarise(contagem = sum(value, na.rm = T)) %>%
     rename(uso2000 = contagem) %>%
     as_tibble()
   
@@ -56,7 +56,7 @@ resume <- function(i) {
   uso2005 <- out2 %>% left_join(dt[,c('car', 'uso2005', 'value')], by = c('car'='car','uso'='uso2005')) %>%
     filter(!is.na(value)) %>%
     group_by(car, uso) %>%
-    summarise(contagem = sum(value))%>%
+    summarise(contagem = sum(value, na.rm = T))%>%
     rename(uso2005 = contagem) %>%
     as_tibble()
   
@@ -64,7 +64,7 @@ resume <- function(i) {
   uso2010 <- out2 %>% left_join(dt[,c('car', 'uso2010', 'value')], by = c('car'='car','uso'='uso2010')) %>%
     filter(!is.na(value)) %>%
     group_by(car, uso) %>%
-    summarise(contagem = sum(value))%>%
+    summarise(contagem = sum(value, na.rm = T))%>%
     rename(uso2010 = contagem) %>%
     as_tibble()
   
@@ -72,7 +72,7 @@ resume <- function(i) {
   uso2015 <- out2 %>% left_join(dt[,c('car', 'uso2015', 'value')], by = c('car'='car','uso'='uso2015')) %>%
     filter(!is.na(value)) %>%
     group_by(car, uso) %>%
-    summarise(contagem = sum(value))%>%
+    summarise(contagem = sum(value, na.rm = T))%>%
     rename(uso2015 = contagem) %>%
     as_tibble()
   
@@ -80,7 +80,7 @@ resume <- function(i) {
   uso2021 <- out2 %>% left_join(dt[,c('car', 'uso2021', 'value')], by = c('car'='car','uso'='uso2021')) %>%
     filter(!is.na(value)) %>%
     group_by(car, uso) %>%
-    summarise(contagem = sum(value))%>%
+    summarise(contagem = sum(value, na.rm = T))%>%
     rename(uso2021 = contagem) %>%
     as_tibble()
   
