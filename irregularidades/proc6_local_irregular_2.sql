@@ -16,7 +16,6 @@ FROM dados_brutos.valid_sicar_imovel a LEFT JOIN LATERAL
 FROM irregularidades.proc23_step14_desmatamento_anual b
 WHERE a.gid = b.car AND 
 (nm_agrup = 'publica_afetada' OR nm_agrup = 'publica afetada_coletiva_privada')
-ORDER BY area_count DESC
-LIMIT 1) foo ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
+ORDER BY area_count DESC LIMIT 1) foo ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
 
 
