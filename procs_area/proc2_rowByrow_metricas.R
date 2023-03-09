@@ -26,23 +26,23 @@ error=function(cond) {
 #dbListTables(connec)[order(dbListTables(connec))]
 
 #dados zonais
-car <- raster('../../outputs/car/proc2_array_agg.tif')
+car <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
 NAvalue(car) <- 0
 #desmatamento
-desmatamento <- raster('/home/pedro/hd1/dados_GPP/uso_terra/desmatamento/PRODES/pa_br_desmatamento_PRODES_30m_2000-2021.tif')
+desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/desmatamento/PRODES/pa_br_desmatamento_PRODES_30m_2000-2021.tif')
 #infra
 rodovias <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/rodovias/pa_br_rodoviasProximity_DNIT_30m_2021.tif')
 ferrovias <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/ferrovias/pa_br_ferroviasProximity_DNIT_30m_2021.tif')
 silos <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/silos/pa_br_silosProximity_30m.tif')
 frigorificos <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/silos/pa_br_frigorificosProximity_30m.tif')
 #aptidao
-aptidao <- raster('/home/pedro/hd1/dados_GPP/uso_terra/mapbiomas/c7/pa_br_usoterra_1986_mapbiomas7_30m.tif')
+aptidao <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/biofisicos/aptidao/pa_br_csr_30m.tif')
 #uso da terra
 mpb2000 <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2000_mapbiomas7_30m.tif')
-mpb2005 <- raster('/home/pedro/hd1/dados_GPP/uso_terra/mapbiomas/c7/pa_br_usoterra_2005_mapbiomas7_30m.tif')
-mpb2010 <- raster('/home/pedro/hd1/dados_GPP/uso_terra/mapbiomas/c7/pa_br_usoterra_2010_mapbiomas7_30m.tif')
-mpb2015 <- raster('/home/pedro/hd1/dados_GPP/uso_terra/mapbiomas/c7/pa_br_usoterra_2015_mapbiomas7_30m.tif')
-mpb2021 <- raster('/home/pedro/hd1/dados_GPP/uso_terra/mapbiomas/c7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
+mpb2005 <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2005_mapbiomas7_30m.tif')
+mpb2010 <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2010_mapbiomas7_30m.tif')
+mpb2015 <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2015_mapbiomas7_30m.tif')
+mpb2021 <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
 
 
 
@@ -80,7 +80,7 @@ dbSendQuery(connec, 'CREATE INDEX proc1_contagem_uso_car_idx ON public.proc1_con
             
             
 #Cluster start
-cl <- snow::makeSOCKcluster(32, outfile="")
+cl <- snow::makeSOCKcluster(16, outfile="")
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
