@@ -6,7 +6,7 @@ library(pacman)
 p_load( raster, rgdal,   dplyr, doMPI, snow,  RPostgreSQL)
 #setwd('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area')
 #source('funcoes.R')
-start <- Sys.time()
+
 source('funcoes_metricas.R')
 tryCatch({
   drv <- dbDriver("PostgreSQL")
@@ -22,7 +22,7 @@ tryCatch({
 error=function(cond) {
   print("Unable to connect to Database.")
 })
-
+start <- Sys.time()
 #dbListTables(connec)[order(dbListTables(connec))]
 
 #dados zonais
@@ -94,3 +94,9 @@ run()
 
 snow::stopCluster(cl)
 print(paste0('Elapsed time: ', Sys.time()-start))
+
+
+
+
+
+
