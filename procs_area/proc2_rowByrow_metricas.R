@@ -58,7 +58,8 @@ dbSendQuery(connec, 'CREATE TABLE public.proc1_contagem_infra (
 	ferrovias integer NULL,
 	silos integer NULL,
 	frigorificos integer NULL,
-	aptidao decimal NULL
+	aptidao decimal NULL,
+	area integer null
 );')
 dbSendQuery(connec, 'CREATE INDEX proc1_contagem_infra_car_idx ON public.proc1_contagem_infra (car);
                     CREATE INDEX proc1_contagem_infra_gid_idx ON public.proc1_contagem_infra (gid);')
