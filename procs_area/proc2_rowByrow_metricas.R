@@ -34,7 +34,7 @@ desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espacia
 rodovias <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/rodovias/pa_br_rodoviasProximity_DNIT_30m_2021.tif')
 ferrovias <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/ferrovias/pa_br_ferroviasProximity_DNIT_30m_2021.tif')
 silos <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/silos/pa_br_silosProximity_30m.tif')
-frigorificos <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/silos/pa_br_frigorificosProximity_30m.tif')
+frigorificos <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/infra/frigorificos/pa_br_frigorificosProximity_30m.tif')
 #aptidao
 aptidao <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/biofisicos/aptidao/pa_br_csr_30m.tif')
 #uso da terra
