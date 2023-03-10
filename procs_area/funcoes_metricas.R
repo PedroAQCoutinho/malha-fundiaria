@@ -17,7 +17,8 @@ resume <- function(i) {
     frigorificos = getValues(frigorificos, row = bss$row[i], nrows = bss$nrows[i]),
     aptidao = getValues(aptidao, row = bss$row[i], nrows = bss$nrows[i])) %>%
     filter(!is.na(car)) %>%
-    mutate(desmatamento = ifelse(desmatamento == 0, 0, 1)) %>%
+    mutate(desmatamento = ifelse(desmatamento == 0, 0, 1),
+           value = 1) %>%
     group_by(car, desmatamento) %>%
     summarise(
       desmatamento = sum(desmatamento, na.rm=T),
@@ -25,7 +26,8 @@ resume <- function(i) {
       ferrovias = min(ferrovias, na.rm=T),
       silos = min(silos, na.rm=T),
       frigorificos = min(frigorificos, na.rm=T),
-      aptidao = mean(aptidao, na.rm=T))
+      aptidao = mean(aptidao, na.rm=T),
+      area = sum(value, na.rm = T))
   
   
   
