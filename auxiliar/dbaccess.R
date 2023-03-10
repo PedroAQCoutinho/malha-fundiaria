@@ -16,4 +16,5 @@ error=function(cond) {
 })
 
 
-dt <- dbGetQuery(connec, 'select gid, area_imovel, tipo_imove, uf, cod_munici, cd_bioma, flag, nm_cat_fund, nm_agrup, is_recente, is_ocupa_irregular, is_grande, tipo FROM irregularidades.proc5_step14_tipo_oii psto')
+dt <- dbGetQuery(connec, 'select gid, area_imovel, tipo_imove, uf, cod_munici, cd_bioma, flag, nm_cat_fund, nm_agrup, is_recente, 
+is_ocupa_irregular, is_grande, tipo FROM irregularidades.proc5_step14_tipo_oii psto')
