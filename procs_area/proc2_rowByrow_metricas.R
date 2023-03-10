@@ -80,7 +80,7 @@ dbSendQuery(connec, 'CREATE INDEX proc1_contagem_uso_car_idx ON public.proc1_con
             
             
 #Cluster start
-cl <- snow::makeSOCKcluster(64, outfile="")
+cl <- snow::makeSOCKcluster(16, outfile="")
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
