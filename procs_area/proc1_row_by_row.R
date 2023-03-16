@@ -6,6 +6,7 @@ library(pacman)
 p_load( raster, rgdal,   dplyr, doMPI, snow,  RPostgreSQL)
 #setwd('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area')
 #source('funcoes.R')
+source('../malha-fundiaria/procs_area/funcoes.R')
 start <- Sys.time()
 tryCatch({
   drv <- dbDriver("PostgreSQL")
@@ -22,16 +23,12 @@ error=function(cond) {
   print("Unable to connect to Database.")
 })
 
-source('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/funcoes.R')
-
-
-#dbListTables(connec)[order(dbListTables(connec))]
 
 #dados
-desmatamento <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/uso_solo/desmatamento/PRODES/pa_br_desmatamento_PRODES_30m_2000-2021.tif')
-car <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/limites_administrativos/car/proc2_array_agg.tif')
+desmatamento <- raster('../../outputs/geotiffs/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+car <- raster('../../outputs/car/proc2_array_agg.tif')
 NAvalue(car) <- 0
-cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/arquivos/dados_espaciais/projetos/escolhas/step14_overlay.tif')
+cat_fund <- raster('../../outputs/geotiffs/step14_overlay.tif')
 NAvalue(cat_fund) <- 0
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 100) ; bss
@@ -41,7 +38,7 @@ output <- vector('list', bss$n)
 
 
 #Cluster start
-cl <- snow::makeSOCKcluster(16, outfile="")
+cl <- snow::makeSOCKcluster(4, outfile="")
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
@@ -49,9 +46,18 @@ snow::clusterEvalQ(cl, library(dplyr))
 snow::clusterExport(cl=cl,
                     ls())
 
+
+
 atualiza_dt()
-output <- data.frame(do.call(rbind, output))
-saveRDS(output, 'proc1_area.rds')
-dbWriteTable(connec, 'proc1_area', output)
+
+
+
 snow::stopCluster(cl)
 print(paste0('Elapsed time: ', Sys.time()-start))
+
+
+
+
+
+
+
