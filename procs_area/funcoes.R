@@ -14,8 +14,10 @@ resume <- function(i) {
     summarise(count = n())
   
     return(list(dt))
-
+  
 }
+
+
 
 
 
@@ -28,12 +30,13 @@ atualiza_dt <- function() {
     snow::sendCall(cl[[i]], resume, i, tag = i)
   }
   
+  #outwriteStart
   
   #Spread the blocks over the processes
   for (i in 1:bss$n) {
 
     ini <- Sys.time()
-    # receive results from a node
+    # receive results from a node - aqui está a sua tabela da funcao resume
     d <- recvOneData(cl)
     # error?
     if (!d$value$success) {
@@ -42,19 +45,31 @@ atualiza_dt <- function() {
       flush.console();
       stop('cluster error')
     }
+    
+    
     # need to send more data?
     ni <- nodes + i
     if (ni <= bss$n) {
       sendCall(cl[[d$node]], resume, ni, tag = ni)
     }
+    
+    
+    
     # which block is this?
     b <- d$value$tag
     print(paste0('recebido bloco: ', b)) ; 
     flush.console()
     
+    
+    
+    #MEXE AQUI
     #atualiza o objeto dt por conta do superassignment <<-
     output[[i]] <<-  d$value$value[[1]]
     #print( d$value$value[[1]] )
+    
+    
+    
+    
     rm(d)
     print(Sys.time()-ini)
     
