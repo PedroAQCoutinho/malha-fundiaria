@@ -1,13 +1,13 @@
 DROP TABLE IF EXISTS layer_fundiario.proc4_step14_id_label;
 CREATE TABLE layer_fundiario.proc4_step14_id_label (
 	gid int4 NULL,
-	original_layer _text NULL,
+	original_layer text[] NULL,
 	am_legal bool NULL,
 	cd_bioma int4 NULL,
 	cd_mun int4 NULL,
 	area float8 NULL,
-	orilayer _int NULL,
-	orilabel _text NULL,
+	orilayer integer[] NULL,
+	orilabel text[] NULL,
 	nm_agrup text NULL,
 	nm_cat_fund text NULL,
 	geom public.geometry NULL
