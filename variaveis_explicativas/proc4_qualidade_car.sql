@@ -1,12 +1,11 @@
-
-
-
 DROP TABLE IF EXISTS variaveis_explicativas.proc4_qualidade_car;
 CREATE TABLE variaveis_explicativas.proc4_qualidade_car (
 
 id_car_original integer null, 
 area_imovel decimal NULL,
 m_fiscal integer NULL,
+am_legal boolean null,
+cd_mun integer null,
 tipo_irregularidade text NULL,
 qualidade_car text NULL
 
@@ -22,7 +21,7 @@ CREATE INDEX proc4_qualidade_car_qualidade_car_idx ON variaveis_explicativas.pro
 
 
 INSERT INTO variaveis_explicativas.proc4_qualidade_car
-SELECT a.gid id_car_original, a.area area_imovel, m_fiscal, d.tipo_irregularidade ,
+SELECT a.gid id_car_original, a.area area_imovel, m_fiscal,am_legal, cd_mun, d.tipo_irregularidade ,
 CASE 
 	WHEN m_fiscal <= 4 AND 1-(area_poligono/a.area) > 0.1 THEN 'poor'
 	WHEN m_fiscal > 4 AND m_fiscal <= 15 AND 1-(area_poligono/a.area) > 0.03 THEN 'poor'
