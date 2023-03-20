@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS layer_fundiario.proc3_step14_id_label;
+DROP TABLE IF EXISTS layer_fundiario.step14_id_label;
 CREATE TABLE layer_fundiario.step14_id_label (
 	gid int4 NULL,
 	original_layer _text NULL,
