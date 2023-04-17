@@ -1,6 +1,6 @@
 
 \echo RUN :var_proc
-INSERT INTO irregularidades.proc7_step14_categorizacao_1404 (car,  area_imovel, am_legal, cd_mun, cd_bioma, nm_agrup, nm_cat_fund, is_grande, is_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
+INSERT INTO irregularidades.proc7_step14_categorizacao_1404 (car,  area_imovel, am_legal, cd_mun, cd_bioma, nm_agrup, nm_cat_fund, is_grande, is_recente, is_desm_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
 SELECT 
 a.gid car, 
 a.area area_imovel, 
@@ -11,6 +11,7 @@ d.nm_agrup,
 d.nm_cat_fund , 
 is_grande, 
 is_recente , 
+is_desm_recente,
 b.desmatamento,  
 is_local_restrito, 
 CASE 
@@ -32,9 +33,10 @@ CASE
 END tipo_irregularidade, valid_geom geom
 FROM dados_brutos.valid_sicar_imovel a
 LEFT JOIN irregularidades.proc3_step14_ano_ocupacao b ON a.gid = b.gid
-LEFT JOIN irregularidades.proc4_step14_tamanho_ocupacao c ON a.gid = c.car
+LEFT JOIN irregularidades.proc4_step14_tamanho_ocupacaov2 c ON a.gid = c.car
 LEFT JOIN irregularidades.proc5_step14_categoria_fundiaria d ON a.gid = d.car
 LEFT JOIN irregularidades.proc6_step14_local_restrito e ON a.gid = e.car
+LEFT JOIN irregularidades.proc8_step14_desmatamento_recente f ON a.gid = f.car
 LEFT JOIN LATERAL (SELECT * FROM irregularidades.proc23_step14_desmatamento_anual h 
 WHERE h.car = a.gid ORDER BY h.area_count DESC LIMIT 1 ) foo
 ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
