@@ -36,7 +36,7 @@ LEFT JOIN irregularidades.proc3_step14_ano_ocupacao b ON a.gid = b.gid
 LEFT JOIN irregularidades.proc4_step14_tamanho_ocupacao c ON a.gid = c.car
 LEFT JOIN irregularidades.proc5_step14_categoria_fundiaria d ON a.gid = d.car
 LEFT JOIN irregularidades.proc6_step14_local_restrito e ON a.gid = e.car
-LEFT JOIN irregularidades.proc8_step14_desmatamento_recente f ON a.gid = f.car
+LEFT JOIN irregularidades.proc8_step14_desmatamento_recente f ON a.gid = f.gid
 LEFT JOIN LATERAL (SELECT * FROM irregularidades.proc23_step14_desmatamento_anual h 
 WHERE h.car = a.gid ORDER BY h.area_count DESC LIMIT 1 ) foo
 ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
