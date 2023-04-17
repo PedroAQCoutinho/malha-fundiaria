@@ -12,7 +12,7 @@ d.nm_cat_fund ,
 is_grande, 
 is_recente , 
 is_desm_recente,
-e.desmatamento,  
+b.desmatamento,  
 is_local_restrito, 
 CASE 
 	WHEN tipo_imove = 'IRU' AND ( d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada'))
@@ -40,7 +40,6 @@ LEFT JOIN irregularidades.proc8_step14_desmatamento_recente f ON a.gid = e.car
 LEFT JOIN LATERAL (SELECT * FROM irregularidades.proc23_step14_desmatamento_anual h 
 WHERE h.car = a.gid ORDER BY h.area_count DESC LIMIT 1 ) foo
 ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
-
 
 
 
