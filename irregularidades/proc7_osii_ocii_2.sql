@@ -33,7 +33,7 @@ CASE
 END tipo_irregularidade, valid_geom geom
 FROM dados_brutos.valid_sicar_imovel a
 LEFT JOIN irregularidades.proc3_step14_ano_ocupacao b ON a.gid = b.gid
-LEFT JOIN irregularidades.proc4_step14_tamanho_ocupacaov2 c ON a.gid = c.car
+LEFT JOIN irregularidades.proc4_step14_tamanho_ocupacao c ON a.gid = c.car
 LEFT JOIN irregularidades.proc5_step14_categoria_fundiaria d ON a.gid = d.car
 LEFT JOIN irregularidades.proc6_step14_local_restrito e ON a.gid = e.car
 LEFT JOIN irregularidades.proc8_step14_desmatamento_recente f ON a.gid = f.car
