@@ -4,7 +4,16 @@
 \echo  
 \echo  
 
+
+-- Esse código se presta a construir as camadas de input livres de autosobreposição.
+-- Na etapa proc4_inputs_autointersection_clean_1 são criadas as tabelas vazias e nessa etapa são populadas.
+-- A regra descrita em linguagem humana é: 
+-- 1. Onde houve feições de autosobreposição, ST_Difference(feicao_autosobreposição, camada original)
+--union all
+-- 2. Feicoes de sobreposição
+
 -- Popular a tabela maior
+
 
 INSERT INTO inputs.input_terrasindigenas_funai_2022 (original_gid, cd_layer, geom)
 SELECT 
