@@ -4,21 +4,17 @@
 \echo  
 
 
+-- Esse script se presta a identificar feições de autosobreposição entre as camadas. 
+-- A lógica funciona apenas para locais em que há duas autosobreposições. Se houve mais que duas não funciona perfeitamente.
+-- Para o CAR isso foi corrigido. Melhoria futura.
+
+
+
 INSERT INTO autointersection.autointersection_input_terrasindigenas_funai_2022
 SELECT ROW_NUMBER() OVER () gid, a.gid agid, b.gid bgid, (ST_Dump(ST_CollectionExtract(ST_Intersection(a.valid_geom, b.valid_geom), 3))).geom geom
 FROM dados_brutos.valid_geoft_terra_indigena a
 JOIN dados_brutos.valid_geoft_terra_indigena b 
 ON ST_Intersects(a.valid_geom, b.valid_geom) AND a.gid <> b.gid AND a.gid < b.gid WHERE (a.gid % :var_num_proc) = :var_proc;
-
-
-
-
-
-
-
-
-
-
 
 
 
