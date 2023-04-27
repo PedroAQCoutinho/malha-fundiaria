@@ -7,6 +7,7 @@ export PGPASSWORD='gpp-es@lq'
 procName=aux
 
 
+
 psql -U $userName -d $databaseName -f ${procName}_1.sql
 
 
