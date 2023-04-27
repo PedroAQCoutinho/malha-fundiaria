@@ -28,6 +28,7 @@ done
 wait
 
 
+
 #If sql 2 exists execute it
 for ((i=0; i < ${numProc}; i++))
 do
