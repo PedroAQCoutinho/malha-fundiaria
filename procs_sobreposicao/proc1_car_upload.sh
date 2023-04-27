@@ -18,6 +18,7 @@ psql -U postgres -d malha_fundiaria -c "CREATE INDEX valid_sicar_imovel_valid_ge
 
 
 
+
 psql -U postgres -d malha_fundiaria -c "DROP TABLE IF EXISTS autointersection.autointersection_input_sicar_imovel;"
 psql -U postgres -d malha_fundiaria -c "CREATE TABLE autointersection.autointersection_input_sicar_imovel
 (
