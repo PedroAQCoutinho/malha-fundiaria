@@ -4,7 +4,7 @@
 \echo  
 
 
--- Esse script se presta a identificar feições de autosobreposição entre as camadas. 
+-- Esse script se presta a identificar feições de autosobreposição intracamada. 
 -- A lógica funciona apenas para locais em que há duas autosobreposições. Se houve mais que duas não funciona perfeitamente.
 -- Para o CAR isso foi corrigido. Melhoria futura.
 
