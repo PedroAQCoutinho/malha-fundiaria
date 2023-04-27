@@ -12,6 +12,7 @@ CREATE INDEX valid_imovel_certificado_snci_publico_geom_idx ON dados_brutos.vali
 
 
 
+
 --Quilombolas
 \echo areas_de_quilombolas
 \echo  
