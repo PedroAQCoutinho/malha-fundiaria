@@ -3,6 +3,7 @@
 \echo  
 \echo  
 
+
 -- Esse script se presta a construir as tabelas vazias que serão populadas na proxima etapa.
 -- Essas tabelas abrigarão os inputs livres de sobreposição
 
