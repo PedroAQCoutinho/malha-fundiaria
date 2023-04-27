@@ -12,6 +12,7 @@ done
 
 
 
+
 --TERRAS INDÍGENAS
 shp2pgsql -c -I "/home/pedro/hd1/pedro/GPP/ltmodel/inputs/dados_INCRA_2022/GEOFT_TERRA_INDIGENA.shp" dados_brutos.GEOFT_TERRA_INDIGENA | psql -U postgres -d malha_fundiaria
 --UNIDADES DE CONSERVAÇÃO
