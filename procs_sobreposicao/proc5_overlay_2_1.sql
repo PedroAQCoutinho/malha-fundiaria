@@ -17,3 +17,4 @@ ON
 	ST_Intersects(a.geom, b.geom)
 WHERE 
 	(a.gid % :var_num_proc) = :var_proc;
+	
