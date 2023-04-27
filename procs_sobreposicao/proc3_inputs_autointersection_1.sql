@@ -4,6 +4,8 @@
 \echo  
 
 
+--Tabelas que serão populadas na próxima etapa
+
 -- Autointersecção
 DROP TABLE IF EXISTS autointersection.autointersection_input_terrasindigenas_funai_2022;
 CREATE TABLE autointersection.autointersection_input_terrasindigenas_funai_2022
