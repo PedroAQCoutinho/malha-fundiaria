@@ -58,7 +58,9 @@ echo Elapsed:
 displaytime $SECONDS
 
 
-psql -U $userName -d $databaseName -c "select cd_grid from grid.gridbr_filtrado" > cd_grid.txt
+psql -U $userName -d $databaseName -c "SELECT avg(cd_grid) cd_grid FROM grid.adm3_overlay WHERE am_legal 
+GROUP BY cd_grid, am_legal
+ORDER BY am_legal DESC, cd_grid" > cd_grid.txt
 
 
 #bash bash_queue_run.sh > log_split 2>&1 
