@@ -11,7 +11,7 @@ userName=postgres
 databaseName=malha_fundiaria
 procName=proc1_malhav2
 
-
+psql -U $userName -d $databaseName -f functionsv2.sql
 psql -U $userName -d $databaseName -f ${procName}_1.sql
 
   # Clean Q array
