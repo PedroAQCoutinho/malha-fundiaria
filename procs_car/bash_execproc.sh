@@ -3,7 +3,7 @@ start_date="$(date)"
 SECONDS=0
 userName=postgres
 databaseName=malha_fundiaria
-numProc=112
+numProc=8
 procName=proc1_overlay
 export PGPASSWORD='gpp-es@lq'
 
@@ -22,23 +22,23 @@ function displaytime {
 }
 
 
-#psql -U $userName -d $databaseName -f ${procName}_1.sql
+psql -U $userName -d $databaseName -f ${procName}_1.sql
 #
 #
 ##If sql 2 exists execute it
-#for ((i=0; i < ${numProc}; i++))
-#do
-#    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
-#done 
-#wait
+for ((i=0; i < ${numProc}; i++))
+do
+    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
+done 
+wait
 #
 #
 ##If sql 2 exists execute it
-#for ((i=0; i < ${numProc}; i++))
-#do
-#    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_3.sql &
-#done 
-#wait
+for ((i=0; i < ${numProc}; i++))
+do
+    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_3.sql &
+done 
+wait
 
 #If sql 2 exists execute it
 for ((i=0; i < ${numProc}; i++))
@@ -58,6 +58,7 @@ echo Elapsed:
 displaytime $SECONDS
 
 
+psql -U $userName -d $databaseName -c "select cd_grid from grid.gridbr_filtrado" > cd_grid.txt
 
 
 #bash bash_queue_run.sh > log_split 2>&1 
