@@ -54,3 +54,35 @@ $func$;
 
 
 
+
+
+---SELECION
+CREATE OR REPLACE FUNCTION get_table_data(grid integer)
+RETURNS TABLE (gid int, original_layer text, original_gid int, geom geometry) AS
+$$
+DECLARE
+   tabela public.mytable%ROWTYPE;
+   tab TEXT;
+BEGIN
+	FOR tab IN (SELECT nm_dado_original_valid_geom FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom IS NOT NULL) LOOP	
+	raise notice 'Run';	
+	raise notice 'Tabela: %', tab;	
+    RETURN QUERY EXECUTE format('
+	
+	SELECT cd_grid, ''%s'' original_layer, 
+	b.gid original_gid, ST_Intersection(ST_SETSRID(b.valid_geom, 4326), ST_SETSRID(a.geom, 4326)) geom FROM grid.adm3_overlay a
+	LEFT JOIN dados_brutos.%I b ON ST_Intersects(ST_SETSRID(a.geom, 4326), ST_SETSRID(b.valid_geom, 4326)) WHERE cd_grid = %s %s
+	UNION ALL
+	SELECT cd_grid, ''GRID'' original_layer, ao.gid original_gid, geom FROM grid.adm3_overlay ao WHERE cd_grid = %s', 
+	(SELECT a.label FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom = tab), 
+	tab, 
+	grid,
+	(SELECT a.where_clause FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom = tab),
+	grid);
+
+RETURN NEXT;
+END LOOP;
+RETURN;
+END;
+$$ 
+LANGUAGE plpgsql VOLATILE;
