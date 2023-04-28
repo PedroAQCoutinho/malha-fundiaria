@@ -70,7 +70,7 @@ CREATE INDEX gridbr_idx_geom ON grid.gridbr USING GIST (geom);
 
 INSERT INTO grid.gridbr
 SELECT ROW_NUMBER() OVER () id, *
-FROM  ST_CreateFishnet(4100, 4000, 0.3, 0.3, -74.3904499689998971, -34.7511779939999457) AS cells;
+FROM  ST_CreateFishnet(4100, 4000, 0.1, 0.1, -74.3904499689998971, -34.7511779939999457) AS cells;
 
 
 
