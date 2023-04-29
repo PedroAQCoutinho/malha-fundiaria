@@ -4,6 +4,7 @@ CREATE TABLE car.proc2_array_agg (
 
 gid serial NOT null,
 original_gid int[] null,
+original_layer text[] null,
 cd_grid integer null, 
 cd_mun integer null, 
 am_legal boolean null ,
