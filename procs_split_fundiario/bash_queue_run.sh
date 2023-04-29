@@ -11,6 +11,16 @@ userName=postgres
 databaseName=malha_fundiaria
 procName=proc1_malhav2
 
+
+psql -U $userName -d $databaseName -c "SELECT cd_grid FROM (SELECT avg(cd_grid)::integer cd_grid FROM grid.adm2_overlay 
+WHERE am_legal 
+GROUP BY cd_grid, am_legal
+ORDER BY am_legal DESC, cd_grid) foo 
+LEFT JOIN (SELECT DISTINCT cd_grid, TRUE exis FROM malhav2.proc2_malhav2 pm) bar 
+using(cd_grid) WHERE exis IS TRUE " > cd_grid.txt
+
+
+
 psql -U $userName -d $databaseName -f functionsv2.sql
 psql -U $userName -d $databaseName -f ${procName}_1.sql
 
