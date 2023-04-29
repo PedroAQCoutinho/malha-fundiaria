@@ -11,26 +11,19 @@ userName=postgres
 databaseName=malha_fundiaria
 procName=proc1_malhav2
 
-psql -U $userName -d $databaseName -c "DROP TABLE IF EXISTS malhav2.aux_distinct;
-CREATE TABLE malhav2.aux_distinct AS 
-SELECT DISTINCT cd_grid FROM malhav2.proc2_malhav2 pm;
-
-CREATE INDEX aux_distinct_cd_grid_idx ON malhav2.aux_distinct USING GIST (cd_grid);" 
 
 
-psql -U $userName -d $databaseName -c "SELECT cd_grid FROM (SELECT avg(cd_grid)::integer cd_grid FROM grid.adm2_overlay 
+psql -U $userName -d $databaseName -c "SELECT avg(cd_grid)::integer cd_grid FROM grid.adm2_overlay 
 WHERE am_legal 
 GROUP BY cd_grid, am_legal
-ORDER BY am_legal DESC, cd_grid) foo 
-LEFT JOIN (SELECT DISTINCT cd_grid, TRUE exis FROM malhav2.proc2_malhav2 pm) bar 
-using(cd_grid) WHERE exis IS TRUE " > cd_grid.txt
+ORDER BY am_legal DESC, cd_grid " > cd_grid.txt
 
 
 
 
 
 psql -U $userName -d $databaseName -f functionsv2.sql
-#psql -U $userName -d $databaseName -f ${procName}_1.sql
+psql -U $userName -d $databaseName -f ${procName}_1.sql
 
   # Clean Q array
   function _clean {
