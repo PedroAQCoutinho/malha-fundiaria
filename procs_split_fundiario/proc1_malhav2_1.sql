@@ -20,6 +20,13 @@ CREATE INDEX proc2_malhav2_cd_grid_idx ON malhav2.proc2_malhav2 USING btree (cd_
 
 
 
+DROP TABLE IF EXISTS malhav2.aux_distinct;
+CREATE TABLE malhav2.aux_distinct (
+cd_grid integer
+)
+
+CREATE INDEX aux_distinct_cd_grid_idx ON malhav2.aux_distinct USING btree (cd_grid);
+
 
 
 
