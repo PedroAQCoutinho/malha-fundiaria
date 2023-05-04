@@ -10,4 +10,4 @@ is_gleba, is_assentamento, original_layer_label, nm_cat_fund, nm_agrup, geom
 FROM malhav2.proc5_malha a 
 LEFT JOIN auxiliares.nomenclatura_categorias_e_agrupamentos_fundiarios b 
 ON a.original_layer_label = b.original_layer
-WHERE (a.cat_fund % :var_num_proc) = :var_proc
+WHERE (a.gid % :var_num_proc) = :var_proc
