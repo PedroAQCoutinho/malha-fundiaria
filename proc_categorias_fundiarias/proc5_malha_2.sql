@@ -73,7 +73,7 @@ array_replace(array_remove(array_remove(array_remove(original_layer, 'FF'),'CAR'
 'SIGEFPRIV', 'IMOVEL'), 
 'SNCIPRIV', 'IMOVEL'))) original_layer_label,
 geom
-FROM malhav2.proc2_malhav2 pm 
+FROM malhav2.proc2_malhav2 a 
 WHERE (a.gid % :var_num_proc) = :var_proc
 
 
