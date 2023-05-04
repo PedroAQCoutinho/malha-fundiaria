@@ -8,7 +8,7 @@ CREATE TABLE malhav2.proc6_malha (
     is_car boolean null,
     is_faixafronteira boolean null,
     is_militar boolean null,
-    is_massasdagua boolean null,
+    is_massadagua boolean null,
     is_quilombola boolean null,
     is_ucpi boolean null,
     is_ucus boolean null,
