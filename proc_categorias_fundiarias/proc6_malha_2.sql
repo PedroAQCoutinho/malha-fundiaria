@@ -4,7 +4,7 @@
 INSERT INTO malhav2.proc6_malha (gid,original_gid ,original_layer,cd_grid,area, is_car,is_faixafronteira,is_militar,
 is_massasdagua,is_quilombola,is_ucpi,is_ucus,is_ucusapa,is_ti,is_imovel,is_gleba,is_assentamento,
 original_layer_label,nm_cat_fund,nm_agrup,geom)
-SELECT gid, original_gid, original_layer, cd_grid, area, is_car, is_faixafronteira,
+SELECT gid, original_gid, a.original_layer, cd_grid, area, is_car, is_faixafronteira,
 is_militar, is_massasdagua, is_quilombola, is_ucpi, is_ucus, is_ucusapa, is_ti, is_imovel,
 is_gleba, is_assentamento, original_layer_label, nm_cat_fund, nm_agrup, geom
 FROM malhav2.proc5_malha a 
