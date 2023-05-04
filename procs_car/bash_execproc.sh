@@ -58,7 +58,7 @@ echo Elapsed:
 displaytime $SECONDS
 
 
-psql -U $userName -d $databaseName -c "SELECT avg(cd_grid)::integer cd_grid FROM grid.adm3_overlay WHERE am_legal 
+psql -U $userName -d $databaseName -c "SELECT avg(cd_grid)::integer cd_grid FROM grid.adm2_overlay WHERE am_legal 
 GROUP BY cd_grid, am_legal
 ORDER BY am_legal DESC, cd_grid" > cd_grid.txt
 
