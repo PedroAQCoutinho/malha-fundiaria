@@ -17,5 +17,3 @@ wait
 
 echo Terminou
 
-
-
