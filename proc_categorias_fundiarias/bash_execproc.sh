@@ -4,7 +4,7 @@ numProc=16
 procName=proc5_malha
 export PGPASSWORD='gpp-es@lq'
 
-psql -U $userName -d $databaseName -f ${procName}.sql
+psql -U $userName -d $databaseName -f ${procName}_1.sql
 
 
 #If sql 2 exists execute it
