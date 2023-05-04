@@ -17,8 +17,6 @@ CREATE TABLE malhav2.proc5_malha (
     is_gleba boolean null,
     is_assentamento boolean null,
     original_layer_label _text NULL,
-    nm_cat_fund text null,
-    nm_agrup text null,
 	geom public.geometry NULL
 );
 
