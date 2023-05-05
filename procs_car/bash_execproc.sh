@@ -3,7 +3,7 @@ start_date="$(date)"
 SECONDS=0
 userName=postgres
 databaseName=malha_fundiaria
-numProc=8
+numProc=32
 procName=proc1_overlay
 export PGPASSWORD='gpp-es@lq'
 
