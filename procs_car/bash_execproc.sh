@@ -7,6 +7,9 @@ numProc=32
 procName=proc1_overlay
 export PGPASSWORD='gpp-es@lq'
 
+echo "PID of $0: $$"
+echo "Parameter: $1"
+
 
 function displaytime {
   local T=$1
@@ -42,3 +45,10 @@ echo Elapsed:
 displaytime $SECONDS
 
 
+
+if pgrep bash >/dev/null
+then
+     echo "Process is running."
+else
+     echo "Process is not running."
+fi
