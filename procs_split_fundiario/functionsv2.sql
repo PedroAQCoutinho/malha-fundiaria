@@ -84,16 +84,17 @@ CREATE OR REPLACE FUNCTION inserto_array_agg(grid int)
 $func$
 BEGIN
    EXECUTE format('
-        INSERT INTO malhav2.proc2_malhav2 (original_gid, original_layer, cd_grid, area, geom) 
+        INSERT INTO malhav2.proc2_malhav3 (original_gid, original_layer, cd_mun, cd_grid, area, geom) 
         SELECT
         array_agg(b.original_gid) original_gid,
         array_agg(original_layer) original_layer,
+        cd_mun,
         cd_grid,
         ST_Area(ST_Union(ST_Force2d(a.geom))::geography)/10000 area,
         ST_Union(ST_Force2d(a.geom)) geom
         FROM split_polygons_%s a 
         LEFT JOIN fdump_%s b ON ST_Intersects(ST_Buffer(ST_Force2d(a.geom)::geography, -5), ST_Force2d(b.geom)) 
-        GROUP BY bin, cd_grid;', grid, grid);
+        GROUP BY bin, cd_mun, cd_grid;', grid, grid);
 END
 $func$;
 
