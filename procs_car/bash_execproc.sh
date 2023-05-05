@@ -22,23 +22,7 @@ function displaytime {
 }
 
 
-psql -U $userName -d $databaseName -f ${procName}_1.sql
-#
-#
-##If sql 2 exists execute it
-for ((i=0; i < ${numProc}; i++))
-do
-    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
-done 
-wait
-#
-#
-##If sql 2 exists execute it
-for ((i=0; i < ${numProc}; i++))
-do
-    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_3.sql &
-done 
-wait
+
 
 #If sql 2 exists execute it
 for ((i=0; i < ${numProc}; i++))
@@ -58,9 +42,3 @@ echo Elapsed:
 displaytime $SECONDS
 
 
-psql -U $userName -d $databaseName -c "SELECT avg(cd_grid)::integer cd_grid FROM grid.adm2_overlay WHERE am_legal 
-GROUP BY cd_grid, am_legal
-ORDER BY am_legal DESC, cd_grid" > cd_grid.txt
-
-
-#bash bash_queue_run.sh > log_split 2>&1 
