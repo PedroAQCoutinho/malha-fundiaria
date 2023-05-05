@@ -1,6 +1,6 @@
 
 DROP TABLE IF EXISTS malhav2.proc2_malhav3;
-CREATE TABLE malhav2.proc2_malhav2 (
+CREATE TABLE malhav2.proc2_malhav3 (
 
 gid serial NOT null,
 original_gid int[] null,
