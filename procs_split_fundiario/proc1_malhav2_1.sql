@@ -6,6 +6,7 @@ gid serial NOT null,
 original_gid int[] null,
 original_layer text[] null,
 cd_mun integer null,
+cd_bioma integer null,
 cd_grid integer null, 
 area decimal null,
 geom geometry null
@@ -17,7 +18,7 @@ CREATE INDEX proc2_malhav2_gid_idx ON malhav2.proc2_malhav2 USING btree (gid);
 CREATE INDEX proc2_malhav2_geom_idx ON malhav2.proc2_malhav2 USING GIST (geom);
 CREATE INDEX proc2_malhav2_cd_mun_idx ON malhav2.proc2_malhav2 USING btree (cd_mun);
 CREATE INDEX proc2_malhav2_cd_grid_idx ON malhav2.proc2_malhav2 USING btree (cd_grid);
-
+CREATE INDEX proc2_malhav2_cd_bioma_idx ON malhav2.proc2_malhav2 USING btree (cd_bioma);
 
 
 
