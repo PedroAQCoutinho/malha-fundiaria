@@ -1,6 +1,6 @@
 #! /bin/bash
 
-N=15  # Amount of jobs to run in parallel
+N=10  # Amount of jobs to run in parallel
 T=0  # Counter for amount of jobs
 Q=() # Job queue
 FILE='cd_grid.txt'
