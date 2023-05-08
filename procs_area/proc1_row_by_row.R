@@ -24,11 +24,33 @@ error=function(cond) {
 })
 
 
+
+dbSendQuery(connec_local, "
+            
+DROP TABLE IF EXISTS public.proc1_row_by_row; 
+CREATE TABLE public.proc1_row_by_row (
+cat_fund integer null,
+car integer null,
+desmatamento integer null,
+count integer null
+
+);
+
+
+CREATE INDEX proc1_row_by_row_cat_fund_idx ON public.proc1_row_by_row USING btree (cat_fund);
+CREATE INDEX proc1_row_by_row_car_idx ON public.proc1_row_by_row USING btree (car);
+CREATE INDEX proc1_row_by_row_desmatamento_idx ON public.proc1_row_by_row USING btree (desmatamento);
+CREATE INDEX proc1_row_by_row_count_idx ON public.proc1_row_by_row USING btree (count);
+
+")
+
+
+
 #dados
-desmatamento <- raster('../../outputs/geotiffs/pa_br_desmatamento_GPP_30m_1988-2021.tif')
-car <- raster('../../outputs/car/proc2_array_agg.tif')
+desmatamento <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+car <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
 NAvalue(car) <- 0
-cat_fund <- raster('../../outputs/geotiffs/step14_overlay.tif')
+cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/proc2_malhav2.tif')
 NAvalue(cat_fund) <- 0
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 100) ; bss
