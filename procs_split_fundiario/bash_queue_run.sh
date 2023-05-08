@@ -23,7 +23,7 @@ WHERE exis IS NOT TRUE  " > cd_grid.txt
 
 
 psql -U $userName -d $databaseName -f functionsv2.sql
-psql -U $userName -d $databaseName -f ${procName}_1.sql
+#psql -U $userName -d $databaseName -f ${procName}_1.sql
 
   # Clean Q array
   function _clean {
