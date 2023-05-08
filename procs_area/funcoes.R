@@ -64,11 +64,10 @@ atualiza_dt <- function() {
     
     #MEXE AQUI
     #atualiza o objeto dt por conta do superassignment <<-
-    output[[i]] <<-  d$value$value[[1]]
+    
     #print( d$value$value[[1]] )
-    
-    
-    
+    dbWriteTable(connec, 'proc1_row_by_row', y, row.names = F, append = T)
+        
     
     rm(d)
     print(Sys.time()-ini)
