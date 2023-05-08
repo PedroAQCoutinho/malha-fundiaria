@@ -25,7 +25,7 @@ error=function(cond) {
 
 
 
-dbSendQuery(connec_local, "
+dbSendQuery(connec, "
             
 DROP TABLE IF EXISTS public.proc1_row_by_row; 
 CREATE TABLE public.proc1_row_by_row (
