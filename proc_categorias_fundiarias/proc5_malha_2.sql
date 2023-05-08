@@ -1,5 +1,5 @@
 INSERT INTO malhav2.proc5_malha
-SELECT gid, original_gid , original_layer , cd_grid, area,  
+SELECT a.gid, cd_mun, a.original_gid , a.original_layer , a.cd_grid, area,  
 CASE 
 	WHEN 'CAR' = ANY(original_layer) THEN TRUE
 	ELSE FALSE
@@ -74,6 +74,9 @@ array_replace(array_remove(array_remove(array_remove(original_layer, 'FF'),'CAR'
 'SNCIPRIV', 'IMOVEL'))) original_layer_label,
 geom
 FROM malhav2.proc2_malhav2 a 
+LEFT JOIN LATERAL (
+SELECT * FROM malhav2.proc4_unnest pu WHERE  pu.gid = a.gid
+) foo ON TRUE 
 WHERE (a.gid % :var_num_proc) = :var_proc
 
 
