@@ -1,5 +1,7 @@
 -- É preciso saber, para cada agrupamento: cat_fund, car, ano-desmatamento a área total desmatada. 
 -- Além disso, trazer junto informações sobre a categoria fundiária, area e MF do CAR
+\echo desmatamento 1
+
 DROP TABLE IF EXISTS irregularidades.proc21_malha_uso_anual;
 CREATE TABLE irregularidades.proc21_malha_uso_anual (
 cat_fund int NULL,
