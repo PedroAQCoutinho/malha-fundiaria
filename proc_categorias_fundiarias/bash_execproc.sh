@@ -1,7 +1,7 @@
 userName=postgres
 databaseName=malha_fundiaria
 numProc=16
-procName=proc6_malha
+procName=proc5_malha
 export PGPASSWORD='gpp-es@lq'
 
 psql -U $userName -d $databaseName -f ${procName}_1.sql
@@ -13,6 +13,22 @@ do
     psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
 done
 wait
+
+
+procName=proc6_malha
+
+
+psql -U $userName -d $databaseName -f ${procName}_1.sql
+
+
+#If sql 2 exists execute it
+for ((i=0; i < ${numProc}; i++))
+do
+    psql -U $userName -d $databaseName -v var_num_proc=$numProc -v var_proc=$i -f ${procName}_2.sql &
+done
+wait
+
+
 
 
 echo Terminou
