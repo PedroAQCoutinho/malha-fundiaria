@@ -1,3 +1,6 @@
+\echo area raw
+
+
 DROP TABLE irregularidades.proc1_malhav2;
 CREATE TABLE irregularidades.proc1_malhav2 
 (
