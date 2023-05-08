@@ -1,3 +1,5 @@
+\echo desmatamento 3
+
 
 DROP TABLE IF EXISTS irregularidades.proc23_malha_uso_anual ;
 CREATE TABLE irregularidades.proc23_malha_uso_anual
