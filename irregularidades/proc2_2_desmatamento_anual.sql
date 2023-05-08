@@ -1,4 +1,6 @@
 -- Essa tabela não possui duplas contagens (não foi realizado o unnest) e será usada para calcular aŕeas
+\echo desmatamento 2
+
 CREATE TABLE irregularidades.proc22_malha_uso_anual AS 
 SELECT cat_fund, CASE WHEN car IS NOT NULL THEN 1 ELSE 0 END iscar, car gid_car, original_gid, 
 uso,a.area area_count,  cd_grid, c.cd_mun, c.am_legal, c.cd_bioma , nm_agrup, nm_cat_fund, orilabel
