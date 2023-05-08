@@ -27,20 +27,20 @@ error=function(cond) {
 
 dbSendQuery(connec, "
             
-DROP TABLE IF EXISTS public.proc1_row_by_row; 
-CREATE TABLE public.proc1_row_by_row (
+DROP TABLE IF EXISTS public.proc1_row_by_row_mapbiomas; 
+CREATE TABLE public.proc1_row_by_row_mapbiomas (
 cat_fund integer null,
 car integer null,
-desmatamento integer null,
+uso integer null,
 count integer null
 
 );
 
 
-CREATE INDEX proc1_row_by_row_cat_fund_idx ON public.proc1_row_by_row USING btree (cat_fund);
-CREATE INDEX proc1_row_by_row_car_idx ON public.proc1_row_by_row USING btree (car);
-CREATE INDEX proc1_row_by_row_desmatamento_idx ON public.proc1_row_by_row USING btree (desmatamento);
-CREATE INDEX proc1_row_by_row_count_idx ON public.proc1_row_by_row USING btree (count);
+CREATE INDEX proc1_row_by_row_mapbiomas_cat_fund_idx ON public.proc1_row_by_row_mapbiomas USING btree (cat_fund);
+CREATE INDEX proc1_row_by_row_mapbiomas_car_idx ON public.proc1_row_by_row_mapbiomas USING btree (car);
+CREATE INDEX proc1_row_by_row_mapbiomas_uso_idx ON public.proc1_row_by_row_mapbiomas USING btree (uso);
+CREATE INDEX proc1_row_by_row_mapbiomas_count_idx ON public.proc1_row_by_row_mapbiomas USING btree (count);
 
 ")
 
@@ -48,6 +48,7 @@ CREATE INDEX proc1_row_by_row_count_idx ON public.proc1_row_by_row USING btree (
 
 #dados
 desmatamento <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+uso <- raster('/home/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
 car <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
 NAvalue(car) <- 0
 cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/proc2_malhav2.tif')
