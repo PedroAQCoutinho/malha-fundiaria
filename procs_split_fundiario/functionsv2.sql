@@ -84,12 +84,10 @@ CREATE OR REPLACE FUNCTION inserto_array_agg(grid int)
 $func$
 BEGIN
    EXECUTE format('
-        INSERT INTO malhav2.proc2_malhav3 (original_gid, original_layer, cd_mun, cd_bioma, cd_grid, area, geom) 
+        INSERT INTO malhav2.proc2_malhav3 (original_gid, original_layer, cd_grid, area, geom) 
         SELECT
         array_agg(b.original_gid) original_gid,
         array_agg(original_layer) original_layer,
-        cd_mun,
-        cd_bioma,
         cd_grid,
         ST_Area(ST_Union(ST_Force2d(a.geom))::geography)/10000 area,
         ST_Union(ST_Force2d(a.geom)) geom
