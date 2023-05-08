@@ -26,3 +26,4 @@ CREATE TABLE malhav2.proc5_malha (
 CREATE INDEX proc5_malha_cd_grid_idx ON malhav2.proc5_malha USING btree (cd_grid);
 CREATE INDEX proc5_malha_geom_idx ON malhav2.proc5_malha USING gist (geom);
 CREATE INDEX proc5_malha_gid_idx ON malhav2.proc5_malha USING btree (gid);
+CREATE INDEX proc5_malha_original_layer_label_idx ON malhav2.proc5_malha USING btree (original_layer_label);
