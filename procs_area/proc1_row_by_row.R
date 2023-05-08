@@ -6,7 +6,7 @@ library(pacman)
 p_load( raster, rgdal,   dplyr, doMPI, snow,  RPostgreSQL)
 #setwd('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area')
 #source('funcoes.R')
-source('../malha-fundiaria/procs_area/funcoes.R')
+source('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/funcoes.R')
 start <- Sys.time()
 tryCatch({
   drv <- dbDriver("PostgreSQL")
