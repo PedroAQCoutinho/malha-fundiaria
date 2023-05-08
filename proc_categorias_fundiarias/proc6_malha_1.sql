@@ -1,3 +1,5 @@
+\echo starting proc6
+
 DROP TABLE malhav2.proc6_malha;
 CREATE TABLE malhav2.proc6_malha (
 	gid serial4 NOT NULL,
