@@ -7,16 +7,6 @@ numProc=16
 
 
 
-procName=proc1_area_raw
-export PGPASSWORD='gpp-es@lq'
-
-
-psql -U $userName -d $databaseName -f ${procName}.sql
-
-
-procName=proc2_1_desmatamento_anual
-export PGPASSWORD='gpp-es@lq'
-
 
 
 psql -U $userName -d $databaseName -f ${procName}.sql
