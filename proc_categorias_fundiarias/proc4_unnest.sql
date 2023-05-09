@@ -2,7 +2,7 @@ CREATE TABLE malhav2.proc4_unnest AS
 SELECT sub.gid, sub.cd_grid, cd_mun 
 FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer FROM malhav2.proc2_malhav2 d) sub 
 LEFT JOIN grid.adm2_overlay ao ON sub.original_gid = ao.gid
-WHERE original_layer = 'GRID'
+WHERE original_layer = 'GRID';
 
 
 
