@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS irregularidades.proc6_malha_local_restrito;
 CREATE TABLE irregularidades.proc6_malha_local_restrito (
 
 car int null, 
-is_local_restrito boolean NULL,
+is_local_restrito boolean NULL
 
 );
 
