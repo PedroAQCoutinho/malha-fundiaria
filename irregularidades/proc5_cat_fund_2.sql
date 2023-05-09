@@ -8,7 +8,7 @@ SELECT a.gid , foo.nm_agrup FROM dados_brutos.valid_sicar_imovel a
 LEFT JOIN LATERAL
 (SELECT * FROM irregularidades.temp_cat_fund tcf WHERE tcf.original_gid = a.gid ORDER BY original_gid, area LIMIT 1) foo ON TRUE 
 WHERE nm_agrup IS NOT NULL
-WHERE (a.gid % :var_num_proc) = :var_proc
+WHERE (a.gid % :var_num_proc) = :var_proc;
 
 
 
