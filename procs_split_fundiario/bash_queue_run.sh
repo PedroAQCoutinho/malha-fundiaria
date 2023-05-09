@@ -17,7 +17,7 @@ echo "Parameter: $1"
 psql -t -A -U $userName -d $databaseName -c "
 SELECT DISTINCT cd_grid FROM grid.adm2_overlay a
 LEFT JOIN (SELECT DISTINCT cd_grid , TRUE exis FROM malhav2.proc6_malha) foo using(cd_grid) 
-WHERE exis IS NOT TRUE AND a.am_legal  " > cd_grid.txt
+WHERE exis IS NOT TRUE AND a.am_legal ; " > cd_grid.txt
 
 
 
