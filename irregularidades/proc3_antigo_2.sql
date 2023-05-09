@@ -1,4 +1,4 @@
-\echo RUN :var_proc
+
 
 INSERT INTO irregularidades.proc3_malha_ano_ocupacao (gid, desmatamento, is_recente)
 SELECT gid, ano, CASE WHEN ano = 0 THEN FALSE WHEN ano >= 9 THEN TRUE ELSE FALSE END is_recente
