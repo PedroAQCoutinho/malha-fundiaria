@@ -1,27 +1,30 @@
 -- Para a car é preciso saber se ele está em local restritivo ou nao à regularizacao fundiaria
 -- Para isso verificamos que pelo menos 10% da propriedade está em área restrita
 -- Area restrita: nm_agrup = 'publica_afetada' OR nm_agrup = 'publica_afetada__imovel_rural_privado' OR nm_agrup = 'publica afetada_coletiva_privada' OR nm_agrup = 'publica imovel_privado_coletivo_publica_destinada'
-DROP TABLE IF EXISTS irregularidades.proc6_step14_local_restrito;
-CREATE TABLE irregularidades.proc6_step14_local_restrito (
+\echo local irregular
+
+DROP TABLE IF EXISTS irregularidades.proc6_malha_local_restrito;
+CREATE TABLE irregularidades.proc6_malha_local_restrito (
 
 car int null, 
 is_local_restrito boolean NULL,
-area_imovel decimal NULL,
-m_fiscal int NULL, 
-cat_fund_irregular TEXT NULL,
-original_layer_label_irregular text[] NULL ,
-nm_cat_fund_irregular TEXT NULL,
-nm_agrup_irregular TEXT NULL
 
 );
 
 
-CREATE INDEX proc6_step14_local_restrito_car_idx ON irregularidades.proc6_step14_local_restrito USING btree (car);
-CREATE INDEX proc6_step14_local_restrito_m_fiscal_idx ON irregularidades.proc6_step14_local_restrito USING btree (m_fiscal);
-CREATE INDEX proc6_step14_local_restrito_cat_fund_irregular_idx ON irregularidades.proc6_step14_local_restrito USING btree (cat_fund_irregular);
-CREATE INDEX proc6_step14_local_restrito_original_layer_label_irregular_idx ON irregularidades.proc6_step14_local_restrito USING btree (original_layer_label_irregular);
-CREATE INDEX proc6_step14_local_restrito_nm_cat_fund_irregular_idx ON irregularidades.proc6_step14_local_restrito USING btree (nm_cat_fund_irregular);
-CREATE INDEX proc6_step14_local_restrito_nm_agrup_irregular_idx ON irregularidades.proc6_step14_local_restrito USING btree (nm_agrup_irregular);
+CREATE INDEX proc6_malha_local_restrito_car_idx ON irregularidades.proc6_malha_local_restrito USING btree (car);
 
 
+DROP TABLE irregularidades.temp_area_restrita;
+CREATE TABLE irregularidades.temp_area_restrita as 
+SELECT original_gid, nm_agrup, area
+FROM (SELECT original_gid, nm_agrup, sum(area) area
+FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer, nm_agrup, area FROM malhav2.proc6_malha d ) sub 
+LEFT JOIN grid.adm2_overlay ao ON sub.original_gid = ao.gid
+WHERE original_layer = 'CAR' AND nm_agrup = 'area_restrita'  AND ao.am_legal 
+GROUP BY original_gid , nm_agrup) foo2;
 
+
+CREATE INDEX temp_area_restrita_original_gid_irregular_idx ON irregularidades.temp_area_restrita USING btree (original_gid);
+CREATE INDEX temp_area_restrita_nm_agrup_irregular_idx ON irregularidades.temp_area_restrita USING btree (nm_agrup);
+CREATE INDEX temp_area_restrita_area_idx ON irregularidades.temp_area_restrita USING btree (area);
