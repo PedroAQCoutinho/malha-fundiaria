@@ -24,7 +24,7 @@ FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_la
 FROM malhav2.proc6_malha d) sub 
 LEFT JOIN grid.adm2_overlay ao ON sub.original_gid = ao.gid
 WHERE original_layer = 'CAR' and ao.am_legal
-GROUP BY original_gid , nm_agrup
+GROUP BY original_gid , nm_agrup;
 
 
 
