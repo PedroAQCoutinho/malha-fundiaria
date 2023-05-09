@@ -89,14 +89,13 @@ BEGIN
         array_agg(b.original_gid) original_gid,
         array_agg(original_layer) original_layer,
         cd_grid,
-        ST_Area(ST_Union(ST_Force2d(a.geom))::geography)/10000 area,
+        ST_Area(ST_Union(ST_Force2d(st_collectionextract(st_makevalid(a.geom),3)))::geography)/10000 area,
         ST_Union(ST_Force2d(a.geom)) geom
         FROM split_polygons_%s a 
         LEFT JOIN fdump_%s b ON ST_Intersects(ST_Buffer(ST_Force2d(a.geom)::geography, -5), ST_Force2d(b.geom)) 
         GROUP BY bin, cd_grid;', grid, grid);
 END
 $func$;
-
 
 
 
