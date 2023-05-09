@@ -9,9 +9,6 @@ numProc=16
 
 
 
-psql -U $userName -d $databaseName -f ${procName}.sql
-
-
 procName=proc2_2_desmatamento_anual
 export PGPASSWORD='gpp-es@lq'
 
