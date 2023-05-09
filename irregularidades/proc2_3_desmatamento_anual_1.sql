@@ -12,11 +12,8 @@ uso integer null,
 area_count decimal null, 
 cd_grid INT NULL , 
 cd_mun INT null, 
-am_legal BOOLEAN null, 
-cd_bioma integer null, 
 nm_agrup TEXT null, 
-nm_cat_fund TEXT NULL , 
-orilabel TEXT[] NULL  
+nm_cat_fund TEXT NULL 
 );
 
 
