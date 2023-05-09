@@ -8,8 +8,8 @@ DECLARE
 BEGIN
 	FOR tab IN (SELECT nm_dado_original_valid_geom FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom IS NOT NULL) LOOP	
     RETURN QUERY EXECUTE format('SELECT cd_grid, ''%s'' original_layer, 
-	b.gid original_gid, ST_CollectionExtract(ST_Intersection(ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(a.geom,3)), 4326)), 3) geom FROM grid.adm2_overlay a
-	LEFT JOIN dados_brutos.%I b ON ST_Intersects(ST_SETSRID(ST_Force2d(ST_CollectionExtract(a.geom,3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326)) WHERE cd_grid = %s AND am_legal %s', 
+	b.gid original_gid, ST_CollectionExtract(ST_Intersection(ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(ST_Makevalid(a.geom),3)), 4326)), 3) geom FROM grid.adm2_overlay a
+	LEFT JOIN dados_brutos.%I b ON ST_Intersects(ST_SETSRID(ST_Force2d(ST_CollectionExtract(ST_Makevalid(a.geom),3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326)) WHERE cd_grid = %s AND am_legal %s', 
 	(SELECT a.label FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom = tab), 
 	tab, 
 	grid,
