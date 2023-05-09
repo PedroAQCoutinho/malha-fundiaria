@@ -3,10 +3,11 @@
 
 CREATE TABLE irregularidades.proc22_malha_uso_anual AS 
 SELECT cat_fund, CASE WHEN car IS NOT NULL THEN 1 ELSE 0 END iscar, car gid_car, b.original_gid, 
-uso,a.area area_count,  cd_grid, c.cd_mun, c.am_legal, c.cd_bioma , nm_agrup, nm_cat_fund, orilabel
+uso,a.area area_count,  c.cd_grid, c.cd_mun, nm_agrup, nm_cat_fund
 FROM irregularidades.proc21_malha_uso_anual a
-LEFT JOIN car.proc2_array_agg b ON car = gid
-LEFT JOIN malhav2.proc6_malha c ON c.gid = cat_fund;
+LEFT JOIN car.proc2_array_agg b ON a.car = b.gid 
+LEFT JOIN malhav2.proc6_malha c ON c.gid = a.cat_fund
+WHERE am_legal;
 
 CREATE INDEX proc22_malha_uso_anual_car_idx ON irregularidades.proc22_malha_uso_anual USING btree (car);
 CREATE INDEX proc22_malha_uso_anual_cat_fund_idx ON irregularidades.proc22_malha_uso_anual USING btree (cat_fund);
