@@ -12,7 +12,7 @@ BEGIN
 	LEFT JOIN dados_brutos.%I b ON ST_Intersects(ST_SETSRID(ST_Force2d(ST_CollectionExtract(ST_Makevalid(a.geom),3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326)) WHERE cd_grid = %s AND am_legal %s', 
 	(SELECT a.label FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom = tab), 
 	tab, 
-	grid,
+	grid,1
 	(SELECT a.where_clause FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom = tab));
 
 RETURN NEXT;
