@@ -16,10 +16,6 @@ WHERE (a.gid % :var_num_proc) = :var_proc;
 
 
 
-DROP TABLE irregularidades.temp_area_restrita;
-
-
-
 
 
 
