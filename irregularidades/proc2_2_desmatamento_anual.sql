@@ -2,7 +2,7 @@
 \echo desmatamento 2
 
 CREATE TABLE irregularidades.proc22_malha_uso_anual AS 
-SELECT cat_fund, CASE WHEN car IS NOT NULL THEN 1 ELSE 0 END iscar, car gid_car, b.original_gid, 
+SELECT cat_fund, CASE WHEN car IS NOT NULL THEN 1 ELSE 0 END iscar, id_car_break, b.original_gid, 
 uso,a.area area_count,  c.cd_grid, c.cd_mun, nm_agrup, nm_cat_fund
 FROM irregularidades.proc21_malha_uso_anual a
 LEFT JOIN car.proc2_array_agg b ON a.car = b.gid 
