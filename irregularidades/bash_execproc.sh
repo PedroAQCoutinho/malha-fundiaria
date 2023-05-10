@@ -10,7 +10,7 @@ numProc=8
 procName=proc5_cat_fund
 export PGPASSWORD='gpp-es@lq'
 
-psql -U $userName -d $databaseName -f ${procName}_1.sql
+#psql -U $userName -d $databaseName -f ${procName}_1.sql
 
 #If sql 2 exists execute it
 for ((i=0; i < ${numProc}; i++))
