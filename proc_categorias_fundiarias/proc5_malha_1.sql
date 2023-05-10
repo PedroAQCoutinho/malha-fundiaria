@@ -6,6 +6,7 @@ CREATE TABLE malhav2.proc5_malha (
 	original_layer _text NULL,
 	cd_grid int4 NULL,
 	area numeric NULL,
+    am_legal boolean null ,
     is_car boolean null,
     is_faixafronteira boolean null,
     is_militar boolean null,
