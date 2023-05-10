@@ -19,9 +19,9 @@ DROP TABLE irregularidades.temp_area_restrita;
 CREATE TABLE irregularidades.temp_area_restrita as 
 SELECT original_gid, nm_agrup, area
 FROM (SELECT original_gid, nm_agrup, sum(area) area
-FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer, nm_agrup, area FROM malhav2.proc6_malha d ) sub 
-LEFT JOIN grid.adm2_overlay ao ON sub.original_gid = ao.gid
-WHERE original_layer = 'CAR' AND nm_agrup = 'area_restrita'  AND ao.am_legal 
+FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer, nm_agrup, area FROM malhav2.proc6_malha d 
+WHERE am_legal) sub 
+WHERE original_layer = 'CAR' AND nm_agrup = 'area_restrita'
 GROUP BY original_gid , nm_agrup) foo2;
 
 
