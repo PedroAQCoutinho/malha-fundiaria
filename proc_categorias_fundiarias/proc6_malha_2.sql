@@ -1,10 +1,10 @@
 \echo RUN proc6_malha :var_proc
 
 
-INSERT INTO malhav2.proc6_malha (gid, cd_mun, original_gid ,original_layer,cd_grid,area, is_car,is_faixafronteira,is_militar,
+INSERT INTO malhav2.proc6_malha (gid, cd_mun, am_legal, original_gid ,original_layer,cd_grid,area, is_car,is_faixafronteira,is_militar,
 is_massadagua,is_quilombola,is_ucpi,is_ucus,is_ucusapa,is_ti,is_imovel,is_gleba,is_assentamento,
 original_layer_label,nm_cat_fund,nm_agrup,geom)
-SELECT gid, cd_mun,  original_gid, a.original_layer, cd_grid, area, is_car, is_faixafronteira,
+SELECT gid, cd_mun, am_legal, original_gid, a.original_layer, cd_grid, area, is_car, is_faixafronteira,
 is_militar, is_massadagua, is_quilombola, is_ucpi, is_ucus, is_ucusapa, is_ti, is_imovel,
 is_gleba, is_assentamento, original_layer_label, nm_cat_fund, nm_agrup, geom
 FROM malhav2.proc5_malha a 
