@@ -4,6 +4,7 @@ DROP TABLE malhav2.proc6_malha;
 CREATE TABLE malhav2.proc6_malha (
 	gid serial4 NOT NULL,
     cd_mun INTEGER null,
+    am_legal BOOLEAN NULL,
 	original_gid _int4 NULL,
 	original_layer _text NULL,
 	cd_grid int4 NULL,
