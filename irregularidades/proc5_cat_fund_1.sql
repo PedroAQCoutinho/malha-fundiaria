@@ -19,11 +19,11 @@ CREATE INDEX proc5_malha_categoria_fundiaria_nm_agrup_idx ON irregularidades.pro
 
 DROP TABLE irregularidades.temp_cat_fund;
 CREATE TABLE irregularidades.temp_cat_fund AS 
-SELECT original_gid, nm_agrup, sum(area) area
-FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer, nm_agrup, area 
+SELECT original_gid, nm_agrup, am_legal, sum(area) area
+FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer, nm_agrup, am_legal , area 
 FROM malhav2.proc6_malha d WHERE cd_grid IS NOT NULL AND am_legal) sub 
 WHERE original_layer = 'CAR' 
-GROUP BY original_gid , nm_agrup;
+GROUP BY original_gid , nm_agrup, am_legal;
 
 
 CREATE INDEX temp_cat_fund_original_gid_idx ON irregularidades.temp_cat_fund USING btree (original_gid);
