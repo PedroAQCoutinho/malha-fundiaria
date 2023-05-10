@@ -8,7 +8,8 @@ DROP TABLE IF EXISTS irregularidades.proc5_malha_categoria_fundiaria;
 CREATE TABLE irregularidades.proc5_malha_categoria_fundiaria (
 
 car int null, 
-nm_agrup text null
+nm_agrup text null,
+am_legal boolean null
 
 );
 
