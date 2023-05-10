@@ -1,5 +1,5 @@
 INSERT INTO malhav2.proc5_malha
-SELECT a.gid, cd_mun, a.original_gid , a.original_layer , a.cd_grid, area,  am_legal,
+SELECT a.gid, cd_mun, a.original_gid , a.original_layer , a.cd_grid, area, am_legal,
 CASE 
 	WHEN 'CAR' = ANY(original_layer) THEN TRUE
 	ELSE FALSE
