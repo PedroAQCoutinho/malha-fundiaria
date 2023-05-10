@@ -1,54 +1,30 @@
 
 \echo RUN :var_proc
-INSERT INTO irregularidades.proc7_step14_categorizacao_1404 (car, tipo_imove, area_imovel, am_legal, cd_mun, cd_bioma, nm_agrup, nm_cat_fund, is_grande, is_recente, is_desm_recente, desmatamento, is_local_restrito, tipo_irregularidade, geom )
-SELECT 
-a.gid car, 
-tipo_imove,
-a.area area_imovel, 
-am_legal, 
-cd_mun, 
-cd_bioma, 
-d.nm_agrup, 
-d.nm_cat_fund , 
-is_grande, 
-is_recente , 
-is_desm_recente,
-b.desmatamento,  
-is_local_restrito, 
-CASE 
-	WHEN tipo_imove = 'IRU' AND ( d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada'))
- AND is_recente AND NOT is_grande AND NOT is_local_restrito AND am_legal  THEN 'A'
-	WHEN tipo_imove = 'IRU' AND (  d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada') )
- AND NOT is_recente AND NOT is_grande AND is_local_restrito AND am_legal  THEN 'B'
-	WHEN tipo_imove = 'IRU' AND (  d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada') )
- AND is_recente AND NOT is_grande AND is_local_restrito AND am_legal  THEN 'C'
-	WHEN tipo_imove = 'IRU' AND (  d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada') )
- AND NOT is_recente AND is_grande AND NOT is_local_restrito AND am_legal  THEN 'D'
-	WHEN tipo_imove = 'IRU' AND (  d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada'))
- AND NOT is_recente AND is_grande AND is_local_restrito AND am_legal  THEN 'E'
-	WHEN tipo_imove = 'IRU' AND (  d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada') )
- AND is_recente AND is_grande AND NOT is_local_restrito AND am_legal  THEN 'F'
-	WHEN tipo_imove = 'IRU' AND (  d.nm_agrup IN ('publica_afetada', 'glebas_publicas', 'vazio', 'publica afetada_coletiva_privada'))
- AND is_recente AND is_grande AND is_local_restrito AND am_legal  THEN 'G'
-	ELSE 'OSII'
-END tipo_irregularidade, valid_geom geom
+CREATE TABLE irregularidades.proc7_car_categorizacao as 
+SELECT a.gid, a.uf , a.municipio , a.tipo_imove , a.m_fiscal,
+a.area area_imovel, c.area area_imovel_check, b.desmatamento ano_ocupacao, b.is_recente,
+c.is_grande, d.nm_agrup , e.is_local_restrito , foo.area_antropizada
 FROM dados_brutos.valid_sicar_imovel a
-LEFT JOIN irregularidades.proc3_step14_ano_ocupacao b ON a.gid = b.gid
-LEFT JOIN irregularidades.proc4_step14_tamanho_ocupacao c ON a.gid = c.car
-LEFT JOIN irregularidades.proc5_step14_categoria_fundiaria d ON a.gid = d.car
-LEFT JOIN irregularidades.proc6_step14_local_restrito e ON a.gid = e.car
-LEFT JOIN irregularidades.proc8_step14_desmatamento_recente f ON a.gid = f.gid
-LEFT JOIN LATERAL (SELECT * FROM irregularidades.proc23_step14_desmatamento_anual h 
-WHERE h.car = a.gid ORDER BY h.area_count DESC LIMIT 1 ) foo
-ON TRUE WHERE (a.gid % :var_num_proc) = :var_proc
+LEFT JOIN irregularidades.proc3_malha_ano_ocupacao b ON a.gid = b.gid 
+LEFT JOIN irregularidades.proc4_malha_tamanho_ocupacao c ON a.gid = c.car 
+LEFT JOIN irregularidades.proc5_malha_categoria_fundiaria d ON a.gid = d.car 
+LEFT JOIN irregularidades.proc6_malha_local_restrito e ON a.gid = e.car 
+LEFT JOIN (SELECT car, sum(pmua.area_count) area_antropizada FROM irregularidades.proc23_malha_uso_anual pmua 
+WHERE  pmua.uso IN (9,15,20,21,24,30,31,39,40,41,46,47,48,62) 
+GROUP BY pmua.car ) foo ON foo.car = a.gid
 
 
 
 
 
 
-
-
+CREATE INDEX proc7_car_categorizacao_car_idx ON irregularidades.proc7_car_categorizacao USING btree (car);
+CREATE INDEX proc7_car_categorizacao_cd_mun_idx ON irregularidades.proc7_car_categorizacao USING btree (cd_mun);
+CREATE INDEX proc7_car_categorizacao_cd_bioma_idx ON irregularidades.proc7_car_categorizacao USING btree (cd_bioma);
+CREATE INDEX proc7_car_categorizacao_original_layer_label_idx ON irregularidades.proc7_car_categorizacao USING btree (original_layer_label);
+CREATE INDEX proc7_car_categorizacao_nm_agrup_idx ON irregularidades.proc7_car_categorizacao USING btree (nm_agrup);
+CREATE INDEX proc7_car_categorizacao_nm_cat_fund_idx ON irregularidades.proc7_car_categorizacao USING btree (nm_cat_fund);
+CREATE INDEX proc7_car_categorizacao_geom_idx ON irregularidades.proc7_car_categorizacao USING GIST (geom);
 
 
 
