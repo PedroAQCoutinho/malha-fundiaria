@@ -18,7 +18,7 @@ GROUP BY pmua.car ) foo ON foo.car = a.gid
 
 
 
-CREATE INDEX proc7_car_categorizacao_car_idx ON irregularidades.proc7_car_categorizacao USING btree (car);
+CREATE INDEX proc7_car_categorizacao_gid_idx ON irregularidades.proc7_car_categorizacao USING btree (gid);
 CREATE INDEX proc7_car_categorizacao_cd_mun_idx ON irregularidades.proc7_car_categorizacao USING btree (cd_mun);
 CREATE INDEX proc7_car_categorizacao_cd_bioma_idx ON irregularidades.proc7_car_categorizacao USING btree (cd_bioma);
 CREATE INDEX proc7_car_categorizacao_original_layer_label_idx ON irregularidades.proc7_car_categorizacao USING btree (original_layer_label);
