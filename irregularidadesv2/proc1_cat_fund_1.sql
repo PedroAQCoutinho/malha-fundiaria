@@ -21,7 +21,7 @@ DROP TABLE irregularidadesv2.temp_cat_fund;
 CREATE TABLE irregularidadesv2.temp_cat_fund AS 
 SELECT original_gid, nm_agrup, sum(area) area
 FROM (SELECT gid, cd_grid, UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer, nm_agrup , area 
-FROM carv2.proc6_car d WHERE cd_grid IS NOT NULL) sub 
+FROM malhav2.proc6_malha d WHERE cd_grid IS NOT NULL) sub 
 WHERE original_layer = 'CAR' 
 GROUP BY original_gid , nm_agrup;
 
