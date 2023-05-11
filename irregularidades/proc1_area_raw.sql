@@ -17,4 +17,3 @@ CREATE INDEX proc1_malhav2_uso_idx ON irregularidades.proc1_malhav2 USING btree 
 
 INSERT INTO irregularidades.proc1_malhav2 (cat_fund, car, uso, count)
 SELECT cat_fund, car, uso, count FROM public.proc1_row_by_row_mapbiomas
-WHERE cat_fund IS NOT NULL
