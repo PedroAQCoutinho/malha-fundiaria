@@ -49,9 +49,9 @@ CREATE INDEX proc1_row_by_row_mapbiomas_count_idx ON public.proc1_row_by_row_map
 #dados
 desmatamento <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
 uso <- raster('/home/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
-car <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
+#car <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
 NAvalue(car) <- 0
-cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/proc2_malhav2.tif')
+cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/proc6_malha.tif')
 NAvalue(cat_fund) <- 0
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 100) ; bss
