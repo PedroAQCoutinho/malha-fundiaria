@@ -30,3 +30,8 @@ done
 wait
 
 
+
+procName=proc8_concatenate
+export PGPASSWORD='gpp-es@lq'
+
+psql -U $userName -d $databaseName -f ${procName}.sql
