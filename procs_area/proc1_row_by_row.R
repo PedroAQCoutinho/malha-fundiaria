@@ -52,7 +52,7 @@ uso <- raster('/home/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra
 #car <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
 NAvalue(car) <- 0
 cat_fund <- raster('/home/pedro_alves_coutinho_usp_br/malha-fundiaria/procs_area/proc6_malha.tif')
-NAvalue(cat_fund) <- 0
+#NAvalue(cat_fund) <- 0
 #id_cat_fund <- dbGetQuery(connec, "select * from layer_fundiario.step15_id_label")
 bss <- blockSize(desmatamento, minrows = 100) ; bss
 output <- vector('list', bss$n)
