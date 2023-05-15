@@ -66,7 +66,7 @@ atualiza_dt <- function() {
     #atualiza o objeto dt por conta do superassignment <<-
     y <- d$value$value[[1]]
     #print( d$value$value[[1]] )
-    dbWriteTable(connec, 'proc1_row_by_row_mapbiomas_12052023', y, row.names = F, append = T)
+    dbWriteTable(connec, 'proc1_row_by_row_mapbiomas_15052023', y, row.names = F, append = T)
         
     
     rm(d)
