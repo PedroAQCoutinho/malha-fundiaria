@@ -15,4 +15,4 @@ CREATE INDEX proc1_count_uso_idx ON irregularidadesv2.proc1_count USING btree (u
 
 
 INSERT INTO irregularidadesv2.proc1_count (cat_fund, desmatamento, uso, area)
-SELECT cat_fund, desmatamento, uso, count*0.087 FROM public.proc1_row_by_row_mapbiomas_12052023
+SELECT cat_fund, desmatamento, uso, count*0.087 FROM public.proc1_row_by_row_mapbiomas_15052023
