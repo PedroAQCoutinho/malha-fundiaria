@@ -1,5 +1,7 @@
 
-CREATE TABLE irregularidadesv2.car_irregularidades
+
+DROP TABLE irregularidadesv2.car_irregularidades;
+CREATE TABLE irregularidadesv2.car_irregularidades AS
 SELECT pico.id_car_original,
 vsi.cod_imovel , 
 vsi.area area_imovel,
@@ -19,4 +21,7 @@ LEFT JOIN irregularidadesv2.proc2_recente pr ON pico.id_car_original = pr.id_car
 LEFT JOIN irregularidadesv2.proc3_car_area_antropizada pcaa ON pico.id_car_original = pcaa.id_car_original 
 LEFT JOIN irregularidadesv2.proc4_car_tamanho_ocupacao pcto ON pico.id_car_original = pcto.car 
 LEFT JOIN irregularidadesv2.proc5_car_categoria_fundiaria pccf ON pico.id_car_original = pccf.car 
-LEFT JOIN irregularidadesv2.proc6_car_local_restrito pclr ON pico.id_car_original = pclr.car 
+LEFT JOIN irregularidadesv2.proc6_car_local_restrito pclr ON pico.id_car_original = pclr.car;
+
+
+CREATE INDEX car_irregularidades_geom_idx ON irregularidadesv2.car_irregularidades USING GIST (geom);
