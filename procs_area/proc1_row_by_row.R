@@ -30,7 +30,7 @@ dbSendQuery(connec, "
 DROP TABLE IF EXISTS public.proc1_row_by_row_mapbiomas_15052023; 
 CREATE TABLE public.proc1_row_by_row_mapbiomas_15052023 (
 cat_fund integer null,
-car integer null,
+desmatamento integer null,
 uso integer null,
 count integer null
 
