@@ -17,8 +17,6 @@ CREATE INDEX proc6_car_local_restrito_car_idx ON irregularidadesv2.proc6_car_loc
 
 
 DROP TABLE irregularidadesv2.temp_area_restrita;
-
-
 CREATE TABLE irregularidadesv2.temp_area_restrita as 
 SELECT original_gid, area area_sobreposicao_restrita
 FROM (SELECT original_gid, sum(area) area
