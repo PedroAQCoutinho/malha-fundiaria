@@ -1,5 +1,5 @@
 CREATE TABLE irregularidadesv2.proc7_id_car_original AS 
-SELECT DISTINCT id_car_original FROM (
+SELECT id_car_original, FROM (
 SELECT pc.cat_fund , pc.desmatamento , pc.uso, UNNEST(pm.original_layer) original_layer , UNNEST(pm.original_gid) id_car_original , 
 pc.area
 FROM irregularidadesv2.proc1_count pc 
