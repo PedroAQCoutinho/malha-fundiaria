@@ -47,7 +47,7 @@ CREATE INDEX proc1_row_by_row_mapbiomas_count_idx ON public.proc1_row_by_row_map
 
 
 #dados
-desmatamento <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/pa_br_desmatamento_GPP_30m_1988-2021.tif')
+desmatamento <- raster('/home/arquivos/dados_espaciais/uso_solo/desmatamento/PRODES/pa_br_desmatamento_PRODES_30m_2000-2021.tif')
 uso <- raster('/home/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
 #car <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/proc2_array_agg.tif')
 #NAvalue(car) <- 0
