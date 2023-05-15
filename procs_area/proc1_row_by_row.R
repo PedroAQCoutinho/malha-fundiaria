@@ -38,7 +38,7 @@ count integer null
 
 
 CREATE INDEX proc1_row_by_row_mapbiomas_15052023_cat_fund_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (cat_fund);
-CREATE INDEX proc1_row_by_row_mapbiomas_15052023_car_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (car);
+CREATE INDEX proc1_row_by_row_mapbiomas_15052023_desmatamento_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (desmatamento);
 CREATE INDEX proc1_row_by_row_mapbiomas_15052023_uso_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (uso);
 CREATE INDEX proc1_row_by_row_mapbiomas_15052023_count_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (count);
 
