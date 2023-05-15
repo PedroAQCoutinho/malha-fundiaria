@@ -27,8 +27,8 @@ error=function(cond) {
 
 dbSendQuery(connec, "
             
-DROP TABLE IF EXISTS public.proc1_row_by_row_mapbiomas; 
-CREATE TABLE public.proc1_row_by_row_mapbiomas (
+DROP TABLE IF EXISTS public.proc1_row_by_row_mapbiomas_15052023; 
+CREATE TABLE public.proc1_row_by_row_mapbiomas_15052023 (
 cat_fund integer null,
 car integer null,
 uso integer null,
@@ -37,10 +37,10 @@ count integer null
 );
 
 
-CREATE INDEX proc1_row_by_row_mapbiomas_cat_fund_idx ON public.proc1_row_by_row_mapbiomas USING btree (cat_fund);
-CREATE INDEX proc1_row_by_row_mapbiomas_car_idx ON public.proc1_row_by_row_mapbiomas USING btree (car);
-CREATE INDEX proc1_row_by_row_mapbiomas_uso_idx ON public.proc1_row_by_row_mapbiomas USING btree (uso);
-CREATE INDEX proc1_row_by_row_mapbiomas_count_idx ON public.proc1_row_by_row_mapbiomas USING btree (count);
+CREATE INDEX proc1_row_by_row_mapbiomas_15052023_cat_fund_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (cat_fund);
+CREATE INDEX proc1_row_by_row_mapbiomas_15052023_car_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (car);
+CREATE INDEX proc1_row_by_row_mapbiomas_15052023_uso_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (uso);
+CREATE INDEX proc1_row_by_row_mapbiomas_15052023_count_idx ON public.proc1_row_by_row_mapbiomas_15052023 USING btree (count);
 
 ")
 
