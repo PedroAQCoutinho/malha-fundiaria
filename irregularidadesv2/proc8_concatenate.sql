@@ -24,4 +24,5 @@ LEFT JOIN irregularidadesv2.proc5_car_categoria_fundiaria pccf ON pico.id_car_or
 LEFT JOIN irregularidadesv2.proc6_car_local_restrito pclr ON pico.id_car_original = pclr.car;
 
 
-CREATE INDEX car_irregularidades_geom_idx ON irregularidadesv2.car_irregularidades USING GIST (geom);
+CREATE INDEX car_irregularidades_geom_idx ON irregularidadesv2.car_irregularidades USING gist (geom);
+CREATE INDEX car_irregularidades_id_car_original_idx ON irregularidadesv2.car_irregularidades USING btree (id_car_original);
