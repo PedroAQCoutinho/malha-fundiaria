@@ -17,15 +17,17 @@ GROUP BY cat_fund)
 SELECT gid, cd_mun, am_legal, original_gid, a.original_layer, cd_grid, area, is_car, is_faixafronteira,
 is_militar, is_massadagua, is_quilombola, is_ucpi, is_ucus, is_ucusapa, is_ti, is_imovel,
 is_gleba, is_assentamento, original_layer_label, nm_cat_fund, nm_agrup, 
-floresta, 
-floresta/area pfloresta, agropecuario, 
-agropecuario/area pagropecuario,
-nao_vegetada, 
-nao_vegetada/area pnao_vegetada, 
-corpo_dagua,  
-corpo_dagua/area pcorpo_dagua, geom
+CASE WHEN floresta IS NOT NULL THEN floresta ELSE 0 END floresta, 
+CASE WHEN floresta/area  > 1 THEN 1 WHEN floresta/area IS NULL THEN 0 ELSE floresta/area END pfloresta , 
+CASE WHEN agropecuario IS NOT NULL THEN agropecuario ELSE 0 END agropecuario , 
+CASE WHEN agropecuario/area > 1 THEN 1 WHEN agropecuario/area IS NULL THEN 0 ELSE agropecuario/area END pagropecuario,
+CASE WHEN nao_vegetada IS NOT NULL THEN nao_vegetada ELSE 0 END nao_vegetada, 
+CASE WHEN nao_vegetada/area > 1 THEN 1 WHEN nao_vegetada/area IS NULL THEN 0 ELSE nao_vegetada/area END  pnao_vegetada, 
+CASE WHEN corpo_dagua IS NOT NULL THEN corpo_dagua ELSE 0 END corpo_dagua,  
+CASE WHEN corpo_dagua/area > 1 THEN 1 WHEN corpo_dagua/area IS NULL THEN 0 ELSE corpo_dagua/area END  pcorpo_dagua, geom
 FROM malhav2.proc5_malha a 
 LEFT JOIN auxiliares.nomenclatura_categorias_e_agrupamentos_fundiarios b 
 ON a.original_layer_label = b.original_layer
 LEFT JOIN foo ON foo.cat_fund = a.gid 
+WHERE (a.gid % :var_num_proc) = :var_proc
 
