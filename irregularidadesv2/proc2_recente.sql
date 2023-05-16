@@ -12,4 +12,5 @@ GROUP BY id_car_original
 
 
 
+
 CREATE INDEX proc2_recente_id_car_original_idx ON irregularidadesv2.proc2_recente USING btree (id_car_original);
