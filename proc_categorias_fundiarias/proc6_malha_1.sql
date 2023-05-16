@@ -1,5 +1,6 @@
 \echo starting proc6
 
+
 DROP TABLE malhav2.proc6_malha;
 CREATE TABLE malhav2.proc6_malha (
 	gid serial4 NOT NULL,
@@ -24,6 +25,14 @@ CREATE TABLE malhav2.proc6_malha (
     original_layer_label _text NULL,
     nm_cat_fund text null, 
     nm_agrup text null,
+    floresta float8 NULL, 
+    pfloresta float8 NULL, 
+    agropecuario float8 NULL,
+    pagropecuario float8 NULL,
+    nao_vegetada float8 NULL,
+    pnao_vegetada float8 NULL,
+    corpo_dagua float8 NULL, 
+    pcorpo_dagua float8 NULL, 
 	geom public.geometry NULL
 );
 
