@@ -8,3 +8,5 @@ WHERE cat_fund IS NOT NULL
 ) foo WHERE original_layer = 'CAR'
 
 CREATE INDEX proc7_id_car_original_id_car_original_idx ON irregularidadesv2.proc7_id_car_original USING btree (id_car_original);
+
+
