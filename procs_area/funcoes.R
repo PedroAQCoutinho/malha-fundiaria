@@ -9,8 +9,9 @@ resume <- function(i) {
   
   dt <- data.frame(uso = getValues(uso, row = bss$row[i], nrows = bss$nrows[i]),
                    desmatamento = getValues(desmatamento, row = bss$row[i], nrows = bss$nrows[i]),
+                   prioritarias = getValues(prioritarias, row = bss$row[i], nrows = bss$nrows[i]),
                    cat_fund = getValues(cat_fund, row = bss$row[i], nrows = bss$nrows[i])) %>%
-    group_by(cat_fund, desmatamento, uso) %>%
+    group_by(cat_fund, desmatamento, uso, prioritarias) %>%
     summarise(count = n())
   
     return(list(dt))
@@ -66,7 +67,7 @@ atualiza_dt <- function() {
     #atualiza o objeto dt por conta do superassignment <<-
     y <- d$value$value[[1]]
     #print( d$value$value[[1]] )
-    dbWriteTable(connec, 'proc1_row_by_row_mapbiomas_15052023', y, row.names = F, append = T)
+    dbWriteTable(connec, 'proc1_row_by_row_mapbiomas_17052023', y, row.names = F, append = T)
         
     
     rm(d)
