@@ -31,6 +31,10 @@ CREATE TABLE malhav2.proc6_malha (
     pnao_vegetada float8 NULL,
     corpo_dagua float8 NULL, 
     pcorpo_dagua float8 NULL, 
+    area_prioridade_alta float8 null, 
+    area_prioridade_extrem_alta float8 null,
+    area_prioridade_muito_alta float8 null ,
+    indice_circulariade float8 null,
 	geom public.geometry NULL
 );
 
