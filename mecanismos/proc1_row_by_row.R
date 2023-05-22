@@ -56,7 +56,7 @@ bss <- blockSize(mecanismo, minrows = 100) ; bss
 
 
 #Cluster start
-cl <- snow::makeSOCKcluster(4, outfile="")
+cl <- snow::makeSOCKcluster(8, outfile="")
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
