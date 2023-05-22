@@ -11,6 +11,7 @@ userName=postgres
 databaseName=malha_fundiaria
 procName=proc6_malha
 
+
 echo "$$" > pid
 echo "Parameter: $1"
 
@@ -39,8 +40,6 @@ for ((i=0; i < $N; i++)); do
 done
 
 while read -r line; do
-        echo RUN $T
-        echo Sequence n $line
         psql -U $userName -d $databaseName -f ${procName}_2.sql -v var_proc=$line &
 
         # Try to find an open sport (Q[i]=0)
