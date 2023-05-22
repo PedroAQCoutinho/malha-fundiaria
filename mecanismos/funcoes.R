@@ -10,6 +10,7 @@ resume <- function(i) {
   dt <- data.frame(mecanismo = getValues(mecanismo, row = bss$row[i], nrows = bss$nrows[i]),
                    mun = getValues(mun, row = bss$row[i], nrows = bss$nrows[i]),
                    uso = getValues(uso, row = bss$row[i], nrows = bss$nrows[i])) %>%
+    mutate(uso = ifelse(uso %in% c(9,15,20,21,24,30,31,39,40,41,46,47,48,62), 1, 0)) %>% 
     group_by(mecanismo, mun, uso) %>%
     summarise(count = n())
   
