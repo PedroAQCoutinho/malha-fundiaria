@@ -40,7 +40,7 @@ done
 
 while read -r line; do
         echo RUN $T
-        echo cd_grid $line
+        echo Sequence n $line
         psql -U $userName -d $databaseName -f ${procName}_2.sql -v var_proc=$line &
 
         # Try to find an open sport (Q[i]=0)
