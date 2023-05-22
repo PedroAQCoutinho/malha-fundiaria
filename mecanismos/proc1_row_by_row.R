@@ -47,7 +47,7 @@ CREATE INDEX proc_mecanismos_count_idx ON public.proc_mecanismos USING btree (co
 
 
 #dados
-mecanismo <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/mecanismos.tif')
+mecanismo <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/car_classificado.tif')
 uso <- raster('/home/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
 mun <- raster('/home/arquivos/dados_espaciais/limites_administrativos/pa_br_limiteMunicipios_30m_2006_ibge_4326.tif')
 bss <- blockSize(mecanismo, minrows = 100) ; bss
