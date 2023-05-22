@@ -64,7 +64,7 @@ snow::clusterEvalQ(cl, library(dplyr))
 snow::clusterExport(cl=cl,
                     ls())
 
-
+print(ls())
 
 atualiza_dt()
 
