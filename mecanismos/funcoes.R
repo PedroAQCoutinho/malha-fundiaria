@@ -39,6 +39,7 @@ atualiza_dt <- function() {
     ini <- Sys.time()
     # receive results from a node - aqui está a sua tabela da funcao resume
     d <- recvOneData(cl)
+    print(d)
     # error?
     if (!d$value$success) {
       saveRDS(d, 'erro.rds')
