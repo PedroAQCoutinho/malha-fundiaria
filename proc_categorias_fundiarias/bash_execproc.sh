@@ -1,6 +1,6 @@
 userName=postgres
 databaseName=malha_fundiaria
-numProc=8
+numProc=4
 
 
 
