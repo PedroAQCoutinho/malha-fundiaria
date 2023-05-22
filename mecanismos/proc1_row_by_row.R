@@ -51,13 +51,12 @@ mecanismo <- raster('/home/arquivos/dados_espaciais/projetos/escolhas/car_classi
 uso <- raster('/home/arquivos/dados_espaciais/uso_solo/mapbiomas7/pa_br_usoterra_2021_mapbiomas7_30m.tif')
 mun <- raster('/home/arquivos/dados_espaciais/limites_administrativos/pa_br_limiteMunicipios_30m_2006_ibge_4326.tif')
 bss <- blockSize(mecanismo, minrows = 100) ; bss
-output <- vector('list', bss$n)
 
 
 
 
 #Cluster start
-cl <- snow::makeSOCKcluster(6, outfile="")
+cl <- snow::makeSOCKcluster(4, outfile="")
 registerDoMPI(cl)
 #Load libraries
 snow::clusterEvalQ(cl, library(raster))
