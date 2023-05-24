@@ -45,5 +45,5 @@ LEFT JOIN auxiliares.nomenclatura_categorias_e_agrupamentos_fundiarios b
 ON a.original_layer_label = b.original_layer
 LEFT JOIN foo ON foo.cat_fund = a.gid 
 LEFT JOIN bar ON bar.cat_fund = a.gid 
-WHERE (a.gid % 200) = :var_proc
+WHERE (a.gid % :var_num_proc) = :var_proc
 
