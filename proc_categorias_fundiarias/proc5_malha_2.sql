@@ -50,6 +50,14 @@ CASE
 	ELSE FALSE
 END is_gleba,
 CASE 
+	WHEN 'GLEBAFED' = ANY(original_layer) THEN TRUE
+	ELSE FALSE
+END is_gleba_fed,
+CASE 
+	WHEN 'GLEBAEST' = ANY(original_layer) THEN TRUE
+	ELSE FALSE
+END is_gleba_est,
+CASE 
 	WHEN 'ASSENREC' = ANY(original_layer) THEN TRUE
 	WHEN 'ASSENFED' = ANY(original_layer) THEN TRUE
 	ELSE FALSE
