@@ -18,6 +18,8 @@ CREATE TABLE malhav2.proc5_malha (
     is_ti boolean null,
     is_imovel boolean null,
     is_gleba boolean null,
+    is_gleba_fed boolean null,
+    is_gleba_est boolean null,
     is_assentamento boolean null,
     original_layer_label _text NULL,
 	geom public.geometry NULL
