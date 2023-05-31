@@ -3,7 +3,7 @@
 
 
 INSERT INTO malhav2.proc6_malha (gid, cd_mun, am_legal, original_gid ,original_layer,cd_grid,area, is_car,is_faixafronteira,is_militar,
-is_massadagua,is_quilombola,is_ucpi,is_ucus,is_ucusapa,is_ti,is_imovel,is_gleba,is_assentamento,
+is_massadagua,is_quilombola,is_ucpi,is_ucus,is_ucusapa,is_ti,is_imovel,is_gleba,is_gleba_fed, is_gleba_est, is_assentamento,
 original_layer_label,nm_cat_fund,nm_agrup,floresta, pfloresta, agropecuario, pagropecuario,
 nao_vegetada, pnao_vegetada, corpo_dagua,  pcorpo_dagua, area_prioridade_alta, area_prioridade_extrem_alta,area_prioridade_muito_alta,
 indice_circulariade, geom)
@@ -26,7 +26,7 @@ GROUP BY cat_fund
 )
 SELECT gid, cd_mun, am_legal, original_gid, a.original_layer, cd_grid, area, is_car, is_faixafronteira,
 is_militar, is_massadagua, is_quilombola, is_ucpi, is_ucus, is_ucusapa, is_ti, is_imovel,
-is_gleba, is_assentamento, original_layer_label, nm_cat_fund, nm_agrup, 
+is_gleba, is_gleba_fed, is_gleba_est,is_assentamento, original_layer_label, nm_cat_fund, nm_agrup, 
 CASE WHEN floresta IS NOT NULL THEN floresta ELSE 0 END floresta, 
 CASE WHEN floresta/area  > 1 THEN 1 WHEN floresta/area IS NULL THEN 0 ELSE floresta/area END pfloresta , 
 CASE WHEN agropecuario IS NOT NULL THEN agropecuario ELSE 0 END agropecuario , 
