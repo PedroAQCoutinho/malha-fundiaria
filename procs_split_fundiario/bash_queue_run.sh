@@ -17,9 +17,10 @@ echo "Parameter: $1"
 psql -t -A -U $userName -d $databaseName -c "
 SELECT * FROM (
 SELECT DISTINCT cd_grid FROM grid.adm2_overlay a
-LEFT JOIN (SELECT DISTINCT cd_grid , TRUE exis FROM malhav2.proc6_malha) foo using(cd_grid) 
+LEFT JOIN (SELECT DISTINCT cd_grid , TRUE exis FROM malhav2.proc2_malhav2) foo using(cd_grid) 
 WHERE exis IS NOT TRUE AND NOT a.am_legal AND substring(cd_mun::TEXT, 1, 2)::int = '29' 
 ) bar ORDER BY cd_grid ; " > cd_grid.txt
+
 
 
 
