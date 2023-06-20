@@ -77,5 +77,22 @@ print(paste0('Elapsed time: ', Sys.time()-start))
 
 
 
+dbSendQuery(connec, "
+            
+DROP TABLE IF EXISTS mecanismos.proc_mecanismos; 
+CREATE TABLE mecanismos.proc_mecanismos (
+mecanismo integer null,
+mun integer null,
+uso integer null,
+count integer null
 
+);
+
+
+CREATE INDEX proc_mecanismos_mecanismo_idx ON mecanismos.proc_mecanismos USING btree (mecanismo);
+CREATE INDEX proc_mecanismos_mun_idx ON mecanismos.proc_mecanismos USING btree (mun);
+CREATE INDEX proc_mecanismos_uso_idx ON mecanismos.proc_mecanismos USING btree (uso);
+CREATE INDEX proc_mecanismos_count_idx ON mecanismos.proc_mecanismos USING btree (count);
+
+")
 
