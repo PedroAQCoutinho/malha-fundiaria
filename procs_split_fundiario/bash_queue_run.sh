@@ -15,11 +15,12 @@ echo "$$" > pid
 echo "Parameter: $1"
 
 psql -t -A -U $userName -d $databaseName -c "
-SELECT * FROM (
-SELECT DISTINCT cd_grid FROM grid.adm2_overlay a
-LEFT JOIN (SELECT DISTINCT cd_grid , TRUE exis FROM malhav2.proc2_malhav2) foo using(cd_grid) 
-WHERE exis IS NOT TRUE AND NOT a.am_legal AND substring(cd_mun::TEXT, 1, 2)::int IN ('21') 
-) bar ORDER BY cd_grid ; " > cd_grid.txt
+WITH foo AS (SELECT UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer FROM malhav2.proc2_malhav2 pm),
+bar AS (SELECT gid original_gid, cd_grid, geom FROM grid.adm2_overlay
+WHERE substring(cd_mun::TEXT, 1, 2)::int IN (21, 22, 17, 29)),
+zeta AS (SELECT DISTINCT original_gid, TRUE exis FROM foo WHERE original_layer = 'GRID')
+SELECT DISTINCT cd_grid FROM bar LEFT JOIN zeta using(original_gid)
+WHERE exis IS NOT TRUE; " > cd_grid.txt
 
 
 
