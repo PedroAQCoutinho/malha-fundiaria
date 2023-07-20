@@ -9,7 +9,7 @@ BEGIN
 	FOR tab IN (SELECT nm_dado_original_valid_geom FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom IS NOT NULL) LOOP	
     RETURN QUERY EXECUTE format('SELECT cd_grid, ''%s'' original_layer, 
 	b.gid original_gid, ST_CollectionExtract(ST_Intersection(ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(ST_Makevalid(a.geom),3)), 4326)), 3) geom FROM grid.adm2_overlay a
-	LEFT JOIN dados_brutos.%I b ON ST_Intersects(ST_SETSRID(ST_Force2d(ST_CollectionExtract(ST_Makevalid(a.geom),3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326)) WHERE cd_grid = %s AND NOT am_legal AND substring(a.cd_mun::TEXT, 1, 2)::int IN (31) %s', 
+	LEFT JOIN dados_brutos.%I b ON ST_Intersects(ST_SETSRID(ST_Force2d(ST_CollectionExtract(ST_Makevalid(a.geom),3)), 4326), ST_SETSRID(ST_Force2d(ST_CollectionExtract(b.valid_geom,3)), 4326)) WHERE cd_grid = %s AND substring(a.cd_mun::TEXT, 1, 2)::int IN (15, 21, 17, 22, 29) %s', 
 	(SELECT a.label FROM auxiliares.inputs a WHERE a.nm_dado_original_valid_geom = tab), 
 	tab, 
 	grid,
@@ -33,7 +33,7 @@ BEGIN
 				SELECT * FROM (SELECT * FROM get_table_data(%s) WHERE geom IS NOT NULL
 				UNION ALL 
 				SELECT cd_grid, ''GRID'' original_layer, ao.gid original_gid, geom 
-				FROM grid.adm2_overlay ao WHERE cd_grid = %s and not am_legal AND substring(ao.cd_mun::TEXT, 1, 2)::int IN (31) ) foo;', 
+				FROM grid.adm2_overlay ao WHERE cd_grid = %s AND substring(ao.cd_mun::TEXT, 1, 2)::int IN (15, 21, 17, 22, 29) ) foo;', 
      grid, grid, grid);
 END
 $func$;
@@ -66,8 +66,8 @@ $func$
 BEGIN
    EXECUTE format('
       CREATE TEMPORARY TABLE split_polygons_%s AS 
-      SELECT st_asbinary((ST_Dump(ST_Split(ST_Union(ST_Force2d(geom)), ST_Union(st_exteriorring(ST_Force2d(geom)))))).geom) bin, 
-      (ST_Dump(ST_Split(ST_Union(ST_Force2d(geom)), ST_Union(st_exteriorring(ST_Force2d(geom)))))).geom 
+      SELECT st_asbinary((ST_Dump(ST_Split( ST_Union(ST_Force2d(ST_buffer(geom::geography, 0.01)::geometry)), ST_Union(st_exteriorring(ST_Force2d(geom)))))).geom ) bin, 
+      (ST_Dump(ST_Split( ST_Union(ST_Force2d(ST_buffer(geom::geography, 0.01)::geometry)), ST_Union(st_exteriorring(ST_Force2d(geom)))))).geom  
       FROM fdump_%s;
       CREATE INDEX split_polygons_%s_bin_idx ON split_polygons_%s USING hash (bin);
       CREATE INDEX split_polygons_%s_geom_idx ON split_polygons_%s USING GIST (geom);', 
