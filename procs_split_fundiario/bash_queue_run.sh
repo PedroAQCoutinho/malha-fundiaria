@@ -23,7 +23,7 @@ echo "Parameter: $1"
 #WHERE exis IS NOT TRUE; " > cd_grid.txt
 
 psql -t -A -U $userName -d $databaseName -c "
- SELECT * FROM grid.adm2_overlay ao
+ SELECT distinct cd_grid FROM grid.adm2_overlay ao
 WHERE cd_grid IN (848351,864354,1024345,876332,944265,1056262,1084265,1136274,1212289,1220289,1204310, 1204310, 1184260); " > cd_grid.txt
 
 
