@@ -13,7 +13,7 @@ WITH foo AS (SELECT
   sum(CASE WHEN uso IN (22,23,24,30,25) THEN count ELSE 0 END)*0.087 AS nao_vegetada,
   sum(CASE WHEN uso IN (26,33,31,27) THEN count ELSE 0 END)*0.087 AS corpo_dagua,
   SUM(CASE WHEN uso IN (9,15,20,21,24,30,31,39,40,41,46,47,48,62) THEN count ELSE 0 END)*0.087 AS antropizada,
-  SUM(CASE WHEN uso IN (3,4,5,49,11,12,32,29,50,13,23,25,33,27) THEN count ELSE 0 END)*0.087 AS nao_antropizada,
+  SUM(CASE WHEN uso IN (3,4,5,49,11,12,32,29,50,13,23,25,33,27) THEN count ELSE 0 END)*0.087 AS nao_antropizada
   FROM public.proc1_row_by_row_mapbiomas_15052023 prbrm 
 GROUP BY cat_fund),
 bar AS (
