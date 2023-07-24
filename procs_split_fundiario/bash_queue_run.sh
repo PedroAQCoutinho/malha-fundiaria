@@ -14,17 +14,17 @@ procName=proc1_malhav2
 echo "$$" > pid
 echo "Parameter: $1"
 
-#psql -t -A -U $userName -d $databaseName -c "
-#WITH foo AS (SELECT UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer FROM malhav2.proc2_malhav2 pm),
-#bar AS (SELECT gid original_gid, cd_grid, geom FROM grid.adm2_overlay
-#WHERE substring(cd_mun::TEXT, 1, 2)::int IN (21, 22, 17, 29)),
-#zeta AS (SELECT DISTINCT original_gid, TRUE exis FROM foo WHERE original_layer = 'GRID')
-#SELECT DISTINCT cd_grid FROM bar LEFT JOIN zeta using(original_gid)
-#WHERE exis IS NOT TRUE; " > cd_grid.txt
-
 psql -t -A -U $userName -d $databaseName -c "
- SELECT distinct cd_grid FROM grid.adm2_overlay ao
-WHERE cd_grid IN (848351,864354,1024345,876332,944265,1056262,1084265,1136274,1212289,1220289,1204310, 1204310, 1184260); " > cd_grid.txt
+WITH foo AS (SELECT UNNEST(original_gid) original_gid, UNNEST(original_layer) original_layer FROM malhav2.proc2_malhav2 pm),
+bar AS (SELECT gid original_gid, cd_grid, geom FROM grid.adm2_overlay
+WHERE substring(cd_mun::TEXT, 1, 2)::int IN (31)),
+zeta AS (SELECT DISTINCT original_gid, TRUE exis FROM foo WHERE original_layer = 'GRID')
+SELECT DISTINCT cd_grid FROM bar LEFT JOIN zeta using(original_gid)
+WHERE exis IS NOT TRUE; " > cd_grid.txt
+
+#psql -t -A -U $userName -d $databaseName -c "
+# SELECT distinct cd_grid FROM grid.adm2_overlay ao
+#WHERE cd_grid IN (848351,864354,1024345,876332,944265,1056262,1084265,1136274,1212289,1220289,1204310, 1204310, 1184260); " > cd_grid.txt
 
 
 
