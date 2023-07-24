@@ -1,3 +1,5 @@
+\echo RUN proc5_malha_1
+
 DROP TABLE malhav2.proc5_malha;
 CREATE TABLE malhav2.proc5_malha (
 	gid serial4 NOT NULL,
