@@ -1,3 +1,6 @@
+\echo RUN proc5_malha :var_proc
+
+
 INSERT INTO malhav2.proc5_malha
 SELECT a.gid, cd_mun, a.original_gid , a.original_layer , a.cd_grid, area, am_legal,
 CASE 
