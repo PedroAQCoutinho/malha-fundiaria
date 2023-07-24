@@ -1,3 +1,5 @@
+\echo RUN proc4_unnest
+
 DROP TABLE malhav2.proc4_unnest;
 CREATE TABLE malhav2.proc4_unnest AS 
 SELECT sub.gid, sub.cd_grid, cd_mun , am_legal
