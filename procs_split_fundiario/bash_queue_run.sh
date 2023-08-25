@@ -1,6 +1,6 @@
 #! /bin/bash
 
-N=8  # Amount of jobs to run in parallel
+N=4  # Amount of jobs to run in parallel
 T=0  # Counter for amount of jobs
 Q=() # Job queue
 FILE='cd_grid.txt'
@@ -21,6 +21,7 @@ WHERE substring(cd_mun::TEXT, 1, 2)::int IN (31)),
 zeta AS (SELECT DISTINCT original_gid, TRUE exis FROM foo WHERE original_layer = 'GRID')
 SELECT DISTINCT cd_grid FROM bar LEFT JOIN zeta using(original_gid)
 WHERE exis IS NOT TRUE; " > cd_grid.txt
+
 
 #psql -t -A -U $userName -d $databaseName -c "
 # SELECT distinct cd_grid FROM grid.adm2_overlay ao
