@@ -1,7 +1,7 @@
-\echo RUN proc5_malha :var_proc
+\echo RUN proc5_malha_v3 :var_proc
 
 
-INSERT INTO malhav2.proc5_malha
+INSERT INTO malhav2.proc5_malha_v3
 SELECT a.gid, cd_mun, a.original_gid , a.original_layer , a.cd_grid, area, am_legal,
 CASE 
 	WHEN 'CAR' = ANY(original_layer) THEN TRUE
