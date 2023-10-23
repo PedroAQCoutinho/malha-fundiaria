@@ -1,7 +1,7 @@
-\echo RUN proc6_malha :var_proc
+\echo RUN proc6_malha_v3 :var_proc
 
 
-INSERT INTO malhav2.proc6_malha (gid, cd_mun, am_legal, original_gid ,original_layer,cd_grid,area, is_car,is_faixafronteira,is_militar,
+INSERT INTO malhav2.proc6_malha_v3 (gid, cd_mun, am_legal, original_gid ,original_layer,cd_grid,area, is_car,is_faixafronteira,is_militar,
 is_massadagua,is_quilombola,is_ucpi,is_ucus,is_ucusapa,is_ti,is_imovel,is_gleba,is_gleba_fed, is_gleba_est, is_assentamento,
 original_layer_label,nm_cat_fund,nm_agrup,floresta, pfloresta, agropecuario, pagropecuario,
 nao_vegetada, pnao_vegetada, corpo_dagua,  pcorpo_dagua, antropizada, pantropizada, nao_antropizada, pnao_antropizada, area_prioridade_alta, area_prioridade_extrem_alta,area_prioridade_muito_alta,
