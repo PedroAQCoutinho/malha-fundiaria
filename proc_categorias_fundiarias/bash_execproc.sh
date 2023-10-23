@@ -3,10 +3,6 @@ databaseName=malha_fundiaria
 numProc=8
 
 
-export PGPASSWORD='gpp-es@lq'
-procName=proc4_unnest
-psql -U $userName -d $databaseName -f ${procName}.sql
-
 
 export PGPASSWORD='gpp-es@lq'
 procName=proc5_malha
