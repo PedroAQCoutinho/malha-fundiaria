@@ -1,8 +1,8 @@
-\echo RUN proc6_malha_1
+\echo RUN proc6_malha_v3_1
 
 
-DROP TABLE malhav2.proc6_malha;
-CREATE TABLE malhav2.proc6_malha (
+DROP TABLE malhav2.proc6_malha_v3;
+CREATE TABLE malhav2.proc6_malha_v3 (
 	gid serial4 NOT NULL,
     cd_mun INTEGER null,
     am_legal BOOLEAN NULL,
@@ -47,9 +47,9 @@ CREATE TABLE malhav2.proc6_malha (
 );
 
 
-CREATE INDEX proc6_malha_cd_grid_idx ON malhav2.proc6_malha USING btree (cd_grid);
-CREATE INDEX proc6_malha_geom_idx ON malhav2.proc6_malha USING gist (geom);
-CREATE INDEX proc6_malha_gid_idx ON malhav2.proc6_malha USING btree (gid);
-CREATE INDEX proc6_malha_original_layer_label_idx ON malhav2.proc6_malha USING btree (original_layer_label);
-CREATE INDEX proc6_malha_nm_cat_fund_idx ON malhav2.proc6_malha USING btree (nm_cat_fund);
-CREATE INDEX proc6_malha_nm_agrup_idx ON malhav2.proc6_malha USING btree (nm_agrup);
+CREATE INDEX proc6_malha_v3_cd_grid_idx ON malhav2.proc6_malha_v3 USING btree (cd_grid);
+CREATE INDEX proc6_malha_v3_geom_idx ON malhav2.proc6_malha_v3 USING gist (geom);
+CREATE INDEX proc6_malha_v3_gid_idx ON malhav2.proc6_malha_v3 USING btree (gid);
+CREATE INDEX proc6_malha_v3_original_layer_label_idx ON malhav2.proc6_malha_v3 USING btree (original_layer_label);
+CREATE INDEX proc6_malha_v3_nm_cat_fund_idx ON malhav2.proc6_malha_v3 USING btree (nm_cat_fund);
+CREATE INDEX proc6_malha_v3_nm_agrup_idx ON malhav2.proc6_malha_v3 USING btree (nm_agrup);
