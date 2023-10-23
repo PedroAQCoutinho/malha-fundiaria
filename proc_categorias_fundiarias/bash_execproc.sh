@@ -5,7 +5,7 @@ numProc=8
 
 export PGPASSWORD='gpp-es@lq'
 procName=proc4_unnest
-psql -U $userName -d $databaseName -f ${procName}_1.sql
+psql -U $userName -d $databaseName -f ${procName}.sql
 
 
 export PGPASSWORD='gpp-es@lq'
