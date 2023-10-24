@@ -86,7 +86,7 @@ array_replace(array_remove(array_remove(array_remove(original_layer, 'FF'),'CAR'
 geom
 FROM malhav2.proc2_malhav2 a 
 LEFT JOIN LATERAL (
-SELECT * FROM malhav2.proc4_unnest pu WHERE  pu.gid = a.gid
+SELECT * FROM malhav2.proc4_unnest_v3 pu WHERE  pu.gid = a.gid
 ) foo ON TRUE 
 WHERE (a.gid % :var_num_proc) = :var_proc
 
