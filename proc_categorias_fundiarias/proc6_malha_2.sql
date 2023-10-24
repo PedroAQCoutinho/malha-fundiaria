@@ -45,7 +45,7 @@ area_prioridade_extrem_alta,
 area_prioridade_muito_alta,
 ((2 * sqrt( pi()* ST_Area(geom)))/ (ST_Perimeter(geom))) indice_circulariade,
 geom
-FROM malhav2.proc5_malha a 
+FROM malhav2.proc5_malha_v3 a 
 LEFT JOIN auxiliares.nomenclatura_categorias_e_agrupamentos_fundiarios b 
 ON a.original_layer_label = b.original_layer
 LEFT JOIN foo ON foo.cat_fund = a.gid 
